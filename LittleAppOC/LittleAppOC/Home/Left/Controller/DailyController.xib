@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DailyController">
+            <connections>
+                <outlet property="textView" destination="wq5-DY-O03" id="yTz-9b-XtX"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wq5-DY-O03">
+                    <rect key="frame" x="10" y="0.0" width="355" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <mutableString key="text">2017年
+
+1月15日
+1、搭建了三级控制器
+2、集成了MMDrawController侧滑控制器
+
+16日
+1、添加了左边控制器的头image视图
+2、修改了titleView
+3、添加了夜间模式按钮
+
+17日
+1、修改了标签按钮的图片
+2、左控制器右下角添加了天气、定位的UI
+3、创建了主题类
+4、主题切换大致意思懂了，背景颜色的主题可以切换了
+5、全部的控制器都可以根据主题改变背景颜色了
+
+18日
+1、未来几天天气预报的model已经加载封装好了
+2、创建了日记控制器，用来记录这个APP的设计日常
+3、三天天气预报的UI已经设置完毕，滑动居中放大，当天的天气图像根据通知进行切换
+
+19日
+1、查看天气界面添加了加载菊花
+
+23日
+1、天气的接口换成了阿里的接口
+2、封装了阿里天气的model
+3、初建阿里天气视图控制器，准备加载数据、创建UI
+4、时刻温度表UI制作完毕
+
+24日
+1、在gamer控制器添加了游戏的图标集合视图，准备点击相应的item，进入游戏
+
+29日
+1、天气预报界面，上下滑的时候改变定位、天气、温度、星期几、最高最低温度等标签的位移以及不透明度
+2、根据主滑动视图的位移，设置了主滑动视图在上滑到一定程度的时候不允许上滑了，其实就是到了一定程度设定固定的偏移量，下滑的时候不做改变
+3、控制滑动视图在可变区间，手动设置滑动视图的偏移，以及定位等标签的改变（需要在拖拽完毕和减速完毕两个方法都进行设置）
+
+30号
+1、时刻温度表下面的滑动视图，也就是每天天气、其它各项指标等，已经制作完毕
+2、集成了短信验证登录，登录成功后会保存本地状态，UI还没有制作好
+3、自定义了短信验证的UI，很粗糙
+4、修改了登录页面的UI，自己P了很久呢
+
+2-1
+1、总算把登录页面的UI全都弄好了，哈哈
+2、左边控制器添加了头像、账户电话号码和退出按钮，并实现了退出功能
+
+2-3
+1、天气界面添加了搜索按钮跟搜索框
+2、可以根据搜索的地点搜索天气，并显示在当前的天气界面
+3、在更多天气信息的滑动视图之上添加了一个视图，用于接收滑动，让主动视图滑动而子滑动视图不滑动。当主滑动视图到达顶端的时候，移开，让子滑动视图接收滑动
+
+2-24
+1、音乐排行榜可以显示欧美排行榜的音乐列表了
+2、排行榜数据本地持久化，在没有网或不需要更新的时候会使用本地数据
+3、切换夜间模式，背景颜色适当改变
+
+2-25
+1、解决了天气搜索之后的位置不正确，遮罩板缺失的bug
+2、集成了MJRefresh，并给歌曲列表添加了上拉加载更多歌曲，上拉显示的图像自己PS
+3、可以切换不同的排行榜了
+4、解决了SD不能设置某些特定的image的bug，其实是SD旧版本的bug，这个bug曾在模仿面包猎人的时候遇到过，现在得以解决，真棒啊
+5、将天气的图标统一为白色，更美观，至于是怎么把这么多图片都弄成白色，这可就六六六了，用到了PS的动作和批处理，瞬间感觉自己力力害
+
+2-26
+1、滚轮密码页面制作成功，将滚轮的密码设定正确之后，就会跳转
+2、解决了什么时候弹出输入密码进入App的逻辑，特别的，是在进入后台之后，才把主窗口设置为输入密码的窗口，不然在App活跃之后才设置的话，会先显示tabbar在显示输入密码的窗口，很突兀
+3、设置界面有是否启用密码的开关，点击可设置密码
+
+2-27
+1、歌曲列表加入了下拉刷新控件，是系统自带的控件，UIRefreshControll
+
+2-28
+1、点击歌曲列表的单元格，可以播放对应的歌曲
+2、正在播放的歌曲页面，UI制作完毕
+3、上一首、暂停、播放、下一首、调节进度、自动跳转下一首功能已经实现（开心）
+4、后台播放歌曲
+5、在切歌动作执行的时候，给专辑图片做了一个向上渐隐的动作
+6、解决了第一次能监听播放完毕，第二次就不能监听的bug，问题在于监听的currentItem改变了，就监听不了。后面改用了监听进度来实现歌曲播放完毕
+
+3-3
+1、播放音乐的界面，背景添加了模糊效果
+
+3-5
+1、封装了TouchID验证类，并加入了TouchID验证进入App
+2、修改了起动App需要指纹，App从后台进入前台需要密码
+
+3-11
+1、目标界面的UI，实现点击尾视图展开/收回cell列表
+
+3-12
+1、游戏中加入了扫雷，点击雷按钮，改变雷在巨大的滑动视图中的位置，窗口中有tip提示雷的位置，每当雷的位置发生改变，tip的位置都会发生改变
+
+3-28
+1、添加了取色板
+
+3-29
+1、添加了折线图
+
+3-30
+1、添加了标尺
+
+8-10
+1、创建了查看网页的控制器
+2、添加了查看深圳地铁
+
+8-14
+1、回到手机主屏幕
+2、翻译
+3、城市列表
+
+8-15
+1、变暗
+2、禁止锁屏
+3、非崩溃式退出程序
+
+8-16
+1、展示手机安装的应用
+2、类似LED显示文字的控制器，能修改字体颜色和背景颜色
+3、添加了系统外的字体
+
+8-17
+1、颜色渐变
+
+8-21
+1、生成二维码
+2、显示gif图像
+
+8-22
+1、日历
+
+8-23
+1、新建输入法
+
+09-04
+1、使用cocoapods集成了YYKit
+</mutableString>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="wq5-DY-O03" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Mf5-RN-gqA"/>
+                <constraint firstAttribute="trailing" secondItem="wq5-DY-O03" secondAttribute="trailing" constant="10" id="T9l-cA-WXs"/>
+                <constraint firstItem="wq5-DY-O03" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="lYH-wb-VTu"/>
+                <constraint firstAttribute="bottom" secondItem="wq5-DY-O03" secondAttribute="bottom" id="oeg-aX-VUF"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+</document>
