@@ -10,11 +10,21 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ImageSelectViewCellDelegate <NSObject>
+
+@optional
+// 长按响应
+- (void)longPressCellAction;
+
+@end
+
 @interface ImageSelectViewCell : UICollectionViewCell
 
 
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 
+@property (assign, nonatomic) BOOL ani;
 
+@property (weak, nonatomic) id<ImageSelectViewCellDelegate> delegate;
 
 @end

@@ -1,10 +1,6 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## Weibo_SDK
-
-
-
 ## YYKit
 
 The MIT License (MIT)

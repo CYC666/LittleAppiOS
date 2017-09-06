@@ -11,10 +11,16 @@
 #import "ImageSelectViewController.h"
 #import "ImageSelectViewCell.h"
 
-@interface ImageSelectViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+@interface ImageSelectViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ImageSelectViewCellDelegate> {
 
     UICollectionView *_listCollectionView;
     NSMutableArray *_images;
+    
+    // 单元格编辑状态
+    BOOL _editCell;
+    
+    // 导航栏右边的按钮
+    UIButton *_rightItem;
 
 }
 
@@ -33,7 +39,7 @@
     [super viewDidLoad];
     
     _images = [NSMutableArray array];
-    
+    _editCell = NO;
     
     UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 20)];
     title.text = @"照片";
@@ -50,6 +56,16 @@
                 selector:@selector(changeBackgroundColor:)
                     name:CThemeChangeNotification
                   object:nil];
+    
+    // 导航栏右边的添加按钮
+    _rightItem = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_rightItem setTitle:@"编辑" forState:UIControlStateNormal];
+    [_rightItem setTintColor:[UIColor whiteColor]];
+    _rightItem.frame = CGRectMake(0, 0, 40, 22);
+    [_rightItem addTarget:self action:@selector(rightItemAction:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:_rightItem];
+    self.navigationItem.rightBarButtonItem = rightBarItem;
+
     
     
     // 集合视图
@@ -79,6 +95,28 @@
 
 #pragma mark ========================================动作响应=============================================
 
+#pragma mark - 导航栏右边按钮响应
+- (void)rightItemAction:(UIButton *)button {
+    
+    if (_images.count == 0) {
+        return;
+    }
+    
+    _editCell = !_editCell;
+    
+    [_listCollectionView reloadData];
+    
+    if (_editCell) {
+        [_rightItem setTitle:@"完成" forState:UIControlStateNormal];
+    } else {
+        [_rightItem setTitle:@"编辑" forState:UIControlStateNormal];
+    }
+    
+    
+}
+
+
+
 #pragma mark ========================================网络请求=============================================
 
 #pragma mark ========================================代理方法=============================================
@@ -103,18 +141,22 @@
         
         // +
         cell.iconImageView.image = [UIImage imageNamed:@"icon_gamer_image_add"];
+        cell.delegate = nil;
         
     } else {
         
         if (indexPath.item == _images.count) {
             // +
             cell.iconImageView.image = [UIImage imageNamed:@"icon_gamer_image_add"];
+            cell.delegate = nil;
             
         } else {
             
             // 显示照片
             UIImage *image = _images[indexPath.item];
             cell.iconImageView.image = image;
+            cell.ani = _editCell;
+            cell.delegate = self;
             
         }
         
@@ -129,12 +171,41 @@
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     
     if (indexPath.item == _images.count) {
-        // 弹出选取照片
-        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-        imagePicker.delegate = self;
-        [self presentViewController:imagePicker animated:YES completion:nil];
+        if (_editCell) {
+            // 正在编辑状态，则先停止编辑
+            _editCell = NO;
+            [collectionView reloadData];
+            
+            // 修改导航栏右边按钮的状态
+            [_rightItem setTitle:@"编辑" forState:UIControlStateNormal];
+            
+        } else {
+            // 弹出选取照片
+            UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+            imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+            imagePicker.delegate = self;
+            [self presentViewController:imagePicker animated:YES completion:^{
+                [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+            }];
+        }
     } else {
-        // 查看照片
+        if (_editCell) {
+            // 编辑状态删除图片
+            [_images removeObjectAtIndex:indexPath.item];
+            [collectionView deleteItemsAtIndexPaths:@[indexPath]];  // 有动画，比较好看
+            
+            if (_images.count == 0) {
+                
+                // 退出编辑状态
+                _editCell = NO;
+                
+                // 修改导航栏右边按钮的状态
+                [_rightItem setTitle:@"编辑" forState:UIControlStateNormal];
+            }
+            
+        } else {
+            // 非编辑状态，查看大图
+        }
     }
 
 }
@@ -148,6 +219,26 @@
     [picker dismissViewControllerAnimated:YES completion:^{
         [_listCollectionView reloadData];
     }];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
+}
+
+#pragma mark - 长按单元格响应
+- (void)longPressCellAction {
+    
+    if (_editCell) {
+        // 如果已经在编辑状态，不做修改
+    } else {
+        // 开始编辑单元格
+        _editCell = YES;
+        [_listCollectionView reloadData];
+        
+        // 修改导航栏右边的完成按钮状态
+        [_rightItem setTitle:@"完成" forState:UIControlStateNormal];
+    }
+
+    
 
 }
 

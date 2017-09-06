@@ -334,7 +334,6 @@
 		9E66B0311F444D910095FC41 /* 迷你简胖娃.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 9E66B02B1F444BF60095FC41 /* 迷你简胖娃.ttf */; };
 		9E66B0321F44562D0095FC41 /* 汉仪清雅体简.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 9E118ACF1E600B0F00914D9E /* 汉仪清雅体简.ttf */; };
 		9E66B0341F4458730095FC41 /* 简特细等线.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 9E66B0331F44582F0095FC41 /* 简特细等线.ttf */; };
-		9E6B61E01F5E4DA8002A7463 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6B61DF1F5E4DA8002A7463 /* libWeiboSDK.a */; };
 		9E6B61E41F5E96ED002A7463 /* input_globe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6B61E21F5E96ED002A7463 /* input_globe@2x.png */; };
 		9E6B61E51F5E96ED002A7463 /* input_globe@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6B61E31F5E96ED002A7463 /* input_globe@3x.png */; };
 		9E6EB0D11E3ED9C800E7128A /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6EB0AC1E3ED9C800E7128A /* MOBFoundation.framework */; };
@@ -1286,7 +1285,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E6B61E01F5E4DA8002A7463 /* libWeiboSDK.a in Frameworks */,
 				9E64DE061F4AB4B9002E6A3F /* libsqlite3.tbd in Frameworks */,
 				9E64DDD81F4AB039002E6A3F /* libz.tbd in Frameworks */,
 				9E251A471F46DB29009EFA56 /* CoreGraphics.framework in Frameworks */,
@@ -3550,17 +3548,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/LittleAppOC/Home/Third/SMS_SDK/SMS_SDK",
 					"$(PROJECT_DIR)/LittleAppOC/Home/Third",
-					"$(PROJECT_DIR)/LittleAppOC/Home/Third/libWeiboSDK.a",
-					"$(SRCROOT)/Pods/Weibo_SDK",
 				);
 				GCC_PREFIX_HEADER = "/Users/caoyicheng/Desktop/39-LittleApp-master/LittleAppOC/LittleAppOC/Home/Tool/CYCLittleAppHeader.pch";
 				INFOPLIST_FILE = LittleAppOC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/Weibo_SDK/libWeiboSDK",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CYC.LittleAppiOS;
@@ -3583,17 +3576,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/LittleAppOC/Home/Third/SMS_SDK/SMS_SDK",
 					"$(PROJECT_DIR)/LittleAppOC/Home/Third",
-					"$(PROJECT_DIR)/LittleAppOC/Home/Third/libWeiboSDK.a",
-					"$(SRCROOT)/Pods/Weibo_SDK",
 				);
 				GCC_PREFIX_HEADER = "/Users/caoyicheng/Desktop/39-LittleApp-master/LittleAppOC/LittleAppOC/Home/Tool/CYCLittleAppHeader.pch";
 				INFOPLIST_FILE = LittleAppOC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/Weibo_SDK/libWeiboSDK",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CYC.LittleAppiOS;
