@@ -272,6 +272,14 @@
 		9E5EE25A1F3C61D8009C3659 /* CWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5EE2591F3C61D8009C3659 /* CWebViewController.m */; };
 		9E5EE25D1F3C6BD3009C3659 /* icon_gamer_subway@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E5EE25B1F3C6BD3009C3659 /* icon_gamer_subway@3x.png */; };
 		9E5EE25E1F3C6BD3009C3659 /* icon_gamer_subway@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E5EE25C1F3C6BD3009C3659 /* icon_gamer_subway@2x.png */; };
+		9E60EE1F1F5FA9F700A73237 /* icon_gamer_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E60EE1D1F5FA9F700A73237 /* icon_gamer_image@2x.png */; };
+		9E60EE201F5FA9F700A73237 /* icon_gamer_image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E60EE1E1F5FA9F700A73237 /* icon_gamer_image@3x.png */; };
+		9E60EE261F5FAA6600A73237 /* ImageSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E60EE241F5FAA6600A73237 /* ImageSelectViewController.m */; };
+		9E60EE271F5FAA6600A73237 /* ImageSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E60EE251F5FAA6600A73237 /* ImageSelectViewController.xib */; };
+		9E60EE2B1F5FAB5500A73237 /* ImageSelectViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E60EE291F5FAB5500A73237 /* ImageSelectViewCell.m */; };
+		9E60EE2C1F5FAB5500A73237 /* ImageSelectViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E60EE2A1F5FAB5500A73237 /* ImageSelectViewCell.xib */; };
+		9E60EE2F1F5FB1B900A73237 /* icon_gamer_image_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E60EE2D1F5FB1B900A73237 /* icon_gamer_image_add@2x.png */; };
+		9E60EE301F5FB1B900A73237 /* icon_gamer_image_add@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E60EE2E1F5FB1B900A73237 /* icon_gamer_image_add@3x.png */; };
 		9E64DDD61F4AB030002E6A3F /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6EB0E81E3EDA3A00E7128A /* libicucore.tbd */; };
 		9E64DDD81F4AB039002E6A3F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6EB0E61E3EDA2E00E7128A /* libz.tbd */; };
 		9E64DDD91F4AB042002E6A3F /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6EB0EE1E3EDA5800E7128A /* libstdc++.tbd */; };
@@ -900,6 +908,16 @@
 		9E5EE2591F3C61D8009C3659 /* CWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWebViewController.m; sourceTree = "<group>"; };
 		9E5EE25B1F3C6BD3009C3659 /* icon_gamer_subway@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_subway@3x.png"; sourceTree = "<group>"; };
 		9E5EE25C1F3C6BD3009C3659 /* icon_gamer_subway@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_subway@2x.png"; sourceTree = "<group>"; };
+		9E60EE1D1F5FA9F700A73237 /* icon_gamer_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image@2x.png"; sourceTree = "<group>"; };
+		9E60EE1E1F5FA9F700A73237 /* icon_gamer_image@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image@3x.png"; sourceTree = "<group>"; };
+		9E60EE231F5FAA6600A73237 /* ImageSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageSelectViewController.h; sourceTree = "<group>"; };
+		9E60EE241F5FAA6600A73237 /* ImageSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageSelectViewController.m; sourceTree = "<group>"; };
+		9E60EE251F5FAA6600A73237 /* ImageSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageSelectViewController.xib; sourceTree = "<group>"; };
+		9E60EE281F5FAB5500A73237 /* ImageSelectViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageSelectViewCell.h; sourceTree = "<group>"; };
+		9E60EE291F5FAB5500A73237 /* ImageSelectViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageSelectViewCell.m; sourceTree = "<group>"; };
+		9E60EE2A1F5FAB5500A73237 /* ImageSelectViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageSelectViewCell.xib; sourceTree = "<group>"; };
+		9E60EE2D1F5FB1B900A73237 /* icon_gamer_image_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_add@2x.png"; sourceTree = "<group>"; };
+		9E60EE2E1F5FB1B900A73237 /* icon_gamer_image_add@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_add@3x.png"; sourceTree = "<group>"; };
 		9E64DD881F4A9008002E6A3F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		9E64DD8A1F4AA497002E6A3F /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		9E64DE351F4ACAD6002E6A3F /* icon_gamer_code@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_code@2x.png"; sourceTree = "<group>"; };
@@ -1570,6 +1588,7 @@
 			children = (
 				9E1389F21E2B11D00011701B /* GamerController.h */,
 				9E1389F31E2B11D00011701B /* GamerController.m */,
+				9E60EE221F5FAA2B00A73237 /* ImageSelect */,
 				9E0672221F4D7C1500C1ABEE /* Input */,
 				9E01D35B1F4C272400AA31F3 /* Calendar */,
 				9E64DE391F4ACB4B002E6A3F /* Code */,
@@ -1891,6 +1910,10 @@
 		9E527DC21E3799460057AF4C /* GamerImage */ = {
 			isa = PBXGroup;
 			children = (
+				9E60EE2D1F5FB1B900A73237 /* icon_gamer_image_add@2x.png */,
+				9E60EE2E1F5FB1B900A73237 /* icon_gamer_image_add@3x.png */,
+				9E60EE1D1F5FA9F700A73237 /* icon_gamer_image@2x.png */,
+				9E60EE1E1F5FA9F700A73237 /* icon_gamer_image@3x.png */,
 				9E06721E1F4D7BDA00C1ABEE /* icon_gamer_input@2x.png */,
 				9E06721F1F4D7BDA00C1ABEE /* icon_gamer_input@3x.png */,
 				9E01D36D1F4C283E00AA31F3 /* icon_gamer_calendar@2x.png */,
@@ -1972,6 +1995,19 @@
 				9E53B4B61E64A2F10015FA02 /* music_song_play@3x.png */,
 			);
 			path = MusicSongLive;
+			sourceTree = "<group>";
+		};
+		9E60EE221F5FAA2B00A73237 /* ImageSelect */ = {
+			isa = PBXGroup;
+			children = (
+				9E60EE231F5FAA6600A73237 /* ImageSelectViewController.h */,
+				9E60EE241F5FAA6600A73237 /* ImageSelectViewController.m */,
+				9E60EE251F5FAA6600A73237 /* ImageSelectViewController.xib */,
+				9E60EE281F5FAB5500A73237 /* ImageSelectViewCell.h */,
+				9E60EE291F5FAB5500A73237 /* ImageSelectViewCell.m */,
+				9E60EE2A1F5FAB5500A73237 /* ImageSelectViewCell.xib */,
+			);
+			path = ImageSelect;
 			sourceTree = "<group>";
 		};
 		9E64DE391F4ACB4B002E6A3F /* Code */ = {
@@ -2796,6 +2832,7 @@
 				9EFAB7371E2EFCA50039C853 /* icon_weatherController_location.png in Resources */,
 				9E4E121F1E3569F900A08DAC /* icon_weatner_night_8.png in Resources */,
 				9E4E11D51E3569F900A08DAC /* icon_weatner_day_18.png in Resources */,
+				9E60EE1F1F5FA9F700A73237 /* icon_gamer_image@2x.png in Resources */,
 				9EA44AED1E2E24BC00F7761D /* 13.png in Resources */,
 				9E4E120B1E3569F900A08DAC /* icon_weatner_night_27.png in Resources */,
 				9EF9EC101E2C89D30030023B /* icon_leftController_day.png in Resources */,
@@ -2813,6 +2850,7 @@
 				9E802F641F4141030092DDAE /* icon_gamer_home@3x.png in Resources */,
 				9E9EB6421E62B86C005A0F2B /* setting_password@2x.png in Resources */,
 				9EF9EC121E2C89D30030023B /* icon_leftController_day@3x.png in Resources */,
+				9E60EE271F5FAA6600A73237 /* ImageSelectViewController.xib in Resources */,
 				9E4E11F81E3569F900A08DAC /* icon_weatner_night_1.png in Resources */,
 				9E4E11ED1E3569F900A08DAC /* icon_weatner_day_54.png in Resources */,
 				9EF9EC131E2C89D30030023B /* icon_leftController_night.png in Resources */,
@@ -2850,6 +2888,7 @@
 				9E53B4B71E64A2F10015FA02 /* music_song_happen.png in Resources */,
 				9E138A371E2B375E0011701B /* Icon-Spotlight-40@3x.png in Resources */,
 				9EA44AF61E2E24BC00F7761D /* 21.png in Resources */,
+				9E60EE201F5FA9F700A73237 /* icon_gamer_image@3x.png in Resources */,
 				9E4E11F21E3569F900A08DAC /* icon_weatner_day_6.png in Resources */,
 				9EF3D98D1E7511920085B9D1 /* image_boom@2x.png in Resources */,
 				9E4E12071E3569F900A08DAC /* icon_weatner_night_23.png in Resources */,
@@ -3031,6 +3070,7 @@
 				9E64DE431F4ACCDA002E6A3F /* CBaseViewController.xib in Resources */,
 				9EA44B061E2E24BD00F7761D /* 36.png in Resources */,
 				9E64DE6A1F4AE5D0002E6A3F /* icon_home_down_white@3x.png in Resources */,
+				9E60EE2C1F5FAB5500A73237 /* ImageSelectViewCell.xib in Resources */,
 				9E53B4BC1E64A2F10015FA02 /* music_song_last@3x.png in Resources */,
 				9E4E12191E3569F900A08DAC /* icon_weatner_night_55.png in Resources */,
 				9E4E120E1E3569F900A08DAC /* icon_weatner_night_3.png in Resources */,
@@ -3075,6 +3115,7 @@
 				9E53B4C41E64A2F10015FA02 /* music_song_pause@2x.png in Resources */,
 				9EFAB74D1E2F38ED0039C853 /* ThirdController.xib in Resources */,
 				9EA44B0C1E2E24BD00F7761D /* 7.png in Resources */,
+				9E60EE301F5FB1B900A73237 /* icon_gamer_image_add@3x.png in Resources */,
 				9E66AFFD1F442BF50095FC41 /* SelectColorController.xib in Resources */,
 				9EA44AFE1E2E24BC00F7761D /* 29.png in Resources */,
 				9EA44AFB1E2E24BC00F7761D /* 26.png in Resources */,
@@ -3105,6 +3146,7 @@
 				9E01D36F1F4C283E00AA31F3 /* icon_gamer_calendar@2x.png in Resources */,
 				9E1389C41E2B08390011701B /* Assets.xcassets in Resources */,
 				9EA44A931E2DF3FF00F7761D /* home_tab_icon_3@2x.png in Resources */,
+				9E60EE2F1F5FB1B900A73237 /* icon_gamer_image_add@2x.png in Resources */,
 				9E4E11D21E3569F900A08DAC /* icon_weatner_day_15.png in Resources */,
 				9E4E11DA1E3569F900A08DAC /* icon_weatner_day_22.png in Resources */,
 				9E138A311E2B375E0011701B /* Icon-60@3x.png in Resources */,
@@ -3258,6 +3300,7 @@
 				9EA44ABB1E2E121300F7761D /* CNetWorking.m in Sources */,
 				9E9D6E261E61705800EB095B /* MJRefreshBackFooter.m in Sources */,
 				9E118AFB1E60147800914D9E /* SDWebImagePrefetcher.m in Sources */,
+				9E60EE261F5FAA6600A73237 /* ImageSelectViewController.m in Sources */,
 				9E9D6E2F1E61705800EB095B /* MJRefreshBackStateFooter.m in Sources */,
 				9E53B4A21E648E670015FA02 /* SongViewController.m in Sources */,
 				9E138A001E2B120E0011701B /* SettingerController.m in Sources */,
@@ -3267,6 +3310,7 @@
 				9EA44B321E2E758900F7761D /* MBProgressHUD.m in Sources */,
 				09453E7A1E8C06850062E5CA /* SHPlot.m in Sources */,
 				9E6EB0DA1E3ED9C800E7128A /* RegViewController.m in Sources */,
+				9E60EE2B1F5FAB5500A73237 /* ImageSelectViewCell.m in Sources */,
 				9E9D6E271E61705800EB095B /* MJRefreshComponent.m in Sources */,
 				9E64DE621F4AE3A2002E6A3F /* CNavigationBar.m in Sources */,
 				9EFAB7451E2F092A0039C853 /* WeatherCollectionView.m in Sources */,

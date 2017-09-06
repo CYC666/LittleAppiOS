@@ -24,6 +24,7 @@
 #import "CodeViewController.h"
 #import "CalendarViewController.h"
 #import "InputViewController.h"
+#import "ImageSelectViewController.h"
 
 
 
@@ -95,7 +96,8 @@
                @"icon_gamer_overColor",
                @"icon_gamer_code",
                @"icon_gamer_calendar",
-               @"icon_gamer_input"];
+               @"icon_gamer_input",
+               @"icon_gamer_image"];
     
     titles = @[@"2048",
                @"目标",
@@ -114,7 +116,8 @@
                @"渐变",
                @"二维码",
                @"日历",
-               @"输入法"];
+               @"输入法",
+               @"照片"];
 
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     UICollectionView *gamesCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(20, 0, kScreenWidth - 40, kScreenHeight - 49)
@@ -276,6 +279,13 @@
         
         // 输入法
         InputViewController *ctrl = [[InputViewController alloc] init];
+        ctrl.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:ctrl animated:YES];
+        
+    } else if ([cell.gameNameLabel.text isEqualToString:@"照片"]) {
+        
+        // 照片
+        ImageSelectViewController *ctrl = [[ImageSelectViewController alloc] init];
         ctrl.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:ctrl animated:YES];
         
