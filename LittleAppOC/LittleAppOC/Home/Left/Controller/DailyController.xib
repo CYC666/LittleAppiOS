@@ -23,7 +23,7 @@
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wq5-DY-O03">
                     <rect key="frame" x="10" y="0.0" width="355" height="667"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <mutableString key="text">2017年
+                    <string key="text">2017年
 
 1月15日
 1、搭建了三级控制器
@@ -162,7 +162,7 @@
 
 09-04
 1、使用cocoapods集成了YYKit
-</mutableString>
+</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
