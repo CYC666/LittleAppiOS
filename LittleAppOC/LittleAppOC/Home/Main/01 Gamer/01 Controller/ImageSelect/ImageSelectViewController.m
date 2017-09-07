@@ -10,8 +10,9 @@
 
 #import "ImageSelectViewController.h"
 #import "ImageSelectViewCell.h"
+#import "PhotoScrollView.h"
 
-@interface ImageSelectViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ImageSelectViewCellDelegate> {
+@interface ImageSelectViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ImageSelectViewCellDelegate, PhotoScrollViewDeletage> {
 
     UICollectionView *_listCollectionView;
     NSMutableArray *_images;
@@ -23,6 +24,10 @@
     UIButton *_rightItem;
 
 }
+
+@property (strong, nonatomic) UIImageView *fadeImageView;   // 显示大图前，用来做动画的假象
+@property (strong, nonatomic) PhotoScrollView *photoView;   // 展示大图
+@property (strong, nonatomic) UICollectionViewCell *selectCell; // 标志选中的cell
 
 @end
 
@@ -143,6 +148,29 @@
 }
 
 
+#pragma mark - 懒加载
+- (PhotoScrollView *)photoView {
+
+    if (_photoView == nil) {
+        _photoView = [[PhotoScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+        _photoView.photoDelegate = self;
+        [[UIApplication sharedApplication].keyWindow addSubview:_photoView];
+    }
+    return _photoView;
+
+}
+
+- (UIImageView *)fadeImageView {
+
+    if (_fadeImageView == nil) {
+        _fadeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+        _fadeImageView.contentMode = UIViewContentModeScaleAspectFit;
+        [[UIApplication sharedApplication].keyWindow addSubview:_fadeImageView];
+    }
+    return _fadeImageView;
+
+}
+
 #pragma mark ========================================动作响应=============================================
 
 #pragma mark - 导航栏右边按钮响应
@@ -230,8 +258,7 @@
             [_rightItem setTitle:@"编辑" forState:UIControlStateNormal];
             
         } else {
-            // 弹出选取照片
-            UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+            
             
             // 弹框提示是否执行
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
@@ -241,12 +268,24 @@
             [alert addAction:[UIAlertAction actionWithTitle:@"来自相机"
                                                       style:UIAlertActionStyleDefault
                                                     handler:^(UIAlertAction * _Nonnull action) {
+                                                        // 弹出选取照片
+                                                        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
                                                         imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                                                        imagePicker.delegate = self;
+                                                        [self presentViewController:imagePicker animated:YES completion:^{
+                                                            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+                                                        }];
                                                     }]];
             [alert addAction:[UIAlertAction actionWithTitle:@"从相册中获取"
                                                       style:UIAlertActionStyleDefault
                                                     handler:^(UIAlertAction * _Nonnull action) {
+                                                        // 弹出选取照片
+                                                        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
                                                         imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+                                                        imagePicker.delegate = self;
+                                                        [self presentViewController:imagePicker animated:YES completion:^{
+                                                            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+                                                        }];
                                                     }]];
             UIAlertAction *action = [UIAlertAction actionWithTitle:@"取消"
                                                              style:UIAlertActionStyleDefault
@@ -258,10 +297,7 @@
             
             [self presentViewController:alert animated:YES completion:nil];
             
-            imagePicker.delegate = self;
-            [self presentViewController:imagePicker animated:YES completion:^{
-                [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-            }];
+            
         }
     } else {
         if (_editCell) {
@@ -280,6 +316,40 @@
             
         } else {
             // 非编辑状态，查看大图
+            // 动画:
+            //      1、单元格隐藏
+            //      2、假象从单元格出发，前往屏幕中部，然后放大到全屏
+            //      3、直接全屏显示要查看的大图
+            //      4、隐藏假象
+            UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+            cell.alpha = 0;
+            _selectCell = cell;
+            CGRect rect = [cell convertRect:cell.bounds toView:[UIApplication sharedApplication].keyWindow];
+            
+            self.fadeImageView.frame = rect;
+            _fadeImageView.image = _images[indexPath.item];
+            
+            self.photoView.imageObj = _images[indexPath.item];
+            _photoView.alpha = 0;
+            
+            [UIView animateWithDuration:0.2
+                             animations:^{
+                                 _fadeImageView.center = CGPointMake(kScreenWidth * 0.5, kScreenHeight * 0.5);
+
+                             } completion:^(BOOL finished) {
+                                 [UIView animateWithDuration:0.2
+                                                  animations:^{
+                                                      _fadeImageView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
+
+                                                  } completion:^(BOOL finished) {
+                                                      [UIView animateWithDuration:0.2
+                                                                       animations:^{
+                                                                           _photoView.alpha = 1;
+                                                                       } completion:^(BOOL finished) {
+                                                                           _fadeImageView.alpha = 0;
+                                                                       }];
+                                                  }];
+                             }];
         }
     }
 
@@ -320,6 +390,41 @@
     }
 
     
+
+}
+
+#pragma mark - 单击了查看大图
+- (void)singleTagAction {
+
+    // 隐藏大图
+    // 动画
+    //      1、显示假象，隐藏大图
+    //      2、假象缩小成单元格，移到单元格位置
+    //      3、显示单元格，隐藏假象
+    
+    CGRect rect = [_selectCell convertRect:_selectCell.bounds toView:[UIApplication sharedApplication].keyWindow];
+    _fadeImageView.alpha = 1;
+    [UIView animateWithDuration:0.2 animations:^{
+        _photoView.alpha = 0;
+    } completion:^(BOOL finished) {
+        [_photoView removeFromSuperview];
+        _photoView = nil;
+        [UIView animateWithDuration:0.2 animations:^{
+            _fadeImageView.frame = CGRectMake((kScreenWidth - kScreenWidth * 0.25) * 0.5,
+                                              (kScreenHeight - kScreenWidth * 0.25) * 0.5,
+                                              kScreenWidth * 0.25,
+                                              kScreenWidth * 0.25);
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.2 animations:^{
+                _fadeImageView.frame = rect;
+            } completion:^(BOOL finished) {
+                _selectCell.alpha = 1;
+                
+                [_fadeImageView removeFromSuperview];
+                _fadeImageView = nil;
+            }];
+        }];
+    }];
 
 }
 

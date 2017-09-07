@@ -280,6 +280,10 @@
 		9E60EE2C1F5FAB5500A73237 /* ImageSelectViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E60EE2A1F5FAB5500A73237 /* ImageSelectViewCell.xib */; };
 		9E60EE2F1F5FB1B900A73237 /* icon_gamer_image_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E60EE2D1F5FB1B900A73237 /* icon_gamer_image_add@2x.png */; };
 		9E60EE301F5FB1B900A73237 /* icon_gamer_image_add@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E60EE2E1F5FB1B900A73237 /* icon_gamer_image_add@3x.png */; };
+		9E648E111F61379500FB2705 /* PhotoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E0A1F61379500FB2705 /* PhotoScrollView.m */; };
+		9E648E121F61379500FB2705 /* ScanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E0C1F61379500FB2705 /* ScanCell.m */; };
+		9E648E131F61379500FB2705 /* ScanCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E0E1F61379500FB2705 /* ScanCollectionView.m */; };
+		9E648E141F61379500FB2705 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E648E101F61379500FB2705 /* ScanViewController.m */; };
 		9E64DDD61F4AB030002E6A3F /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6EB0E81E3EDA3A00E7128A /* libicucore.tbd */; };
 		9E64DDD81F4AB039002E6A3F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6EB0E61E3EDA2E00E7128A /* libz.tbd */; };
 		9E64DDD91F4AB042002E6A3F /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6EB0EE1E3EDA5800E7128A /* libstdc++.tbd */; };
@@ -917,6 +921,14 @@
 		9E60EE2A1F5FAB5500A73237 /* ImageSelectViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageSelectViewCell.xib; sourceTree = "<group>"; };
 		9E60EE2D1F5FB1B900A73237 /* icon_gamer_image_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_add@2x.png"; sourceTree = "<group>"; };
 		9E60EE2E1F5FB1B900A73237 /* icon_gamer_image_add@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_add@3x.png"; sourceTree = "<group>"; };
+		9E648E091F61379500FB2705 /* PhotoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoScrollView.h; sourceTree = "<group>"; };
+		9E648E0A1F61379500FB2705 /* PhotoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoScrollView.m; sourceTree = "<group>"; };
+		9E648E0B1F61379500FB2705 /* ScanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanCell.h; sourceTree = "<group>"; };
+		9E648E0C1F61379500FB2705 /* ScanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanCell.m; sourceTree = "<group>"; };
+		9E648E0D1F61379500FB2705 /* ScanCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanCollectionView.h; sourceTree = "<group>"; };
+		9E648E0E1F61379500FB2705 /* ScanCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanCollectionView.m; sourceTree = "<group>"; };
+		9E648E0F1F61379500FB2705 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
+		9E648E101F61379500FB2705 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
 		9E64DD881F4A9008002E6A3F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		9E64DD8A1F4AA497002E6A3F /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		9E64DE351F4ACAD6002E6A3F /* icon_gamer_code@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_code@2x.png"; sourceTree = "<group>"; };
@@ -2008,6 +2020,21 @@
 			path = ImageSelect;
 			sourceTree = "<group>";
 		};
+		9E648E081F61379500FB2705 /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				9E648E091F61379500FB2705 /* PhotoScrollView.h */,
+				9E648E0A1F61379500FB2705 /* PhotoScrollView.m */,
+				9E648E0B1F61379500FB2705 /* ScanCell.h */,
+				9E648E0C1F61379500FB2705 /* ScanCell.m */,
+				9E648E0D1F61379500FB2705 /* ScanCollectionView.h */,
+				9E648E0E1F61379500FB2705 /* ScanCollectionView.m */,
+				9E648E0F1F61379500FB2705 /* ScanViewController.h */,
+				9E648E101F61379500FB2705 /* ScanViewController.m */,
+			);
+			path = PhotoBrowser;
+			sourceTree = "<group>";
+		};
 		9E64DE391F4ACB4B002E6A3F /* Code */ = {
 			isa = PBXGroup;
 			children = (
@@ -2610,6 +2637,7 @@
 		9EF53CD71E2BBE4F00F55033 /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				9E648E081F61379500FB2705 /* PhotoBrowser */,
 				09453E6F1E8C06850062E5CA /* SHLineGraphView */,
 				9E4FE1DA1E6950D200AF3885 /* FXBlurView */,
 				9E9D6DF61E61705800EB095B /* MJRefresh */,
@@ -3263,15 +3291,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E01D3681F4C272400AA31F3 /* CalendarMonth.m in Sources */,
+				9E648E121F61379500FB2705 /* ScanCell.m in Sources */,
 				9E66B0341F4458730095FC41 /* 简特细等线.ttf in Sources */,
 				9E66B0321F44562D0095FC41 /* 汉仪清雅体简.ttf in Sources */,
 				9E66B02F1F444D910095FC41 /* DFW_WW7.TTF in Sources */,
+				9E648E141F61379500FB2705 /* ScanViewController.m in Sources */,
 				9E66B0311F444D910095FC41 /* 迷你简胖娃.ttf in Sources */,
 				9E66B0171F442C9B0095FC41 /* FlowSliderController.m in Sources */,
 				9E1389F41E2B11D00011701B /* GamerController.m in Sources */,
 				9E118AFA1E60147800914D9E /* SDWebImageManager.m in Sources */,
 				9EFAB7481E2F09A40039C853 /* WeatherCollectionViewCell.m in Sources */,
 				9E9D6E381E61705800EB095B /* UIView+MJExtension.m in Sources */,
+				9E648E131F61379500FB2705 /* ScanCollectionView.m in Sources */,
 				9E01D3671F4C272400AA31F3 /* CalendarCell.m in Sources */,
 				9E4E12281E356E3D00A08DAC /* Ali_AQI_Model.m in Sources */,
 				9E66B0241F4432C60095FC41 /* SelectFontSizeViewController.m in Sources */,
@@ -3312,6 +3343,7 @@
 				9E9D6E271E61705800EB095B /* MJRefreshComponent.m in Sources */,
 				9E64DE621F4AE3A2002E6A3F /* CNavigationBar.m in Sources */,
 				9EFAB7451E2F092A0039C853 /* WeatherCollectionView.m in Sources */,
+				9E648E111F61379500FB2705 /* PhotoScrollView.m in Sources */,
 				9E66B0071F442C330095FC41 /* AppListViewController.m in Sources */,
 				9E01D3691F4C272400AA31F3 /* CalendarScrollView.m in Sources */,
 				9EA44AB51E2E11CD00F7761D /* AFURLConnectionOperation.m in Sources */,
