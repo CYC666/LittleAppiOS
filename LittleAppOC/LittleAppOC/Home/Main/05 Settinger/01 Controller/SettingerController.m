@@ -165,7 +165,7 @@
             unsigned long long length = [attrs fileSize];
             totalSize += length / 1024.0 / 1024.0;
         }
-        NSString *totalStr = [NSString stringWithFormat:@"清除缓存(%.2f)", totalSize];
+        NSString *totalStr = [NSString stringWithFormat:@"清除缓存(%.2fM)", totalSize];
         cell.textLabel.text = totalStr;
         
         

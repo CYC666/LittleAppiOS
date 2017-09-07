@@ -77,7 +77,8 @@
 
 #define weiboAccess_token @"weiboAccess_token"                                                          // 采用OAuth授权方式为必填参数，OAuth授权后获得
 
-
+//-----------------------------------------------------沙盒储存------------------------------------------------
+#define Documents_Picture @"/Documents/pic.plist"                                                       // 本地储存图片的plist路径
 
 
 

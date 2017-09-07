@@ -23,7 +23,7 @@
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wq5-DY-O03">
                     <rect key="frame" x="10" y="0.0" width="355" height="667"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <string key="text">2017年
+                    <mutableString key="text">2017年
 
 1月15日
 1、搭建了三级控制器
@@ -162,7 +162,9 @@
 
 09-04
 1、使用cocoapods集成了YYKit
-</string>
+
+09-07
+1、选择了照片之后，会把照片存到本地沙盒</mutableString>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>

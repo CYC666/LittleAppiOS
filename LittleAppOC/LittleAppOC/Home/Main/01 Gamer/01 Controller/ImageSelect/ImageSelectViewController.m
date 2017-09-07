@@ -84,14 +84,64 @@
     _listCollectionView.dataSource = self;
     [self.view addSubview:_listCollectionView];
     
-    
+    // 获取沙河中的image
+    [self getImages];
     
     
     
 }
 
+- (void)dealloc {
+
+    //获取沙盒路径，
+    NSString *path_sandox = NSHomeDirectory();
+    //创建一个存储plist文件的路径
+    NSString *newPath = [path_sandox stringByAppendingPathComponent:Documents_Picture];
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    //把图片转换为Base64的字符串
+    for (UIImage *image in _images) {
+        NSData *_data = UIImageJPEGRepresentation(image, 1.0f);
+        
+        NSString *_encodedImageStr = [_data base64Encoding];
+        
+        [arr addObject:_encodedImageStr];
+    }
+    
+    
+    //写入plist文件
+    if ([arr writeToFile:newPath atomically:YES]) {
+        NSLog(@"写入成功");
+    };
+
+}
+
 
 #pragma mark ========================================私有方法=============================================
+
+#pragma mark - 获取沙盒中的照片
+- (void)getImages {
+
+    //获取沙盒路径，
+    NSString *path_sandox = NSHomeDirectory();
+    //创建一个存储plist文件的路径
+    NSString *newPath = [path_sandox stringByAppendingPathComponent:Documents_Picture];
+    //获取plist
+    NSArray *imageArray = [NSArray arrayWithContentsOfFile:newPath];
+    if (imageArray != nil) {
+        
+        // 解析图片，存到数组中
+        for (NSString *imageStr in imageArray) {
+            NSData *_decodedImageData = [[NSData alloc] initWithBase64Encoding:imageStr];
+            UIImage *_decodedImage = [UIImage imageWithData:_decodedImageData];
+            [_images addObject:_decodedImage];
+            
+        }
+        
+    }
+    [_listCollectionView reloadData];
+
+}
+
 
 #pragma mark ========================================动作响应=============================================
 
@@ -182,7 +232,32 @@
         } else {
             // 弹出选取照片
             UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-            imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+            
+            // 弹框提示是否执行
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
+                                                                           message:nil
+                                                                    preferredStyle:UIAlertControllerStyleActionSheet];
+            
+            [alert addAction:[UIAlertAction actionWithTitle:@"来自相机"
+                                                      style:UIAlertActionStyleDefault
+                                                    handler:^(UIAlertAction * _Nonnull action) {
+                                                        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                                                    }]];
+            [alert addAction:[UIAlertAction actionWithTitle:@"从相册中获取"
+                                                      style:UIAlertActionStyleDefault
+                                                    handler:^(UIAlertAction * _Nonnull action) {
+                                                        imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+                                                    }]];
+            UIAlertAction *action = [UIAlertAction actionWithTitle:@"取消"
+                                                             style:UIAlertActionStyleDefault
+                                                           handler:^(UIAlertAction * _Nonnull action) {
+                                                               
+                                                           }];
+            [alert addAction:action];
+            [action setValue:[UIColor redColor] forKey:@"titleTextColor"];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+            
             imagePicker.delegate = self;
             [self presentViewController:imagePicker animated:YES completion:^{
                 [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
@@ -222,6 +297,12 @@
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 
+}
+
+#pragma mark - 取消选取照片
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
 #pragma mark - 长按单元格响应
