@@ -11,8 +11,9 @@
 #import "CNavigationBar.h"
 #import "CityListController.h"
 #import <YYKit.h>
+#import "CDoubleTableView.h"
 
-@interface HomerController () <CityListControllerDelegate, UIScrollViewDelegate> {
+@interface HomerController () <CityListControllerDelegate, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource> {
 
     // 虚拟导航栏
     CNavigationBar *navView;
@@ -23,6 +24,8 @@
     // 地址标签
     UILabel *locationLabel;
     NSDictionary *locationDic;
+    
+    CDoubleTableView *tableView;
 
 }
 
@@ -81,9 +84,13 @@
     mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 49)];
     mainScrollView.contentSize = CGSizeMake(kScreenWidth, kScreenHeight * 2);
     mainScrollView.backgroundColor = CTHEME.themeColor;
-    //    mainScrollView.delegate = self;
+        mainScrollView.delegate = self;
     [self.view addSubview:mainScrollView];
     self.automaticallyAdjustsScrollViewInsets = NO; // 这样子滑动视图就不会自动偏移20个像素
+    
+
+    
+    
     
     // 假的导航栏
     navView = [CNavigationBar viewFromXIB];
@@ -100,6 +107,41 @@
     
     
     
+    
+    
+    /**< 初始化colorsView */
+    UIView *colorsView = [[UIView alloc] init];
+    colorsView.frame = CGRectMake(0, 64, kScreenWidth, kScreenWidth);
+    [mainScrollView addSubview:colorsView];
+    
+    /**< 初始化渐变层 */
+    CAGradientLayer *gradientColorLayer = [CAGradientLayer layer];
+    gradientColorLayer.frame = colorsView.bounds;
+    [colorsView.layer addSublayer:gradientColorLayer];
+    
+    /**< 设置颜色组 */
+    gradientColorLayer.colors = @[(__bridge id)[UIColor redColor].CGColor,
+                                  (__bridge id)[UIColor blueColor].CGColor];
+    
+    /**< 设置颜色分割点 */
+    gradientColorLayer.locations  = @[@(0.5)];
+    
+    
+    /**< 设置渐变颜色方向 */
+    // 1、起始位置
+    gradientColorLayer.startPoint = CGPointMake(0, 0);
+    // 2、结束位置
+    gradientColorLayer.endPoint   = CGPointMake(0, 1);
+    
+    
+    tableView = [[CDoubleTableView alloc] initWithFrame:CGRectMake(0, 400, kScreenWidth, 400) style:UITableViewStylePlain];
+    tableView.showsVerticalScrollIndicator = NO;
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    [mainScrollView addSubview:tableView];
+    
+    
+    
 }
 
 
@@ -112,15 +154,9 @@
     
     [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
-                                                                   message:field.text
-                                                            preferredStyle:UIAlertControllerStyleAlert];
+    [[[UIAlertView alloc] initWithTitle:@"点击了搜索" message:@"" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"好的", nil] show];
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        
-    }]];
     
-    [self presentViewController:alert animated:YES completion:nil];
     
 }
 
@@ -180,22 +216,79 @@
     
     NSLog(@"%.2f", scrollView.contentOffset.y);
     
-    // 计算导航栏的alpha值
-    CGFloat navAlpha = 0;
-    if (scrollView.contentOffset.y <= 0) {
-        navAlpha = 0;
-    } else if (scrollView.contentOffset.y <= 500) {
-        navAlpha = scrollView.contentOffset.y * 0.002;
-    } else {
-        navAlpha = 1;
+    
+    if ([scrollView isEqual:mainScrollView]) {
+        // 定义滑动多少距离之后不能再滑动
+        CGFloat distance = 200;
+        
+        // 当前滑动视图的偏移
+        CGFloat offsetY = scrollView.contentOffset.y;
+        
+        if (offsetY >= distance) {
+            scrollView.contentOffset = CGPointMake(0, distance);
+            _allowSelfScroll = NO;
+            // 发送通知
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"允许移动" object:nil];
+            
+        } else {
+            _allowSelfScroll = YES;
+            // 发送通知
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"不允许移动" object:nil];
+        }
     }
     
-    // 设置颜色
-    navView.backgroundColor = [UIColor colorWithWhite:0 alpha:navAlpha];
+    
+
+    
     
 }
 
+#pragma mark - 表视图代理方法
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 4;
+    
+}
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return 3;
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 60.0;
+    
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    
+    return 0.01;
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    
+    return 10.0;
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"HomeCell"];
+    
+    
+    return cell;
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+}
 
 
 #pragma mark ========================================通知================================================

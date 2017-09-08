@@ -150,6 +150,8 @@
     _imageObj = imageObj;
     
     _imageV.image = imageObj;
+    
+    
 
 }
 

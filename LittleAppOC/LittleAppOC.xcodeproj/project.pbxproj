@@ -96,6 +96,7 @@
 		9E138A351E2B375E0011701B /* Icon-Spotlight-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E138A2C1E2B375E0011701B /* Icon-Spotlight-40.png */; };
 		9E138A361E2B375E0011701B /* Icon-Spotlight-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E138A2D1E2B375E0011701B /* Icon-Spotlight-40@2x.png */; };
 		9E138A371E2B375E0011701B /* Icon-Spotlight-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E138A2E1E2B375E0011701B /* Icon-Spotlight-40@3x.png */; };
+		9E1679F81F6288F500B2776E /* CDoubleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1679F71F6288F500B2776E /* CDoubleTableView.m */; };
 		9E220D341E30A4A6009D7146 /* new_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E220D201E30A4A6009D7146 /* new_0.png */; };
 		9E220D351E30A4A6009D7146 /* new_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E220D211E30A4A6009D7146 /* new_1.png */; };
 		9E220D361E30A4A6009D7146 /* new_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E220D221E30A4A6009D7146 /* new_2.png */; };
@@ -130,7 +131,6 @@
 		9E279D2A1F3DA8B1004E9FB4 /* icon_gamer_translate@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E279D281F3DA8B1004E9FB4 /* icon_gamer_translate@3x.png */; };
 		9E2E4F011F5904ED0025B0FF /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2E4F001F5904ED0025B0FF /* ImageIO.framework */; };
 		9E2E4F031F5904FD0025B0FF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2E4F021F5904FD0025B0FF /* Security.framework */; };
-		9E2E4F051F5908220025B0FF /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2E4F041F5908220025B0FF /* Photos.framework */; };
 		9E336FE91E43ABB000D8F112 /* icon_weather_search.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E336FE61E43ABB000D8F112 /* icon_weather_search.png */; };
 		9E336FEA1E43ABB000D8F112 /* icon_weather_search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E336FE71E43ABB000D8F112 /* icon_weather_search@2x.png */; };
 		9E336FEB1E43ABB000D8F112 /* icon_weather_search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E336FE81E43ABB000D8F112 /* icon_weather_search@3x.png */; };
@@ -724,6 +724,8 @@
 		9E138A2C1E2B375E0011701B /* Icon-Spotlight-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Spotlight-40.png"; sourceTree = "<group>"; };
 		9E138A2D1E2B375E0011701B /* Icon-Spotlight-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Spotlight-40@2x.png"; sourceTree = "<group>"; };
 		9E138A2E1E2B375E0011701B /* Icon-Spotlight-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Spotlight-40@3x.png"; sourceTree = "<group>"; };
+		9E1679F61F6288F500B2776E /* CDoubleTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDoubleTableView.h; sourceTree = "<group>"; };
+		9E1679F71F6288F500B2776E /* CDoubleTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDoubleTableView.m; sourceTree = "<group>"; };
 		9E220D201E30A4A6009D7146 /* new_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_0.png; sourceTree = "<group>"; };
 		9E220D211E30A4A6009D7146 /* new_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_1.png; sourceTree = "<group>"; };
 		9E220D221E30A4A6009D7146 /* new_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_2.png; sourceTree = "<group>"; };
@@ -1308,7 +1310,6 @@
 				9E6EB0F11E3EDA6200E7128A /* SystemConfiguration.framework in Frameworks */,
 				9E2E4F011F5904ED0025B0FF /* ImageIO.framework in Frameworks */,
 				9E251A431F46DB12009EFA56 /* QuartzCore.framework in Frameworks */,
-				9E2E4F051F5908220025B0FF /* Photos.framework in Frameworks */,
 				9E64DDDA1F4AB050002E6A3F /* JavaScriptCore.framework in Frameworks */,
 				9E64DDD91F4AB042002E6A3F /* libstdc++.tbd in Frameworks */,
 				9E64DDD61F4AB030002E6A3F /* libicucore.tbd in Frameworks */,
@@ -1579,6 +1580,8 @@
 				9ECB1E9F1E6BECEA002FE2E4 /* CYCTouchID.m */,
 				9E5EE2581F3C61D8009C3659 /* CWebViewController.h */,
 				9E5EE2591F3C61D8009C3659 /* CWebViewController.m */,
+				9E1679F61F6288F500B2776E /* CDoubleTableView.h */,
+				9E1679F71F6288F500B2776E /* CDoubleTableView.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -3390,6 +3393,7 @@
 				09453E791E8C06850062E5CA /* SHLineGraphView.m in Sources */,
 				9E9D6E251E61705800EB095B /* MJRefreshAutoFooter.m in Sources */,
 				9E0672261F4D7C2100C1ABEE /* InputViewController.m in Sources */,
+				9E1679F81F6288F500B2776E /* CDoubleTableView.m in Sources */,
 				9E6EB0DF1E3ED9C800E7128A /* SMSUIVerificationCodeViewController.m in Sources */,
 				9E66AFEB1F442AD80095FC41 /* FontViewController.m in Sources */,
 				9E66B0121F442C790095FC41 /* CityListController.m in Sources */,

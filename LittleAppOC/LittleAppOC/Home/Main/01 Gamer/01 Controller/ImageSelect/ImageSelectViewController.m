@@ -67,7 +67,7 @@
     [_rightItem setTitle:@"编辑" forState:UIControlStateNormal];
     [_rightItem setTintColor:[UIColor whiteColor]];
     _rightItem.frame = CGRectMake(0, 0, 40, 22);
-    [_rightItem addTarget:self action:@selector(rightItemAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_rightItem addTarget:self action:@selector(点击右边按钮:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:_rightItem];
     self.navigationItem.rightBarButtonItem = rightBarItem;
 
@@ -174,7 +174,7 @@
 #pragma mark ========================================动作响应=============================================
 
 #pragma mark - 导航栏右边按钮响应
-- (void)rightItemAction:(UIButton *)button {
+- (void)点击右边按钮:(UIButton *)按钮 {
     
     if (_images.count == 0) {
         return;
@@ -185,9 +185,9 @@
     [_listCollectionView reloadData];
     
     if (_editCell) {
-        [_rightItem setTitle:@"完成" forState:UIControlStateNormal];
+        [按钮 setTitle:@"完成" forState:UIControlStateNormal];
     } else {
-        [_rightItem setTitle:@"编辑" forState:UIControlStateNormal];
+        [按钮 setTitle:@"编辑" forState:UIControlStateNormal];
     }
     
     
