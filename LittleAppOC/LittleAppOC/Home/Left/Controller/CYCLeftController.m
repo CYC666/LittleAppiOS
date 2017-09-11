@@ -25,7 +25,7 @@
 #define CYCLeftControllerCellID @"CYCLeftControllerCellID"  // 单元格重用标识符
 
 
-@interface CYCLeftController () <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate>
+@interface CYCLeftController () <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (strong, nonatomic) NSArray *tableViewTitles;     // 表视图的title
 @property (strong, nonatomic) NSArray *tableViewIcons;      // 表视图的icon
@@ -33,6 +33,7 @@
 @property (strong, nonatomic) CThemeLabel *locationLabel;   // 定位标签
 @property (strong, nonatomic) UILabel *temperatureLabel;    // 温度标签
 @property (strong, nonatomic) UIImageView *weatherImageView;// 显示天气的图
+@property (assign, nonatomic) BOOL headImageFlag;           // 当前是否是编辑头像
 @property (copy, nonatomic) NSString *location;             // 位置
 
 @end
@@ -58,33 +59,46 @@
 - (void)creatSubviews {
 
     // 头部背景图片
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *filePath = [[paths firstObject] stringByAppendingString:@"/leftControllerHeadImage.jpg"];
-    NSData *imageData = [NSData dataWithContentsOfFile:filePath];
-    UIImage *image;
-    if (imageData == nil) {
-        image = [UIImage imageNamed:@"image_leftControllerHeadImage"];
-    } else {
-        image = [UIImage imageWithData:imageData];
-    }
     _headImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, cLeftControllerWidth, cLeftControllerHeadImageHeight)];
-    _headImageView.image = image;
     _headImageView.contentMode = UIViewContentModeScaleAspectFit;
     _headImageView.userInteractionEnabled = YES;
     UITapGestureRecognizer *headTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headTapAction:)];
     [_headImageView addGestureRecognizer:headTap];
     [self.view addSubview:_headImageView];
+
+    NSString *path_sandox = NSHomeDirectory();
+    NSString *filePath = [path_sandox stringByAppendingString:LeftImage];
+    UIImage *image = [[UIImage alloc]initWithContentsOfFile:filePath];
+    if (image == nil) {
+        _headImageView.image = [UIImage imageNamed:@"image_leftControllerHeadImage"];
+    } else {
+        _headImageView.image = image;
+    }
     
     // 头像
-    UIImageView *headImageView = [[UIImageView alloc] initWithFrame:CGRectMake((cLeftControllerWidth - 80)/2.0,
+    _headImage = [[UIImageView alloc] initWithFrame:CGRectMake((cLeftControllerWidth - 80)/2.0,
                                                                                (cLeftControllerHeadImageHeight - 80)/2.0
                                                                                , 80, 80)];
-    headImageView.image = [UIImage imageNamed:@"icon_left_headImage"];
-    headImageView.layer.cornerRadius = 40;
-    headImageView.layer.borderWidth = 2;
-    headImageView.layer.borderColor = [UIColor whiteColor].CGColor;
-    headImageView.clipsToBounds = YES;
-    [self.view addSubview:headImageView];
+    _headImage.layer.cornerRadius = 40;
+    _headImage.layer.borderWidth = 2;
+    _headImage.layer.borderColor = [UIColor whiteColor].CGColor;
+    _headImage.clipsToBounds = YES;
+    [self.view addSubview:_headImage];
+    
+    // 查看本地头像
+    NSString *imagePath = [path_sandox stringByAppendingString:HeadImage];
+    UIImage *imgFromUrl=[[UIImage alloc]initWithContentsOfFile:imagePath];
+    if (imgFromUrl == nil) {
+        _headImage.image = [UIImage imageNamed:@"icon_left_headImage"];
+    } else {
+        _headImage.image = imgFromUrl;
+    }
+    
+    // 点击头像更换
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeHeadImage:)];
+    _headImage.userInteractionEnabled = YES;
+    [_headImage addGestureRecognizer:tap];
+    
     
     // 电话号码
     UILabel *phoneLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, cLeftControllerHeadImageHeight - 40, cLeftControllerWidth, 30)];
@@ -198,10 +212,34 @@
 }
 
 
+
 // ------------------------------------------------------动作响应区----------------------------------------------------
 #pragma mark - 点击了头部的背景图片,更换图片
 - (void)headTapAction:(UITapGestureRecognizer *)tap {
+    
+    _headImageFlag = NO;
 
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    imagePicker.delegate = self;
+    [self presentViewController:imagePicker animated:YES completion:^{
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    }];
+
+}
+
+#pragma mark - 更换头像
+- (void)changeHeadImage:(UITapGestureRecognizer *)tap {
+    
+    _headImageFlag = YES;
+
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    imagePicker.allowsEditing = YES;
+    imagePicker.delegate = self;
+    [self presentViewController:imagePicker animated:YES completion:^{
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    }];
 
 }
 
@@ -308,6 +346,39 @@
     // 获取天气
     [self loadWeather:currentCoor2D];
     
+}
+
+#pragma mark - 选择了照片
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+
+    
+    
+    if (_headImageFlag) {
+        // 修改头像
+        UIImage *image = info[UIImagePickerControllerEditedImage];
+        _headImage.image = image;
+        NSString *path_sandox = NSHomeDirectory();
+        NSString *imagePath = [path_sandox stringByAppendingString:HeadImage];
+        [UIImagePNGRepresentation(image) writeToFile:imagePath atomically:YES];
+    } else {
+        // 修改背景图
+        UIImage *image = info[UIImagePickerControllerOriginalImage];
+        _headImageView.image = image;
+        NSString *path_sandox = NSHomeDirectory();
+        NSString *filePath = [path_sandox stringByAppendingString:LeftImage];
+        [UIImagePNGRepresentation(image) writeToFile:filePath atomically:YES];
+    }
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [picker dismissViewControllerAnimated:YES completion:nil];
+
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [picker dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 // -----------------------------------------------------其他方法-----------------------------------------------------

@@ -14,6 +14,7 @@
 @interface CYCLeftController : UIViewController
 
 @property (strong, nonatomic) UIImageView *headImageView;   // 头部背景图片
+@property (strong, nonatomic) UIImageView *headImage;       // 头像
 @property (strong, nonatomic) UITableView *middleTableView; // 中部表视图
 @property (strong, nonatomic) CThemeButton *nightButton;    // 夜间模式按钮
 

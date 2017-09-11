@@ -79,7 +79,8 @@
 
 //-----------------------------------------------------沙盒储存------------------------------------------------
 #define Documents_Picture @"/Documents/pic.plist"                                                       // 本地储存图片的plist路径
-
+#define LeftImage @"/Documents/leftControllerHeadImage.jpg"                                             // 左控制器头部背景图片
+#define HeadImage @"/Documents/icon_left_headImage.png"                                                 // 头像保存的路径
 
 
 

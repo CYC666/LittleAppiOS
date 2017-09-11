@@ -34,6 +34,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //初始化应用的短信验证
+    [SMSSDK registerApp:APP_Key
+             withSecret:APP_Secret];
+    
     // 修改状态栏颜色
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     

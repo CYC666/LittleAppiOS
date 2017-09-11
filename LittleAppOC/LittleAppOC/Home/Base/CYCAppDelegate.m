@@ -25,11 +25,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    //初始化应用的短信验证
-    [SMSSDK registerApp:APP_Key
-             withSecret:APP_Secret];
-
-    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     // 判断是否已经存在登录之后的手机号，如果不存在，那么显示短信登录界面
     if ([CUSER objectForKey:CUserPhone]) {

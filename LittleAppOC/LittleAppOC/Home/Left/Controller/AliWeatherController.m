@@ -14,6 +14,7 @@
 #import "AliHourlyModel.h"
 #import "ThemeManager.h"
 #import "CThemeLabel.h"
+#import "CScrollView.h"
 
 #define AliMainScrollContentHeight kScreenHeight - 120 + (kScreenHeight/2.0 - 120)          // 主滑动视图的内容尺寸
 #define AliHourlyStartY (kScreenHeight/2.0 - 120)                                           // 时刻温度表的起点
@@ -39,7 +40,9 @@
 @property (strong, nonatomic) UILabel *temphighLabel;           // 今天的最高温度
 @property (strong, nonatomic) UILabel *templowLabel;            // 今天的最低温度
 @property (strong, nonatomic) UIScrollView *mainScrollView;     // 承载时刻气温和未来几天两个滑动视图的主滑动视图
-@property (strong, nonatomic) UIView *subTopView;               // 遮在子滑动视图上的视图，用于向上滑动子滑动视图的时候，不让子视图滑动，反而滑动主滑动视图
+@property (strong, nonatomic) CScrollView *subScrollView;      // 承载星期天气的滑动视图
+
+@property (assign, nonatomic) BOOL allowSubSvroll;              // 是否允许子滑动视图滑动
 
 
 @end
@@ -375,21 +378,12 @@
     }
     
     // 承载未来几天天气和其他信息的滑动视图
-    UIScrollView *subScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, AliDailyCellSatrtY,
+    _subScrollView = [[CScrollView alloc] initWithFrame:CGRectMake(0, AliDailyCellSatrtY,
                                                                                    kScreenWidth, AliMainScrollContentHeight - AliDailyCellSatrtY)];
-    subScrollView.contentSize = CGSizeMake(kScreenWidth, 10 + 30*_weatherModel.dailyArray.count + 260 + 10);
-    subScrollView.showsVerticalScrollIndicator = NO;
-    subScrollView.delegate = self;
-    [_mainScrollView addSubview:subScrollView];
-    
-    // 初始让subTopView跌在子滑动视图之上
-    // 遮在子滑动视图上的视图，用于向上滑动子滑动视图的时候，不让子视图滑动，反而滑动主滑动视图
-    // frame跟承载其他信息滑动视图的大小一致
-    _subTopView = [[UIView alloc] initWithFrame:CGRectMake(0, AliDailyCellSatrtY,
-                                                           kScreenWidth, AliMainScrollContentHeight - AliDailyCellSatrtY)];
-    _subTopView.backgroundColor = [UIColor clearColor];
-    // 放在主滑动视图上
-    [_mainScrollView addSubview:_subTopView];
+    _subScrollView.contentSize = CGSizeMake(kScreenWidth, 10 + 30*_weatherModel.dailyArray.count + 260 + 10);
+    _subScrollView.showsVerticalScrollIndicator = NO;
+    _subScrollView.delegate = self;
+    [_mainScrollView addSubview:_subScrollView];
     
     float dailyCellHeight = 10;
     // 未来几天天气
@@ -403,13 +397,13 @@
         week.font = C_MAIN_FONT(15);
         week.textColor = [UIColor whiteColor];
         week.text = model.week;
-        [subScrollView addSubview:week];
+        [_subScrollView addSubview:week];
         
         // 云图
         UIImageView *cloud = [[UIImageView alloc] initWithFrame:CGRectMake((kScreenWidth - 30)/2.0, 10 + 30*i, 25, 25)];
         cloud.contentMode = UIViewContentModeScaleAspectFit;
         cloud.image = [UIImage imageNamed:[NSString stringWithFormat:@"icon_weatner_day_%@", model.day_img]];
-        [subScrollView addSubview:cloud];
+        [_subScrollView addSubview:cloud];
         
         // 最高温
         UILabel *high = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth - 80, 10 + 30*i, 30, 20)];
@@ -417,7 +411,7 @@
         high.font = C_MAIN_FONT(15);
         high.textColor = [UIColor whiteColor];
         high.text = model.day_temphigh;
-        [subScrollView addSubview:high];
+        [_subScrollView addSubview:high];
 
         
         // 最低温
@@ -426,7 +420,7 @@
         low.font = C_MAIN_FONT(15);
         low.textColor = AliTemplowLabelColor;
         low.text = model.night_templow;
-        [subScrollView addSubview:low];
+        [_subScrollView addSubview:low];
         
         // 记录每日天气视图的总高度
         dailyCellHeight += 30;
@@ -436,11 +430,11 @@
     CALayer *top = [[CALayer alloc] init];
     top.frame = CGRectMake(0, dailyCellHeight, kScreenWidth, 0.5);
     top.backgroundColor = [UIColor whiteColor].CGColor;
-    [subScrollView.layer addSublayer:top];
+    [_subScrollView.layer addSublayer:top];
     CALayer *bottom = [[CALayer alloc] init];
     bottom.frame = CGRectMake(0, dailyCellHeight + 40 - 0.5, kScreenWidth, 0.5);
     bottom.backgroundColor = [UIColor whiteColor].CGColor;
-    [subScrollView.layer addSublayer:bottom];
+    [_subScrollView.layer addSublayer:bottom];
     
     // 今天天气描述
     UILabel *todayDescriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, dailyCellHeight, kScreenWidth - 15, 40)];
@@ -448,7 +442,7 @@
     todayDescriptionLabel.font = C_MAIN_FONT(14);
     todayDescriptionLabel.textColor = [UIColor whiteColor];
     todayDescriptionLabel.text = [NSString stringWithFormat:@"今天:当前%@。 气温%@º； 最高气温%@º", _weatherModel.weather, _weatherModel.temp, _weatherModel.temphigh];
-    [subScrollView addSubview:todayDescriptionLabel];
+    [_subScrollView addSubview:todayDescriptionLabel];
     
     // 日出日落（拿每日天气里的第一个）
     UILabel *sunrise = [[UILabel alloc] initWithFrame:CGRectMake(0, dailyCellHeight + 40 + 5, kScreenWidth/2.0 - 20, 20)];
@@ -456,13 +450,13 @@
     sunrise.font = C_MAIN_FONT(14);
     sunrise.textColor = [UIColor whiteColor];
     sunrise.text = @"日出:";
-    [subScrollView addSubview:sunrise];
+    [_subScrollView addSubview:sunrise];
     UILabel *sunset = [[UILabel alloc] initWithFrame:CGRectMake(0, dailyCellHeight + 60 + 2, kScreenWidth/2.0 - 20, 20)];
     sunset.textAlignment = NSTextAlignmentRight;
     sunset.font = C_MAIN_FONT(14);
     sunset.textColor = [UIColor whiteColor];
     sunset.text = @"日落:";
-    [subScrollView addSubview:sunset];
+    [_subScrollView addSubview:sunset];
     
     AliDailyModel *model = _weatherModel.dailyArray.firstObject;
     UILabel *sunriseNum = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth/2.0, dailyCellHeight + 40 + 5, kScreenWidth/2.0, 20)];
@@ -470,13 +464,13 @@
     sunriseNum.font = C_MAIN_FONT(14);
     sunriseNum.textColor = [UIColor whiteColor];
     sunriseNum.text = model.sunrise;
-    [subScrollView addSubview:sunriseNum];
+    [_subScrollView addSubview:sunriseNum];
     UILabel *sunsetNum = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth/2.0, dailyCellHeight + 60 + 2, kScreenWidth/2.0, 20)];
     sunsetNum.textAlignment = NSTextAlignmentLeft;
     sunsetNum.font = C_MAIN_FONT(14);
     sunsetNum.textColor = [UIColor whiteColor];
     sunsetNum.text = model.sunset;
-    [subScrollView addSubview:sunsetNum];
+    [_subScrollView addSubview:sunsetNum];
     
     // 降雨概率和湿度
     UILabel *rain = [[UILabel alloc] initWithFrame:CGRectMake(0, dailyCellHeight + 85 + 5, kScreenWidth/2.0 - 20, 20)];
@@ -484,26 +478,26 @@
     rain.font = C_MAIN_FONT(14);
     rain.textColor = [UIColor whiteColor];
     rain.text = @"降雨概率:";
-    [subScrollView addSubview:rain];
+    [_subScrollView addSubview:rain];
     UILabel *humidity = [[UILabel alloc] initWithFrame:CGRectMake(0, dailyCellHeight + 105 + 2, kScreenWidth/2.0 - 20, 20)];
     humidity.textAlignment = NSTextAlignmentRight;
     humidity.font = C_MAIN_FONT(14);
     humidity.textColor = [UIColor whiteColor];
     humidity.text = @"湿度:";
-    [subScrollView addSubview:humidity];
+    [_subScrollView addSubview:humidity];
     
     UILabel *rainNum = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth/2.0, dailyCellHeight + 85 + 5, kScreenWidth/2.0, 20)];
     rainNum.textAlignment = NSTextAlignmentLeft;
     rainNum.font = C_MAIN_FONT(14);
     rainNum.textColor = [UIColor whiteColor];
     rainNum.text = @"50%-";
-    [subScrollView addSubview:rainNum];
+    [_subScrollView addSubview:rainNum];
     UILabel *humidityNum = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth/2.0, dailyCellHeight + 105 + 2, kScreenWidth/2.0, 20)];
     humidityNum.textAlignment = NSTextAlignmentLeft;
     humidityNum.font = C_MAIN_FONT(14);
     humidityNum.textColor = [UIColor whiteColor];
     humidityNum.text = [NSString stringWithFormat:@"%@%%", _weatherModel.humidity];
-    [subScrollView addSubview:humidityNum];
+    [_subScrollView addSubview:humidityNum];
     
     // 风速风力等级
     UILabel *windspeed = [[UILabel alloc] initWithFrame:CGRectMake(0, dailyCellHeight + 130 + 5, kScreenWidth/2.0 - 20, 20)];
@@ -511,26 +505,26 @@
     windspeed.font = C_MAIN_FONT(14);
     windspeed.textColor = [UIColor whiteColor];
     windspeed.text = @"风速:";
-    [subScrollView addSubview:windspeed];
+    [_subScrollView addSubview:windspeed];
     UILabel *windpower = [[UILabel alloc] initWithFrame:CGRectMake(0, dailyCellHeight + 150 + 2, kScreenWidth/2.0 - 20, 20)];
     windpower.textAlignment = NSTextAlignmentRight;
     windpower.font = C_MAIN_FONT(14);
     windpower.textColor = [UIColor whiteColor];
     windpower.text = @"风力等级:";
-    [subScrollView addSubview:windpower];
+    [_subScrollView addSubview:windpower];
     
     UILabel *windspeedNum = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth/2.0, dailyCellHeight + 130 + 5, kScreenWidth/2.0, 20)];
     windspeedNum.textAlignment = NSTextAlignmentLeft;
     windspeedNum.font = C_MAIN_FONT(14);
     windspeedNum.textColor = [UIColor whiteColor];
     windspeedNum.text = [NSString stringWithFormat:@"%@ 每秒%@米", _weatherModel.winddirect, _weatherModel.windspeed];
-    [subScrollView addSubview:windspeedNum];
+    [_subScrollView addSubview:windspeedNum];
     UILabel *windpowerNum = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth/2.0, dailyCellHeight + 150 + 2, kScreenWidth/2.0, 20)];
     windpowerNum.textAlignment = NSTextAlignmentLeft;
     windpowerNum.font = C_MAIN_FONT(14);
     windpowerNum.textColor = [UIColor whiteColor];
     windpowerNum.text = _weatherModel.windpower;
-    [subScrollView addSubview:windpowerNum];
+    [_subScrollView addSubview:windpowerNum];
     
     // 降水量气压
     UILabel *raining = [[UILabel alloc] initWithFrame:CGRectMake(0, dailyCellHeight + 175 + 5, kScreenWidth/2.0 - 20, 20)];
@@ -538,26 +532,26 @@
     raining.font = C_MAIN_FONT(14);
     raining.textColor = [UIColor whiteColor];
     raining.text = @"降水量:";
-    [subScrollView addSubview:raining];
+    [_subScrollView addSubview:raining];
     UILabel *pressure = [[UILabel alloc] initWithFrame:CGRectMake(0, dailyCellHeight + 195 + 2, kScreenWidth/2.0 - 20, 20)];
     pressure.textAlignment = NSTextAlignmentRight;
     pressure.font = C_MAIN_FONT(14);
     pressure.textColor = [UIColor whiteColor];
     pressure.text = @"气压:";
-    [subScrollView addSubview:pressure];
+    [_subScrollView addSubview:pressure];
     
     UILabel *rainingNum = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth/2.0, dailyCellHeight + 175 + 5, kScreenWidth/2.0, 20)];
     rainingNum.textAlignment = NSTextAlignmentLeft;
     rainingNum.font = C_MAIN_FONT(14);
     rainingNum.textColor = [UIColor whiteColor];
     rainingNum.text = @"50毫米-";
-    [subScrollView addSubview:rainingNum];
+    [_subScrollView addSubview:rainingNum];
     UILabel *pressureNum = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth/2.0, dailyCellHeight + 195 + 2, kScreenWidth/2.0, 20)];
     pressureNum.textAlignment = NSTextAlignmentLeft;
     pressureNum.font = C_MAIN_FONT(14);
     pressureNum.textColor = [UIColor whiteColor];
     pressureNum.text = [NSString stringWithFormat:@"%@百帕", _weatherModel.pressure];
-    [subScrollView addSubview:pressureNum];
+    [_subScrollView addSubview:pressureNum];
     
     // 空气质量指数和空气质量
     UILabel *aqi = [[UILabel alloc] initWithFrame:CGRectMake(0, dailyCellHeight + 220 + 5, kScreenWidth/2.0 - 20, 20)];
@@ -565,26 +559,26 @@
     aqi.font = C_MAIN_FONT(14);
     aqi.textColor = [UIColor whiteColor];
     aqi.text = @"空气质量指数:";
-    [subScrollView addSubview:aqi];
+    [_subScrollView addSubview:aqi];
     UILabel *quality = [[UILabel alloc] initWithFrame:CGRectMake(0, dailyCellHeight + 240 + 2, kScreenWidth/2.0 - 20, 20)];
     quality.textAlignment = NSTextAlignmentRight;
     quality.font = C_MAIN_FONT(14);
     quality.textColor = [UIColor whiteColor];
     quality.text = @"气压:";
-    [subScrollView addSubview:quality];
+    [_subScrollView addSubview:quality];
     
     UILabel *aqiNum = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth/2.0, dailyCellHeight + 220 + 5, kScreenWidth/2.0, 20)];
     aqiNum.textAlignment = NSTextAlignmentLeft;
     aqiNum.font = C_MAIN_FONT(14);
     aqiNum.textColor = [UIColor whiteColor];
     aqiNum.text = _weatherModel.aqi.aqi;
-    [subScrollView addSubview:aqiNum];
+    [_subScrollView addSubview:aqiNum];
     UILabel *qualityNum = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth/2.0, dailyCellHeight + 240 + 2, kScreenWidth/2.0, 20)];
     qualityNum.textAlignment = NSTextAlignmentLeft;
     qualityNum.font = C_MAIN_FONT(14);
     qualityNum.textColor = [UIColor whiteColor];
     qualityNum.text = _weatherModel.aqi.quality;
-    [subScrollView addSubview:qualityNum];
+    [_subScrollView addSubview:qualityNum];
     
     // 空气描述和建议
 //    UILabel *affectNum = [[UILabel alloc] initWithFrame:CGRectMake(0, dailyCellHeight + 265 + 5, kScreenWidth, 20)];
@@ -624,12 +618,24 @@
     // 根据主滑动视图的位置，设置定位和温度标签的不透明度
     if (scrollView == _mainScrollView) {
         
-        if (scrollView.contentOffset.y == AliHourlyStartY) {
-            // 隐藏遮罩层
-            self.subTopView.transform = CGAffineTransformMakeTranslation(-kScreenWidth, 0);
+        if (_allowSubSvroll) {
+            
+            scrollView.contentOffset = CGPointMake(0, AliHourlyStartY);
+            _allowSubSvroll = YES;
+            
         } else {
-            // 显示遮罩层
-            self.subTopView.transform = CGAffineTransformMakeTranslation(0, 0);
+        
+            if (scrollView.contentOffset.y == AliHourlyStartY) {
+                
+                _allowSubSvroll = YES;
+                scrollView.contentOffset = CGPointMake(0, AliHourlyStartY);
+                
+            } else {
+                
+                _allowSubSvroll = NO;
+                
+            }
+        
         }
         
         if (scrollView.contentOffset.y >= AliHourlyStartY) {
@@ -647,6 +653,28 @@
             _temphighLabel.alpha = ((AliHourlyStartY - 80) - scrollView.contentOffset.y) / (AliHourlyStartY - 80);
             _templowLabel.alpha = ((AliHourlyStartY - 80) - scrollView.contentOffset.y) / (AliHourlyStartY - 80);
         }
+    } else if (scrollView == _subScrollView) {
+    
+        if (_allowSubSvroll) {
+            
+            if (scrollView.contentOffset.y <= 0) {
+                
+                _allowSubSvroll = NO;
+                scrollView.contentOffset = CGPointMake(0, 0);
+                
+            } else {
+                
+                _allowSubSvroll = YES;
+                
+            }
+            
+        } else {
+        
+            _allowSubSvroll = NO;
+            scrollView.contentOffset = CGPointMake(0, 0);
+        
+        }
+        
     }
 
 }
@@ -732,6 +760,8 @@
     }
     
 }
+
+
 
 // 按下搜索return
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
