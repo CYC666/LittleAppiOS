@@ -141,6 +141,9 @@
     [mainScrollView addSubview:tableView];
     
     
+    // 添加监听刷新的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(allowSubViewScrollAction) name:@"允许移动" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(banSubViewScrollAction) name:@"不允许移动" object:nil];
     
 }
 
@@ -217,24 +220,58 @@
     NSLog(@"%.2f", scrollView.contentOffset.y);
     
     
-    if ([scrollView isEqual:mainScrollView]) {
+    if ([scrollView isEqual:mainScrollView]) {  // 父视图
+        
         // 定义滑动多少距离之后不能再滑动
         CGFloat distance = 200;
         
-        // 当前滑动视图的偏移
-        CGFloat offsetY = scrollView.contentOffset.y;
-        
-        if (offsetY >= distance) {
+        if (_allowSubViewScroll) {
+            
+            // 不允许移动
             scrollView.contentOffset = CGPointMake(0, distance);
-            _allowSelfScroll = NO;
-            // 发送通知
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"允许移动" object:nil];
+            scrollView.showsVerticalScrollIndicator = NO;
+        } else {
+
+            // 当前滑动视图的偏移
+            CGFloat offsetY = scrollView.contentOffset.y;
+            
+            if (offsetY >= distance) {
+                scrollView.contentOffset = CGPointMake(0, distance);
+                _allowSubViewScroll = YES;
+                
+            } else {
+                _allowSubViewScroll = NO;
+            }
+            
+            scrollView.showsVerticalScrollIndicator = YES;
+            
+        }
+        
+    } else if ([scrollView isEqual:tableView]) {    // 子视图
+    
+        if (_allowSubViewScroll) {
+            // 允许移动
+            
+            // 当前滑动视图的偏移
+            CGFloat offsetY = scrollView.contentOffset.y;
+            if (offsetY <= 0) {
+                scrollView.contentOffset = CGPointMake(0, 0);
+                _allowSubViewScroll = NO;
+            } else {
+                _allowSubViewScroll = YES;
+            }
+            
+            scrollView.showsVerticalScrollIndicator = YES;
             
         } else {
-            _allowSelfScroll = YES;
-            // 发送通知
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"不允许移动" object:nil];
+        
+            // 不允许移动
+            scrollView.contentOffset = CGPointMake(0, 0);
+            _allowSubViewScroll = NO;
+            
+            scrollView.showsVerticalScrollIndicator = NO;
         }
+    
     }
     
     
@@ -252,7 +289,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 3;
+    return 2;
     
 }
 
@@ -301,8 +338,19 @@
 }
 
 
+#pragma mark - 允许子视图移动
+- (void)allowSubViewScrollAction {
+    
+    _allowSubViewScroll = YES;
+    
+}
 
-
+#pragma mark - 不允许子视图移动
+- (void)banSubViewScrollAction {
+    
+    _allowSubViewScroll = NO;
+    
+}
 
 
 

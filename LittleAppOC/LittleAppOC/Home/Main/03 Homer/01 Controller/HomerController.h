@@ -10,6 +10,6 @@
 
 @interface HomerController : UIViewController
 
-@property (assign, nonatomic) BOOL allowSelfScroll;
+@property (assign, nonatomic) BOOL allowSubViewScroll;
 
 @end
