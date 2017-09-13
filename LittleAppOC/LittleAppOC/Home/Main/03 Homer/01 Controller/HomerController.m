@@ -120,8 +120,8 @@
     [colorsView.layer addSublayer:gradientColorLayer];
     
     /**< 设置颜色组 */
-    gradientColorLayer.colors = @[(__bridge id)[UIColor redColor].CGColor,
-                                  (__bridge id)[UIColor blueColor].CGColor];
+    gradientColorLayer.colors = @[(__bridge id)[UIColor orangeColor].CGColor,
+                                  (__bridge id)[UIColor grayColor].CGColor];
     
     /**< 设置颜色分割点 */
     gradientColorLayer.locations  = @[@(0.5)];

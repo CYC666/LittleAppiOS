@@ -27,6 +27,7 @@
 #import "ImageSelectViewController.h"
 #import "GameCollectionViewFlowLayout.h"
 #import "AnimationController.h"
+#import "F3HNumberTileGameViewController.h"
 
 
 
@@ -182,6 +183,15 @@
             if ([cell.gameNameLabel.text isEqualToString:@"2048"]) {
                 
                 // 2048
+                F3HNumberTileGameViewController *ctrl = [F3HNumberTileGameViewController numberTileGameWithDimension:4
+                                                                                                        winThreshold:2048
+                                                                                                     backgroundColor:[UIColor whiteColor]
+                                                                                                       swipeControls:YES];
+                UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:ctrl];
+                nav.navigationBar.barTintColor = [UIColor blackColor];
+                nav.navigationBar.tintColor = [UIColor whiteColor];
+                nav.navigationBar.translucent = NO;
+                [self presentViewController:nav animated:YES completion:nil];
                 
             } else if ([cell.gameNameLabel.text isEqualToString:@"目标"]) {
                 

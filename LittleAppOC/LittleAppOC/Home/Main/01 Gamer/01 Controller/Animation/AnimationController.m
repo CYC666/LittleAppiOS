@@ -102,6 +102,32 @@
         [button setTitle:@"开  始" forState:UIControlStateNormal];
     }
     
+//    //1 创建动画对象，参数决定动画效果，不能随便设置
+//    CAKeyframeAnimation *key = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+//    //2设置动画属性
+//    key.duration = 2;
+//    key.repeatCount = 2;
+//    [key setRemovedOnCompletion:NO];
+//    //3 设置动画路径
+//    //1 创建路径
+//    CGMutablePathRef path = CGPathCreateMutable();
+//    CGPathMoveToPoint(path,NULL,50.0,120.0);
+//    // 制作曲线，类似于钢笔工具
+//    CGPathAddCurveToPoint(path,NULL,50.0,275.0,150.0,275.0,150.0,120.0);
+//    CGPathAddCurveToPoint(path,NULL,150.0,275.0,250.0,275.0,250.0,120.0);
+//    CGPathAddCurveToPoint(path,NULL,250.0,275.0,350.0,275.0,350.0,120.0);
+//    CGPathAddCurveToPoint(path,NULL,350.0,275.0,450.0,275.0,450.0,120.0);
+//    //4设置曲线路径
+//    key.path = path;
+//    //4 添加动画
+//    [_testView.layer addAnimation:key forKey:nil];
+    
+    
+    
+    
+    
+    
+    
 }
 
 
