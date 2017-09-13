@@ -19,6 +19,7 @@
 // 开始动画按钮
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 
-
+// 标志是否正在动画中
+@property (assign, nonatomic) BOOL isAnimation;
 
 @end

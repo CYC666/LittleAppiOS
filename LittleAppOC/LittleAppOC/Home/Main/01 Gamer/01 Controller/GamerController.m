@@ -26,7 +26,7 @@
 #import "InputViewController.h"
 #import "ImageSelectViewController.h"
 #import "GameCollectionViewFlowLayout.h"
-
+#import "AnimationController.h"
 
 
 
@@ -297,6 +297,13 @@
                 
                 // 照片
                 ImageSelectViewController *ctrl = [[ImageSelectViewController alloc] init];
+                ctrl.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:ctrl animated:YES];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"动画"]) {
+                
+                // 动画
+                AnimationController *ctrl = [[AnimationController alloc] init];
                 ctrl.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:ctrl animated:YES];
                 
