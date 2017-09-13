@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *albumImageView;   // 专辑图片
 @property (weak, nonatomic) IBOutlet CThemeLabel *songNameLabel;    // 歌名
 @property (weak, nonatomic) IBOutlet UILabel *singerNameLabel;      // 歌手名字
-@property (weak, nonatomic) IBOutlet UIView *isLive;                // 正在播放
+@property (weak, nonatomic) IBOutlet UIView *isLiveView;            // 正在播放
 
 
 

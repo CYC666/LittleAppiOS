@@ -65,6 +65,8 @@
                     name:CThemeChangeNotification
                   object:nil];
     
+
+    
     // 检测本地的数据是否已经到了更新时间（间隔一天）
     BOOL toReload = [self isNecessaryToReloadData];
     
@@ -202,6 +204,8 @@
     
     
 }
+
+
 
 #pragma mark - 导航栏的响应
 // 搜索按钮
@@ -433,6 +437,7 @@
         model.singername = musicDic[@"singername"];
         model.albumid = musicDic[@"albumid"];
         model.number = [NSString stringWithFormat:@"%ld", i+1];
+        model.isLive = NO;
         
         [self.songArray addObject:model];
     }
@@ -486,6 +491,18 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     SongModel *songModel = _tableViewDataArray[indexPath.row];
+    
+    for (NSInteger i = 0; i < _tableViewDataArray.count; i++) {
+        
+        SongModel *liveModel = _tableViewDataArray[i];
+        if (i == indexPath.row) {
+            liveModel.isLive = YES;
+        } else {
+            liveModel.isLive = NO;
+        }
+        
+        [_songListTableView reloadData];
+    }
     
     // 播放音乐
     _mp3Player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:songModel.url]];
@@ -641,6 +658,18 @@
     [_songImageView sd_setImageWithURL:[NSURL URLWithString:liveModel.albumpic_small]];
     _mp3Player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:liveModel.url]];
     [_mp3Player play];
+    
+    for (NSInteger i = 0; i < _tableViewDataArray.count; i++) {
+        
+        SongModel *liveModel = _tableViewDataArray[i];
+        if (i == index) {
+            liveModel.isLive = YES;
+        } else {
+            liveModel.isLive = NO;
+        }
+        
+        [_songListTableView reloadData];
+    }
 
 }
 
@@ -662,6 +691,18 @@
     [_songImageView sd_setImageWithURL:[NSURL URLWithString:liveModel.albumpic_small]];
     _mp3Player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:liveModel.url]];
     [_mp3Player play];
+    
+    for (NSInteger i = 0; i < _tableViewDataArray.count; i++) {
+        
+        SongModel *liveModel = _tableViewDataArray[i];
+        if (i == index) {
+            liveModel.isLive = YES;
+        } else {
+            liveModel.isLive = NO;
+        }
+        
+        [_songListTableView reloadData];
+    }
 
 }
 
@@ -676,6 +717,8 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:CThemeChangeNotification
                                                   object:nil];
+
+
 
 }
 

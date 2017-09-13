@@ -25,6 +25,7 @@
 #import "CalendarViewController.h"
 #import "InputViewController.h"
 #import "ImageSelectViewController.h"
+#import "GameCollectionViewFlowLayout.h"
 
 
 
@@ -97,7 +98,8 @@
                @"icon_gamer_code",
                @"icon_gamer_calendar",
                @"icon_gamer_input",
-               @"icon_gamer_image"];
+               @"icon_gamer_image",
+               @"icon_gamer_image_animation"];
     
     titles = @[@"2048",
                @"目标",
@@ -117,7 +119,8 @@
                @"二维码",
                @"日历",
                @"输入法",
-               @"照片"];
+               @"照片",
+               @"动画"];
 
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     UICollectionView *gamesCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(20, 0, kScreenWidth - 40, kScreenHeight - 49)
@@ -168,131 +171,155 @@
 
     GamerCell *cell = (GamerCell *)[collectionView cellForItemAtIndexPath:indexPath];
     
-    if ([cell.gameNameLabel.text isEqualToString:@"2048"]) {
-        
-        // 2048
-        
-    } else if ([cell.gameNameLabel.text isEqualToString:@"目标"]) {
+    // 点中给予动画效果
+    [UIView animateWithDuration:0.15 animations:^{
+        cell.transform = CGAffineTransformMakeScale(0.9, 0.9);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.2 animations:^{
+            cell.transform = CGAffineTransformMakeScale(1, 1);
+        } completion:^(BOOL finished) {
+            
+            if ([cell.gameNameLabel.text isEqualToString:@"2048"]) {
+                
+                // 2048
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"目标"]) {
+                
+                // 目标
+                CSalesTargetViewController *controller = [[CSalesTargetViewController alloc] init];
+                controller.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:controller animated:YES];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"扫雷"]) {
+                
+                // 寻找炸弹(超大滑动视图)
+                BoomController *controller = [[BoomController alloc] init];
+                controller.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:controller animated:YES];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"取色板"]) {
+                
+                // 区色板
+                SelectColorController *controller = [[SelectColorController alloc] init];
+                controller.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:controller animated:YES];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"折线图"]) {
+                
+                // 折线图
+                brokenLineController *controller = [[brokenLineController alloc] init];
+                controller.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:controller animated:YES];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"标尺"]) {
+                
+                FlowSliderController *controller = [[FlowSliderController alloc] init];
+                controller.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:controller animated:YES];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"深圳地铁"]) {
+                
+                CWebViewController *controller = [[CWebViewController alloc] initWithTitle:@"深圳地铁"
+                                                                                       URL:@"http://map.baidu.com/mobile/webapp/subway/show//city=shenzhen?third_party=webapp-aladdin"];
+                controller.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:controller animated:YES];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"识别银行卡"]) {
+                
+                // 识别银行卡
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"翻译"]) {
+                
+                TranslateController *ctrl = [[TranslateController alloc] init];
+                ctrl.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:ctrl animated:YES];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"桌面"]) {
+                
+                // 回到手机桌面
+                [[UIApplication sharedApplication] performSelector:@selector(suspend)];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"退出"]) {
+                
+                // 退出程序
+                [self exitApplication];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"城市"]) {
+                
+                // 城市列表
+                CityListController *ctrl = [[CityListController alloc] init];
+                ctrl.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:ctrl animated:YES];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"字幕"]) {
+                
+                // 字幕
+                FontViewController *ctrl = [[FontViewController alloc] init];
+                ctrl.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:ctrl animated:YES];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"应用"]) {
+                
+                // 所有应用
+                AppListViewController *ctrl = [[AppListViewController alloc] init];
+                ctrl.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:ctrl animated:YES];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"渐变"]) {
+                
+                // 颜色渐变
+                OverColorViewController *ctrl = [[OverColorViewController alloc] init];
+                ctrl.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:ctrl animated:YES];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"二维码"]) {
+                
+                // 二维码
+                CodeViewController *ctrl = [[CodeViewController alloc] init];
+                ctrl.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:ctrl animated:YES];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"日历"]) {
+                
+                // 日历
+                CalendarViewController *ctrl = [[CalendarViewController alloc] init];
+                ctrl.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:ctrl animated:YES];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"输入法"]) {
+                
+                // 输入法
+                InputViewController *ctrl = [[InputViewController alloc] init];
+                ctrl.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:ctrl animated:YES];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"照片"]) {
+                
+                // 照片
+                ImageSelectViewController *ctrl = [[ImageSelectViewController alloc] init];
+                ctrl.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:ctrl animated:YES];
+                
+            }
+            
+        }];
+    }];
     
-        // 目标
-        CSalesTargetViewController *controller = [[CSalesTargetViewController alloc] init];
-        controller.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:controller animated:YES];
     
-    } else if ([cell.gameNameLabel.text isEqualToString:@"扫雷"]) {
     
-        // 寻找炸弹(超大滑动视图)
-        BoomController *controller = [[BoomController alloc] init];
-        controller.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:controller animated:YES];
-    
-    } else if ([cell.gameNameLabel.text isEqualToString:@"取色板"]) {
-        
-        // 区色板
-        SelectColorController *controller = [[SelectColorController alloc] init];
-        controller.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:controller animated:YES];
-        
-    } else if ([cell.gameNameLabel.text isEqualToString:@"折线图"]) {
-        
-        // 折线图
-        brokenLineController *controller = [[brokenLineController alloc] init];
-        controller.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:controller animated:YES];
-        
-    } else if ([cell.gameNameLabel.text isEqualToString:@"标尺"]) {
-        
-        FlowSliderController *controller = [[FlowSliderController alloc] init];
-        controller.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:controller animated:YES];
-        
-    } else if ([cell.gameNameLabel.text isEqualToString:@"深圳地铁"]) {
-    
-        CWebViewController *controller = [[CWebViewController alloc] initWithTitle:@"深圳地铁"
-                                                                               URL:@"http://map.baidu.com/mobile/webapp/subway/show//city=shenzhen?third_party=webapp-aladdin"];
-        controller.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:controller animated:YES];
-    
-    } else if ([cell.gameNameLabel.text isEqualToString:@"识别银行卡"]) {
-        
-        // 识别银行卡
-        
-    } else if ([cell.gameNameLabel.text isEqualToString:@"翻译"]) {
-    
-        TranslateController *ctrl = [[TranslateController alloc] init];
-        ctrl.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:ctrl animated:YES];
-    
-    } else if ([cell.gameNameLabel.text isEqualToString:@"桌面"]) {
-        
-        // 回到手机桌面
-        [[UIApplication sharedApplication] performSelector:@selector(suspend)];
-        
-    } else if ([cell.gameNameLabel.text isEqualToString:@"退出"]) {
-        
-        // 退出程序
-        [self exitApplication];
-        
-    } else if ([cell.gameNameLabel.text isEqualToString:@"城市"]) {
-        
-        // 城市列表
-        CityListController *ctrl = [[CityListController alloc] init];
-        ctrl.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:ctrl animated:YES];
-        
-    } else if ([cell.gameNameLabel.text isEqualToString:@"字幕"]) {
-        
-        // 字幕
-        FontViewController *ctrl = [[FontViewController alloc] init];
-        ctrl.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:ctrl animated:YES];
-        
-    } else if ([cell.gameNameLabel.text isEqualToString:@"应用"]) {
-        
-        // 所有应用
-        AppListViewController *ctrl = [[AppListViewController alloc] init];
-        ctrl.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:ctrl animated:YES];
-        
-    } else if ([cell.gameNameLabel.text isEqualToString:@"渐变"]) {
-        
-        // 颜色渐变
-        OverColorViewController *ctrl = [[OverColorViewController alloc] init];
-        ctrl.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:ctrl animated:YES];
-        
-    } else if ([cell.gameNameLabel.text isEqualToString:@"二维码"]) {
-        
-        // 二维码
-        CodeViewController *ctrl = [[CodeViewController alloc] init];
-        ctrl.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:ctrl animated:YES];
-        
-    } else if ([cell.gameNameLabel.text isEqualToString:@"日历"]) {
-        
-        // 日历
-        CalendarViewController *ctrl = [[CalendarViewController alloc] init];
-        ctrl.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:ctrl animated:YES];
-        
-    } else if ([cell.gameNameLabel.text isEqualToString:@"输入法"]) {
-        
-        // 输入法
-        InputViewController *ctrl = [[InputViewController alloc] init];
-        ctrl.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:ctrl animated:YES];
-        
-    } else if ([cell.gameNameLabel.text isEqualToString:@"照片"]) {
-        
-        // 照片
-        ImageSelectViewController *ctrl = [[ImageSelectViewController alloc] init];
-        ctrl.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:ctrl animated:YES];
-        
-    }
 
     
     
+}
+
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+
+    GamerCell *theCell = (GamerCell *)cell;
+    
+    
+    
+    
+
 }
 
 

@@ -29,6 +29,8 @@
 
 @property (copy, nonatomic) NSString *number;           // 排名
 
+@property (assign, nonatomic) BOOL isLive;              // 是否正在播放
+
 
 
 @end

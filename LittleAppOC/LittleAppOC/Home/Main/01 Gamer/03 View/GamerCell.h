@@ -13,4 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *gameImageView;
 @property (weak, nonatomic) IBOutlet CThemeLabel *gameNameLabel;
 
+@property (assign, nonatomic) BOOL resumeAnimation;
+
 @end
