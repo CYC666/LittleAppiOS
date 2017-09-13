@@ -25,7 +25,7 @@
     UILabel *locationLabel;
     NSDictionary *locationDic;
     
-    CDoubleTableView *tableView;
+
 
 }
 
@@ -81,7 +81,7 @@
 - (void)creatUIAction {
     
     // 滑动视图
-    mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 49)];
+    mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight - 64 - 49)];
     mainScrollView.contentSize = CGSizeMake(kScreenWidth, kScreenHeight * 2);
     mainScrollView.backgroundColor = CTHEME.themeColor;
         mainScrollView.delegate = self;
@@ -106,44 +106,7 @@
     
     
     
-    
-    
-    
-    /**< 初始化colorsView */
-    UIView *colorsView = [[UIView alloc] init];
-    colorsView.frame = CGRectMake(0, 64, kScreenWidth, kScreenWidth);
-    [mainScrollView addSubview:colorsView];
-    
-    /**< 初始化渐变层 */
-    CAGradientLayer *gradientColorLayer = [CAGradientLayer layer];
-    gradientColorLayer.frame = colorsView.bounds;
-    [colorsView.layer addSublayer:gradientColorLayer];
-    
-    /**< 设置颜色组 */
-    gradientColorLayer.colors = @[(__bridge id)[UIColor orangeColor].CGColor,
-                                  (__bridge id)[UIColor grayColor].CGColor];
-    
-    /**< 设置颜色分割点 */
-    gradientColorLayer.locations  = @[@(0.5)];
-    
-    
-    /**< 设置渐变颜色方向 */
-    // 1、起始位置
-    gradientColorLayer.startPoint = CGPointMake(0, 0);
-    // 2、结束位置
-    gradientColorLayer.endPoint   = CGPointMake(0, 1);
-    
-    
-    tableView = [[CDoubleTableView alloc] initWithFrame:CGRectMake(0, 400, kScreenWidth, 400) style:UITableViewStylePlain];
-    tableView.showsVerticalScrollIndicator = NO;
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    [mainScrollView addSubview:tableView];
-    
-    
-    // 添加监听刷新的通知
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(allowSubViewScrollAction) name:@"允许移动" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(banSubViewScrollAction) name:@"不允许移动" object:nil];
+
     
 }
 
@@ -214,71 +177,6 @@
 
 
 
-#pragma mark - 滑动视图代理方法
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
-    NSLog(@"%.2f", scrollView.contentOffset.y);
-    
-    
-    if ([scrollView isEqual:mainScrollView]) {  // 父视图
-        
-        // 定义滑动多少距离之后不能再滑动
-        CGFloat distance = 200;
-        
-        if (_allowSubViewScroll) {
-            
-            // 不允许移动
-            scrollView.contentOffset = CGPointMake(0, distance);
-            scrollView.showsVerticalScrollIndicator = NO;
-        } else {
-
-            // 当前滑动视图的偏移
-            CGFloat offsetY = scrollView.contentOffset.y;
-            
-            if (offsetY >= distance) {
-                scrollView.contentOffset = CGPointMake(0, distance);
-                _allowSubViewScroll = YES;
-                
-            } else {
-                _allowSubViewScroll = NO;
-            }
-            
-            scrollView.showsVerticalScrollIndicator = YES;
-            
-        }
-        
-    } else if ([scrollView isEqual:tableView]) {    // 子视图
-    
-        if (_allowSubViewScroll) {
-            // 允许移动
-            
-            // 当前滑动视图的偏移
-            CGFloat offsetY = scrollView.contentOffset.y;
-            if (offsetY <= 0) {
-                scrollView.contentOffset = CGPointMake(0, 0);
-                _allowSubViewScroll = NO;
-            } else {
-                _allowSubViewScroll = YES;
-            }
-            
-            scrollView.showsVerticalScrollIndicator = YES;
-            
-        } else {
-        
-            // 不允许移动
-            scrollView.contentOffset = CGPointMake(0, 0);
-            _allowSubViewScroll = NO;
-            
-            scrollView.showsVerticalScrollIndicator = NO;
-        }
-    
-    }
-    
-    
-
-    
-    
-}
 
 #pragma mark - 表视图代理方法
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -334,21 +232,6 @@
     
     self.view.backgroundColor = CTHEME.themeColor;
     mainScrollView.backgroundColor = CTHEME.themeColor;
-    
-}
-
-
-#pragma mark - 允许子视图移动
-- (void)allowSubViewScrollAction {
-    
-    _allowSubViewScroll = YES;
-    
-}
-
-#pragma mark - 不允许子视图移动
-- (void)banSubViewScrollAction {
-    
-    _allowSubViewScroll = NO;
     
 }
 
