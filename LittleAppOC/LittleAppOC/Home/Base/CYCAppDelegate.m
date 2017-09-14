@@ -71,6 +71,9 @@
     [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
     [audioSession setActive:YES error:nil];
     
+    // 开启接收远程控制
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    
     // 是否禁止屏幕自动锁屏
     if ([CUSER boolForKey:CLockScreen]) {
 
@@ -144,7 +147,37 @@
 }
 
 
+// 处理接收到远程控制的方法,并在发送接收到远程控制的通知。
+-(void)remoteControlReceivedWithEvent:(UIEvent *)event {
 
+    if(event.type==UIEventTypeRemoteControl) {
+        
+        NSInteger order=-1;
+        switch (event.subtype) {
+            case UIEventSubtypeRemoteControlPause:
+                order=UIEventSubtypeRemoteControlPause;
+                break;
+            case UIEventSubtypeRemoteControlPlay:
+                order=UIEventSubtypeRemoteControlPlay;
+                break;
+            case UIEventSubtypeRemoteControlNextTrack:
+                order=UIEventSubtypeRemoteControlNextTrack;
+                break;
+            case UIEventSubtypeRemoteControlPreviousTrack:
+                order=UIEventSubtypeRemoteControlPreviousTrack;
+                break;
+            case UIEventSubtypeRemoteControlTogglePlayPause:
+                order=UIEventSubtypeRemoteControlTogglePlayPause;
+                break;
+            default:
+                order=-1;
+                break;
+        }
+        NSDictionary *orderDict=@{@"order":@(order)};
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"kAppDidReceiveRemoteControlNotification" object:nil userInfo:orderDict];
+    }
+
+}
 
 
 

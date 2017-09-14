@@ -144,6 +144,8 @@
 		9E35FC241E73E1240077D688 /* icon_gamer_target_edit@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E35FC221E73E1240077D688 /* icon_gamer_target_edit@3x.png */; };
 		9E35FC271E73E67C0077D688 /* icon_gamer_target_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E35FC251E73E67C0077D688 /* icon_gamer_target_user@2x.png */; };
 		9E35FC281E73E67C0077D688 /* icon_gamer_target_user@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E35FC261E73E67C0077D688 /* icon_gamer_target_user@3x.png */; };
+		9E4661E41F6A1BD800C7BC65 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E4661E31F6A1BD800C7BC65 /* AVFoundation.framework */; };
+		9E4661E71F6A1BE000C7BC65 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E4661E61F6A1BE000C7BC65 /* MediaPlayer.framework */; };
 		9E472A171E3D914000C6245E /* CScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E472A161E3D914000C6245E /* CScrollView.m */; };
 		9E485AAE1F452E1B0014ECE6 /* icon_gamer_overColor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E485AAC1F452E1B0014ECE6 /* icon_gamer_overColor@2x.png */; };
 		9E485AAF1F452E1B0014ECE6 /* icon_gamer_overColor@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E485AAD1F452E1B0014ECE6 /* icon_gamer_overColor@3x.png */; };
@@ -830,6 +832,8 @@
 		9E35FC221E73E1240077D688 /* icon_gamer_target_edit@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_target_edit@3x.png"; sourceTree = "<group>"; };
 		9E35FC251E73E67C0077D688 /* icon_gamer_target_user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_target_user@2x.png"; sourceTree = "<group>"; };
 		9E35FC261E73E67C0077D688 /* icon_gamer_target_user@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_target_user@3x.png"; sourceTree = "<group>"; };
+		9E4661E31F6A1BD800C7BC65 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9E4661E61F6A1BE000C7BC65 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		9E472A151E3D914000C6245E /* CScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CScrollView.h; sourceTree = "<group>"; };
 		9E472A161E3D914000C6245E /* CScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CScrollView.m; sourceTree = "<group>"; };
 		9E485AAC1F452E1B0014ECE6 /* icon_gamer_overColor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_overColor@2x.png"; sourceTree = "<group>"; };
@@ -1431,6 +1435,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E4661E71F6A1BE000C7BC65 /* MediaPlayer.framework in Frameworks */,
+				9E4661E41F6A1BD800C7BC65 /* AVFoundation.framework in Frameworks */,
 				9E64DE061F4AB4B9002E6A3F /* libsqlite3.tbd in Frameworks */,
 				9E64DDD81F4AB039002E6A3F /* libz.tbd in Frameworks */,
 				9E251A471F46DB29009EFA56 /* CoreGraphics.framework in Frameworks */,
@@ -2432,6 +2438,8 @@
 		9E6EB0E51E3EDA2E00E7128A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9E4661E61F6A1BE000C7BC65 /* MediaPlayer.framework */,
+				9E4661E31F6A1BD800C7BC65 /* AVFoundation.framework */,
 				9E6B61DF1F5E4DA8002A7463 /* libWeiboSDK.a */,
 				9E2E4F041F5908220025B0FF /* Photos.framework */,
 				9E2E4F021F5904FD0025B0FF /* Security.framework */,

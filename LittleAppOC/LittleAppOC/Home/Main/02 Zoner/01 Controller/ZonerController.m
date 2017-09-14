@@ -18,6 +18,8 @@
 #import "SongViewController.h"
 #import "UIImageView+WebCache.h"
 #import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MPNowPlayingInfoCenter.h>
+#import <MediaPlayer/MPMediaItem.h>
 
 
 #define SongListTableViewID @"SongListTableViewID"  // 表视图单元格重用标识符
@@ -64,6 +66,13 @@
                 selector:@selector(changeBackgroundColor:)
                     name:CThemeChangeNotification
                   object:nil];
+    
+    // 注册接收到远程控制的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(listeningRemoteControl:)
+                                                 name:@"kAppDidReceiveRemoteControlNotification"
+                                               object:nil];
+    
     
 
     
@@ -204,6 +213,120 @@
     
     
 }
+
+#pragma mark - 监听远程通知，控制播放
+-(void)listeningRemoteControl:(NSNotification *)sender {
+    NSDictionary *dict = sender.userInfo;
+    NSInteger order=[[dict objectForKey:@"order"] integerValue];
+    switch (order) {
+            //暂停
+        case UIEventSubtypeRemoteControlPause: {
+            
+            [_mp3Player pause];
+            
+            break;
+        }
+            //播放
+        case UIEventSubtypeRemoteControlPlay: {
+            
+            [_mp3Player play];
+            
+            break;
+        }
+            //暂停播放切换
+        case UIEventSubtypeRemoteControlTogglePlayPause: {
+            
+            break;
+        }
+            //下一首
+        case UIEventSubtypeRemoteControlNextTrack: {
+            
+            if (++_currentIndex > _tableViewDataArray.count) {
+                break;
+            }
+            
+            SongModel *liveModel = _tableViewDataArray[_currentIndex];
+            [_songImageView sd_setImageWithURL:[NSURL URLWithString:liveModel.albumpic_small]];
+            _mp3Player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:liveModel.url]];
+            [_mp3Player play];
+            
+            for (NSInteger i = 0; i < _tableViewDataArray.count; i++) {
+                
+                SongModel *liveModel = _tableViewDataArray[i];
+                if (i == _currentIndex) {
+                    liveModel.isLive = YES;
+                } else {
+                    liveModel.isLive = NO;
+                }
+                
+                [_songListTableView reloadData];
+            }
+            
+            [self setNowPlayingInfo];
+            
+            break;
+        }
+            //上一首
+        case UIEventSubtypeRemoteControlPreviousTrack: {
+            
+            if (--_currentIndex < 0) {
+                break;
+            }
+            
+            SongModel *liveModel = _tableViewDataArray[_currentIndex];
+            [_songImageView sd_setImageWithURL:[NSURL URLWithString:liveModel.albumpic_small]];
+            _mp3Player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:liveModel.url]];
+            [_mp3Player play];
+            
+            for (NSInteger i = 0; i < _tableViewDataArray.count; i++) {
+                
+                SongModel *liveModel = _tableViewDataArray[i];
+                if (i == _currentIndex) {
+                    liveModel.isLive = YES;
+                } else {
+                    liveModel.isLive = NO;
+                }
+                
+                [_songListTableView reloadData];
+            }
+            
+            [self setNowPlayingInfo];
+            
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+#pragma mark - 设置控制中心显示的歌曲信息
+-(void)setNowPlayingInfo {
+    
+    SongModel *liveModel = _tableViewDataArray[_currentIndex];
+    NSMutableDictionary *songDict=[NSMutableDictionary dictionary];
+    //歌名
+    [songDict setObject:liveModel.songname forKey:MPMediaItemPropertyTitle];
+    //歌手名
+    [songDict setObject:liveModel.singername forKey:MPMediaItemPropertyArtist];
+    //歌曲的总时间
+    [songDict setObject:liveModel.seconds forKeyedSubscript:MPMediaItemPropertyPlaybackDuration];
+    //设置歌曲图片
+    SDWebImageManager *manager = [SDWebImageManager sharedManager];
+    //判断是否有缓存
+    BOOL isExist = [manager diskImageExistsForURL:[NSURL URLWithString:liveModel.albumpic_big]];
+    if (isExist) {
+        UIImage *image = [[manager imageCache] imageFromDiskCacheForKey:liveModel.albumpic_big];
+        MPMediaItemArtwork *imageItem = [[MPMediaItemArtwork alloc] initWithImage:image];
+        [songDict setObject:imageItem forKey:MPMediaItemPropertyArtwork];
+    }
+    //设置控制中心歌曲信息
+    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:songDict];
+}
+//-->并在播放过程中，改变播放进度，播放时间的逻辑中加入如下代码，更新控制中心歌曲的当前时间：
+//NSDictionary info=[[MPNowPlayingInfoCenter defaultCenter] nowPlayingInfo];
+//NSMutableDictionary dict=[NSMutableDictionary dictionaryWithDictionary:info];
+//[dict setObject:@(currentSecond) forKeyedSubscript:MPNowPlayingInfoPropertyElapsedPlaybackTime];
+//[[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:dict];
 
 
 
@@ -491,6 +614,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     SongModel *songModel = _tableViewDataArray[indexPath.row];
+    _currentIndex = indexPath.row;
     
     for (NSInteger i = 0; i < _tableViewDataArray.count; i++) {
         
@@ -503,6 +627,8 @@
         
         [_songListTableView reloadData];
     }
+    
+    [self setNowPlayingInfo];
     
     // 播放音乐
     _mp3Player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:songModel.url]];
@@ -655,6 +781,7 @@
 - (void)lastSong:(NSInteger)index {
 
     SongModel *liveModel = _tableViewDataArray[index];
+    _currentIndex = index;
     [_songImageView sd_setImageWithURL:[NSURL URLWithString:liveModel.albumpic_small]];
     _mp3Player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:liveModel.url]];
     [_mp3Player play];
@@ -687,6 +814,7 @@
 // 下一首
 - (void)nextSong:(NSInteger)index {
 
+    _currentIndex = index;
     SongModel *liveModel = _tableViewDataArray[index];
     [_songImageView sd_setImageWithURL:[NSURL URLWithString:liveModel.albumpic_small]];
     _mp3Player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:liveModel.url]];
@@ -717,7 +845,9 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:CThemeChangeNotification
                                                   object:nil];
-
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:@"kAppDidReceiveRemoteControlNotification"
+                                                  object:nil];
 
 
 }
