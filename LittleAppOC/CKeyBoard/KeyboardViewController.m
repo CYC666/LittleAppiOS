@@ -48,7 +48,8 @@
     UIButton *buttonA = [UIButton buttonWithType:UIButtonTypeCustom];
     buttonA.frame = CGRectMake(0, 60, 40, 40);
     buttonA.backgroundColor = [UIColor grayColor];
-    [buttonA addTarget:self action:@selector(buttonA) forControlEvents:UIControlEventAllTouchEvents];
+    [buttonA setTitle:@"િ😋ી" forState:UIControlStateNormal];
+    [buttonA addTarget:self action:@selector(buttonA) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:buttonA];
     
 }
@@ -79,7 +80,7 @@
 
 - (void)buttonA {
 
-    
+    [self.textDocumentProxy insertText:@"િ😋ી"];
 
 }
 
