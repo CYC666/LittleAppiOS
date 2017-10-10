@@ -182,7 +182,7 @@
     _tipLabel.text = @"验证失败，请点击重新验证";
     
 }
-// 当前设备不支持指纹识别
+// 当前设备不支持指纹识别，很多次认证失败后就会这样，不允许指纹认证了，需要手机密码
 - (void)CYCTouchIDIsNotSupport {
     
     _tipLabel.text = @"当前设备不支持指纹识别";
