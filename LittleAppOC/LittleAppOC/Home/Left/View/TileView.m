@@ -29,10 +29,17 @@
         boxView2.frame = CGRectMake(0, 0, 80, 30);
         boxView2.center = CGPointMake(150, 50);
         [self addSubview:boxView2];
+        self.nameImageView = boxView2;
         
-        self.boxViewOther = boxView2;
-        
-        
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 30)];
+        label.center = CGPointMake(150, 100);
+        label.textAlignment = NSTextAlignmentCenter;
+        label.adjustsFontSizeToFitWidth = YES;
+        label.textColor = [UIColor orangeColor];
+        label.font = [UIFont systemFontOfSize:19];
+        label.text = [CUSER objectForKey:CUserPhone];
+        [self addSubview:label];
+        self.stepLabel = label;
         
         UIImageView *boxView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"dog1"]];
         boxView3.frame = CGRectMake(0, 0, 30, 30);
@@ -67,6 +74,42 @@
     return self;
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

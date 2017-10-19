@@ -15,8 +15,8 @@
 /**  方块视图  */
 @property (nonatomic, weak) UIImageView *boxView;
 
-@property (nonatomic, weak) UIImageView *boxViewOther;
-
+@property (nonatomic, weak) UIImageView *nameImageView;     // 名字
+@property (nonatomic, weak) UILabel *stepLabel;             // 步数
 @property (nonatomic, weak) UIImageView *boxView3;
 @property (nonatomic, weak) UIImageView *boxView4;
 @property (nonatomic, weak) UIImageView *boxView5;

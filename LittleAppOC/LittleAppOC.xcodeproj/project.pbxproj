@@ -947,6 +947,7 @@
 		9E4E73961F983CFF00D869DF /* TileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileView.m; sourceTree = "<group>"; };
 		9E4E73981F983E7B00D869DF /* CollisionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionView.h; sourceTree = "<group>"; };
 		9E4E73991F983E7B00D869DF /* CollisionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollisionView.m; sourceTree = "<group>"; };
+		9E4E739B1F987CC600D869DF /* LittleAppOC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LittleAppOC.entitlements; sourceTree = "<group>"; };
 		9E4FE1DB1E6950D200AF3885 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
 		9E4FE1DC1E6950D200AF3885 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		9E527DBD1E3797350057AF4C /* GamerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamerCell.h; sourceTree = "<group>"; };
@@ -1648,6 +1649,7 @@
 		9E1389B61E2B08390011701B /* LittleAppOC */ = {
 			isa = PBXGroup;
 			children = (
+				9E4E739B1F987CC600D869DF /* LittleAppOC.entitlements */,
 				9E1389D41E2B0A330011701B /* Home */,
 				9E1389C31E2B08390011701B /* Assets.xcassets */,
 				9E1389C51E2B08390011701B /* LaunchScreen.storyboard */,
@@ -3055,6 +3057,14 @@
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = XTKV8S84MB;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.HealthKit = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};

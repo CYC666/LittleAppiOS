@@ -298,6 +298,12 @@
                          _temperatureLabel.alpha = 1;
                          _weatherImageView.alpha = 1;
                      }];
+    
+    
+    // 设置某个瓦片的图片
+    self.baseView.boxView3.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", model.weatherCode]];
+    self.baseView.stepLabel.text = [NSString stringWithFormat:@"%@º", model.temperature];
+    
 }
 
 
