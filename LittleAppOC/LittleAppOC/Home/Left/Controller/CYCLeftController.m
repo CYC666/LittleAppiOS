@@ -21,11 +21,18 @@
 #import "CYCLoginController.h"
 #import "PasswordController.h"
 #import <CoreLocation/CoreLocation.h>
+#import <CoreMotion/CoreMotion.h>
+#import "TileView.h"
+#import "CollisionView.h"
 
 #define CYCLeftControllerCellID @"CYCLeftControllerCellID"  // 单元格重用标识符
 
 
-@interface CYCLeftController () <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface CYCLeftController () <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
+
+    NSTimeInterval updateInterval;
+
+}
 
 @property (strong, nonatomic) NSArray *tableViewTitles;     // 表视图的title
 @property (strong, nonatomic) NSArray *tableViewIcons;      // 表视图的icon
@@ -35,6 +42,10 @@
 @property (strong, nonatomic) UIImageView *weatherImageView;// 显示天气的图
 @property (assign, nonatomic) BOOL headImageFlag;           // 当前是否是编辑头像
 @property (copy, nonatomic) NSString *location;             // 位置
+
+// 碰撞
+@property (nonatomic,strong) CMMotionManager *mManager;
+@property (nonatomic,strong) TileView * baseView;
 
 @end
 
@@ -53,6 +64,14 @@
                   object:nil];
 }
 
+- (CMMotionManager *)mManager {
+    
+    if (!_mManager) {
+        updateInterval = 1.0/10.0;
+        _mManager = [[CMMotionManager alloc] init];
+    }
+    return _mManager;
+}
 
 // ------------------------------------------------------UI创建-------------------------------------------------------
 #pragma mark - 创建子视图
@@ -139,6 +158,9 @@
     _middleTableView.dataSource = self;
     [self.view addSubview:_middleTableView];
     
+    // 创建碰撞模块
+    [self creatTileViewAction];
+    
     // 夜间模式开关
     _nightButton = [CThemeButton buttonWithType:UIButtonTypeCustom];
     _nightButton.frame = CGRectMake(10, kScreenHeight - 49, 70, 49);
@@ -183,9 +205,75 @@
     [self.view addSubview:_weatherImageView];
 
     
+    
     // 定位 -- 天气 -- 设置天气UI
     [self loadLocation];
 
+}
+
+#pragma mark - 创建碰撞方块
+- (void)creatTileViewAction {
+    
+    self.baseView = [[CollisionView alloc] init];
+    self.baseView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    
+    [self.view addSubview:self.baseView];
+    
+    
+    if ([self.mManager isAccelerometerAvailable] == YES) {
+        //回调会一直调用,建议获取到就调用下面的停止方法，需要再重新开始，当然如果需求是实时不间断的话可以等离开页面之后再stop
+        [self.mManager setAccelerometerUpdateInterval:updateInterval];
+        [self.mManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error)
+         {
+             double x = accelerometerData.acceleration.x;
+             double y = accelerometerData.acceleration.y;
+             if (fabs(y) >= fabs(x))
+             {
+                 if (y >= 0){
+                     
+//                     NSLog(@"Down");
+                     //Down
+                 }
+                 else{
+//                     NSLog(@"Portrait");
+                     
+                     //Portrait
+                 }
+             }
+             else
+             {
+                 if (x >= 0){
+//                     NSLog(@"Right");
+                     
+                     //Right
+                 }
+                 else{
+//                     NSLog(@"Left");
+                     
+                     //Left
+                 }
+                 
+             }
+             
+             
+             // 1. 计算偏移量
+             CGPoint offset = CGPointMake(accelerometerData.acceleration.x,-accelerometerData.acceleration.y);
+             // 2. 计算角度
+             CGFloat angle = atan2(offset.y, offset.x);
+             // 3. 计算距离
+             CGFloat distance = hypot(offset.y, offset.x);
+             // 4. 设置推动的大小、角度
+             self.baseView.push.magnitude = distance * 0.3;
+             self.baseView.push.angle = angle;
+             // 5. 使单次推行为有效
+             self.baseView.push.active = YES;
+             
+             
+             
+         }];
+    }
+
+    
 }
 
 #pragma mark - 设置天气UI
