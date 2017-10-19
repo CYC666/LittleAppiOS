@@ -73,7 +73,16 @@
 
 
 
+/**
+ 智能问答
 
+ @param question 问题
+ @param success 成功回调
+ @param failure 失败回调
+ */
++ (void)intelligentRobotWithQuestion:(NSString *)question
+                             success:(void (^)(id response))success
+                             failure:(void (^)(NSError *err))failure;
 
 
 

@@ -512,7 +512,14 @@
 #pragma mark - 测试接口
 - (void)testURL {
 
-    
+    [CNetWorking intelligentRobotWithQuestion:@"深圳天气"
+                                      success:^(id response) {
+                                          
+                                          NSLog(@"sssšsss");
+                                          
+                                      } failure:^(NSError *err) {
+                                          NSLog(@"ffffdfdf");
+                                      }];
     
     
 

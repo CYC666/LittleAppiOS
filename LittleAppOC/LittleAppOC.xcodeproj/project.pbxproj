@@ -248,6 +248,10 @@
 		9E4E12371E35889E00A08DAC /* icon_weather_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E4E12341E35889E00A08DAC /* icon_weather_back@3x.png */; };
 		9E4E73971F983CFF00D869DF /* TileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4E73961F983CFF00D869DF /* TileView.m */; };
 		9E4E739A1F983E7B00D869DF /* CollisionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4E73991F983E7B00D869DF /* CollisionView.m */; };
+		9E4E73A61F98A92F00D869DF /* IMMessageYourCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4E73A41F98A92F00D869DF /* IMMessageYourCell.m */; };
+		9E4E73A71F98A92F00D869DF /* IMMessageYourCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E4E73A51F98A92F00D869DF /* IMMessageYourCell.xib */; };
+		9E4E73AB1F98A94500D869DF /* IMMessageMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4E73A91F98A94500D869DF /* IMMessageMineCell.m */; };
+		9E4E73AC1F98A94500D869DF /* IMMessageMineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E4E73AA1F98A94500D869DF /* IMMessageMineCell.xib */; };
 		9E4FE1DD1E6950D200AF3885 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4FE1DC1E6950D200AF3885 /* FXBlurView.m */; };
 		9E527DC01E3797350057AF4C /* GamerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E527DBE1E3797350057AF4C /* GamerCell.m */; };
 		9E527DC11E3797350057AF4C /* GamerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E527DBF1E3797350057AF4C /* GamerCell.xib */; };
@@ -948,6 +952,12 @@
 		9E4E73981F983E7B00D869DF /* CollisionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionView.h; sourceTree = "<group>"; };
 		9E4E73991F983E7B00D869DF /* CollisionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollisionView.m; sourceTree = "<group>"; };
 		9E4E739B1F987CC600D869DF /* LittleAppOC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LittleAppOC.entitlements; sourceTree = "<group>"; };
+		9E4E73A31F98A92F00D869DF /* IMMessageYourCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMMessageYourCell.h; sourceTree = "<group>"; };
+		9E4E73A41F98A92F00D869DF /* IMMessageYourCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMMessageYourCell.m; sourceTree = "<group>"; };
+		9E4E73A51F98A92F00D869DF /* IMMessageYourCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IMMessageYourCell.xib; sourceTree = "<group>"; };
+		9E4E73A81F98A94500D869DF /* IMMessageMineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMMessageMineCell.h; sourceTree = "<group>"; };
+		9E4E73A91F98A94500D869DF /* IMMessageMineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMMessageMineCell.m; sourceTree = "<group>"; };
+		9E4E73AA1F98A94500D869DF /* IMMessageMineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IMMessageMineCell.xib; sourceTree = "<group>"; };
 		9E4FE1DB1E6950D200AF3885 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
 		9E4FE1DC1E6950D200AF3885 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		9E527DBD1E3797350057AF4C /* GamerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamerCell.h; sourceTree = "<group>"; };
@@ -2216,6 +2226,12 @@
 				9E64DE5E1F4AE3A2002E6A3F /* CNavigationBar.h */,
 				9E64DE5F1F4AE3A2002E6A3F /* CNavigationBar.m */,
 				9E64DE601F4AE3A2002E6A3F /* CNavigationBar.xib */,
+				9E4E73A31F98A92F00D869DF /* IMMessageYourCell.h */,
+				9E4E73A41F98A92F00D869DF /* IMMessageYourCell.m */,
+				9E4E73A51F98A92F00D869DF /* IMMessageYourCell.xib */,
+				9E4E73A81F98A94500D869DF /* IMMessageMineCell.h */,
+				9E4E73A91F98A94500D869DF /* IMMessageMineCell.m */,
+				9E4E73AA1F98A94500D869DF /* IMMessageMineCell.xib */,
 			);
 			path = 03View;
 			sourceTree = "<group>";
@@ -3409,6 +3425,7 @@
 				9E4E11CC1E3569F900A08DAC /* icon_weatner_day_1.png in Resources */,
 				9EF9EC201E2CD01A0030023B /* icon_tab_Bar@3x.png in Resources */,
 				9E64DE691F4AE5D0002E6A3F /* icon_home_down_white@2x.png in Resources */,
+				9E4E73AC1F98A94500D869DF /* IMMessageMineCell.xib in Resources */,
 				9EF53D131E2BDE2000F55033 /* icon_leftCtrl_user@3x.png in Resources */,
 				9E4E11DC1E3569F900A08DAC /* icon_weatner_day_24.png in Resources */,
 				9E118AC51E5FFC9C00914D9E /* music_rightButton@3x.png in Resources */,
@@ -3446,6 +3463,7 @@
 				9ED17DBE1F6920EB00127760 /* icon_best_score@3x.png in Resources */,
 				9E66AFDC1F43F3B40095FC41 /* icon_gamer_app@3x.png in Resources */,
 				9E53B4C41E64A2F10015FA02 /* music_song_pause@2x.png in Resources */,
+				9E4E73A71F98A92F00D869DF /* IMMessageYourCell.xib in Resources */,
 				9EFAB74D1E2F38ED0039C853 /* ThirdController.xib in Resources */,
 				9EA44B0C1E2E24BD00F7761D /* 7.png in Resources */,
 				9E60EE301F5FB1B900A73237 /* icon_gamer_image_add@3x.png in Resources */,
@@ -3745,6 +3763,7 @@
 				9E6EB0FE1E3EDD4800E7128A /* CYCLoginController.m in Sources */,
 				9E472A171E3D914000C6245E /* CScrollView.m in Sources */,
 				9E66AFF61F442BCB0095FC41 /* CTargetCell.m in Sources */,
+				9E4E73AB1F98A94500D869DF /* IMMessageMineCell.m in Sources */,
 				9E118B071E6016EC00914D9E /* SongCell.m in Sources */,
 				9E66AFF41F442BCB0095FC41 /* CSalesTargetViewController.m in Sources */,
 				9E118AF51E60147800914D9E /* SDImageCache.m in Sources */,
@@ -3752,6 +3771,7 @@
 				9E4E122B1E356F7F00A08DAC /* AliDailyModel.m in Sources */,
 				9ED17DE31F6920EB00127760 /* F3HScoreView.m in Sources */,
 				9E66B0201F442CDA0095FC41 /* VSliderView.m in Sources */,
+				9E4E73A61F98A92F00D869DF /* IMMessageYourCell.m in Sources */,
 				9E9EB63A1E62A46C005A0F2B /* PasswordController.m in Sources */,
 				9E9D6E351E61705800EB095B /* NSBundle+MJRefresh.m in Sources */,
 				9E118AF31E60147800914D9E /* MKAnnotationView+WebCache.m in Sources */,
