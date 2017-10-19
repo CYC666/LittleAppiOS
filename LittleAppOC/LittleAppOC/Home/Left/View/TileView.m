@@ -25,8 +25,8 @@
         self.boxView = boxView;
         
         
-        UIImageView *boxView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"dog1"]];
-        boxView2.frame = CGRectMake(0, 0, 30, 30);
+        UIImageView *boxView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CYC"]];
+        boxView2.frame = CGRectMake(0, 0, 80, 30);
         boxView2.center = CGPointMake(150, 50);
         [self addSubview:boxView2];
         

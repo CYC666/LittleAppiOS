@@ -215,6 +215,7 @@
 - (void)creatTileViewAction {
     
     self.baseView = [[CollisionView alloc] init];
+    self.baseView.userInteractionEnabled = NO;
     self.baseView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     
     [self.view addSubview:self.baseView];
