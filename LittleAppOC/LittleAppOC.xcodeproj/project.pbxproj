@@ -277,6 +277,9 @@
 		9E53B4C61E64A2F10015FA02 /* music_song_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E53B4B41E64A2F10015FA02 /* music_song_play.png */; };
 		9E53B4C71E64A2F10015FA02 /* music_song_play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E53B4B51E64A2F10015FA02 /* music_song_play@2x.png */; };
 		9E53B4C81E64A2F10015FA02 /* music_song_play@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E53B4B61E64A2F10015FA02 /* music_song_play@3x.png */; };
+		9E5BFDCD1F999A2A005F3544 /* IMMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5BFDCC1F999A2A005F3544 /* IMMessageModel.m */; };
+		9E5BFDD31F99DEE7005F3544 /* IMInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5BFDD21F99DEE7005F3544 /* IMInputBar.m */; };
+		9E5BFDD51F99DEF4005F3544 /* IMInputBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E5BFDD41F99DEF4005F3544 /* IMInputBar.xib */; };
 		9E5EE25A1F3C61D8009C3659 /* CWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5EE2591F3C61D8009C3659 /* CWebViewController.m */; };
 		9E5EE25D1F3C6BD3009C3659 /* icon_gamer_subway@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E5EE25B1F3C6BD3009C3659 /* icon_gamer_subway@3x.png */; };
 		9E5EE25E1F3C6BD3009C3659 /* icon_gamer_subway@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E5EE25C1F3C6BD3009C3659 /* icon_gamer_subway@2x.png */; };
@@ -986,6 +989,11 @@
 		9E53B4B41E64A2F10015FA02 /* music_song_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music_song_play.png; sourceTree = "<group>"; };
 		9E53B4B51E64A2F10015FA02 /* music_song_play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music_song_play@2x.png"; sourceTree = "<group>"; };
 		9E53B4B61E64A2F10015FA02 /* music_song_play@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music_song_play@3x.png"; sourceTree = "<group>"; };
+		9E5BFDCB1F999A2A005F3544 /* IMMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMMessageModel.h; sourceTree = "<group>"; };
+		9E5BFDCC1F999A2A005F3544 /* IMMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMMessageModel.m; sourceTree = "<group>"; };
+		9E5BFDD11F99DEE7005F3544 /* IMInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMInputBar.h; sourceTree = "<group>"; };
+		9E5BFDD21F99DEE7005F3544 /* IMInputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMInputBar.m; sourceTree = "<group>"; };
+		9E5BFDD41F99DEF4005F3544 /* IMInputBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IMInputBar.xib; sourceTree = "<group>"; };
 		9E5EE2581F3C61D8009C3659 /* CWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWebViewController.h; sourceTree = "<group>"; };
 		9E5EE2591F3C61D8009C3659 /* CWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWebViewController.m; sourceTree = "<group>"; };
 		9E5EE25B1F3C6BD3009C3659 /* icon_gamer_subway@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_subway@3x.png"; sourceTree = "<group>"; };
@@ -1073,7 +1081,6 @@
 		9E66B0291F444BF60095FC41 /* DFW_WW7.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = DFW_WW7.TTF; sourceTree = "<group>"; };
 		9E66B02B1F444BF60095FC41 /* 迷你简胖娃.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "迷你简胖娃.ttf"; sourceTree = "<group>"; };
 		9E66B0331F44582F0095FC41 /* 简特细等线.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "简特细等线.ttf"; sourceTree = "<group>"; };
-		9E6B61DF1F5E4DA8002A7463 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWeiboSDK.a; path = Pods/Weibo_SDK/libWeiboSDK/libWeiboSDK.a; sourceTree = "<group>"; };
 		9E6B61E21F5E96ED002A7463 /* input_globe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_globe@2x.png"; sourceTree = "<group>"; };
 		9E6B61E31F5E96ED002A7463 /* input_globe@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_globe@3x.png"; sourceTree = "<group>"; };
 		9E6EB0AC1E3ED9C800E7128A /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
@@ -2216,6 +2223,8 @@
 				9E64DE641F4AE5D0002E6A3F /* Images */,
 				9E64DE5B1F4AE3A2002E6A3F /* CityModel.h */,
 				9E64DE5C1F4AE3A2002E6A3F /* CityModel.m */,
+				9E5BFDCB1F999A2A005F3544 /* IMMessageModel.h */,
+				9E5BFDCC1F999A2A005F3544 /* IMMessageModel.m */,
 			);
 			path = 02Model;
 			sourceTree = "<group>";
@@ -2232,6 +2241,9 @@
 				9E4E73A81F98A94500D869DF /* IMMessageMineCell.h */,
 				9E4E73A91F98A94500D869DF /* IMMessageMineCell.m */,
 				9E4E73AA1F98A94500D869DF /* IMMessageMineCell.xib */,
+				9E5BFDD11F99DEE7005F3544 /* IMInputBar.h */,
+				9E5BFDD21F99DEE7005F3544 /* IMInputBar.m */,
+				9E5BFDD41F99DEF4005F3544 /* IMInputBar.xib */,
 			);
 			path = 03View;
 			sourceTree = "<group>";
@@ -2464,7 +2476,6 @@
 			children = (
 				9E4661E61F6A1BE000C7BC65 /* MediaPlayer.framework */,
 				9E4661E31F6A1BD800C7BC65 /* AVFoundation.framework */,
-				9E6B61DF1F5E4DA8002A7463 /* libWeiboSDK.a */,
 				9E2E4F041F5908220025B0FF /* Photos.framework */,
 				9E2E4F021F5904FD0025B0FF /* Security.framework */,
 				9E2E4F001F5904ED0025B0FF /* ImageIO.framework */,
@@ -3223,6 +3234,7 @@
 				9E4E12071E3569F900A08DAC /* icon_weatner_night_23.png in Resources */,
 				9EA44A8F1E2DF3FF00F7761D /* home_tab_icon_1@2x.png in Resources */,
 				9E4E11CD1E3569F900A08DAC /* icon_weatner_day_10.png in Resources */,
+				9E5BFDD51F99DEF4005F3544 /* IMInputBar.xib in Resources */,
 				09D0F8DC1E8AB48D00E2BDFF /* icon_gamer_color@2x.png in Resources */,
 				9E4E12011E3569F900A08DAC /* icon_weatner_night_18.png in Resources */,
 				9E4E12091E3569F900A08DAC /* icon_weatner_night_25.png in Resources */,
@@ -3629,6 +3641,7 @@
 				9E66B0321F44562D0095FC41 /* 汉仪清雅体简.ttf in Sources */,
 				9E66B02F1F444D910095FC41 /* DFW_WW7.TTF in Sources */,
 				9E648E141F61379500FB2705 /* ScanViewController.m in Sources */,
+				9E5BFDD31F99DEE7005F3544 /* IMInputBar.m in Sources */,
 				9E66B0311F444D910095FC41 /* 迷你简胖娃.ttf in Sources */,
 				9E66B0171F442C9B0095FC41 /* FlowSliderController.m in Sources */,
 				9E1389F41E2B11D00011701B /* GamerController.m in Sources */,
@@ -3658,6 +3671,7 @@
 				9E6EB0D41E3ED9C800E7128A /* SMS_HYZBadgeView.m in Sources */,
 				9E9D6E931E618A8900EB095B /* MenuController.m in Sources */,
 				9E6EB0D81E3ED9C800E7128A /* CustomCell.m in Sources */,
+				9E5BFDCD1F999A2A005F3544 /* IMMessageModel.m in Sources */,
 				9ED17DB51F6920EB00127760 /* CGameRankModel.m in Sources */,
 				9EA44AB11E2E11CD00F7761D /* AFHTTPRequestOperationManager.m in Sources */,
 				9E4E12251E356A6300A08DAC /* AliWeatherModel.m in Sources */,

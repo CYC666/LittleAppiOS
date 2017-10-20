@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="IMInputBar">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="187"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1S4-cj-R8C">
+                    <rect key="frame" x="15" y="5" width="345" height="177"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SGX-ww-QXg">
+                    <rect key="frame" x="25" y="5" width="325" height="177"/>
+                    <color key="tintColor" red="0.81975001096725464" green="0.93049997091293335" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="send"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="0.81975001096725464" green="0.93049997091293335" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="1S4-cj-R8C" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="5YJ-an-RWR"/>
+                <constraint firstItem="1S4-cj-R8C" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="68O-gg-QuM"/>
+                <constraint firstItem="SGX-ww-QXg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="EwG-cR-bBT"/>
+                <constraint firstAttribute="bottom" secondItem="SGX-ww-QXg" secondAttribute="bottom" constant="5" id="TL2-PJ-qOi"/>
+                <constraint firstAttribute="bottom" secondItem="1S4-cj-R8C" secondAttribute="bottom" constant="5" id="fZR-FR-ypj"/>
+                <constraint firstAttribute="trailing" secondItem="SGX-ww-QXg" secondAttribute="trailing" constant="25" id="flf-x9-k5w"/>
+                <constraint firstItem="SGX-ww-QXg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="gkN-G7-PYt"/>
+                <constraint firstAttribute="trailing" secondItem="1S4-cj-R8C" secondAttribute="trailing" constant="15" id="tXM-FU-1rO"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="inputView" destination="SGX-ww-QXg" id="8EU-bC-pGH"/>
+            </connections>
+            <point key="canvasLocation" x="25.5" y="433.5"/>
+        </view>
+    </objects>
+</document>

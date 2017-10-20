@@ -7,6 +7,7 @@
 //
 
 #import "IMMessageYourCell.h"
+#import "IMMessageModel.h"
 
 @implementation IMMessageYourCell
 
@@ -15,10 +16,30 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+- (void)setDataModel:(IMMessageModel *)dataModel {
+    
+    _dataModel = dataModel;
+    
+    _contentLabel.text = dataModel.Content;
+    
+    if (dataModel.simpleLine && [dataModel.Flag isEqualToString:@"Me"]) {
+        _contentLabel.textAlignment = NSTextAlignmentRight;
+    } else {
+        _contentLabel.textAlignment = NSTextAlignmentLeft;
+    }
+    
+    
+    UIImage *oldImage = [UIImage imageNamed:@"yourImage"];
+    UIImage *newImage = [oldImage stretchableImageWithLeftCapWidth:oldImage.size.width * 0.5 topCapHeight:oldImage.size.height * 0.5];
+    _groundImageView.image = newImage;
+    
+    _contentLabel.frame = dataModel.contentRect;
+    _groundImageView.frame = dataModel.imageRect;
+    
 }
+
+
+
 
 @end

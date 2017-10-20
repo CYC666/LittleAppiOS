@@ -80,7 +80,7 @@
 #define Documents_Picture @"/Documents/pic.plist"                                                       // 本地储存图片的plist路径
 #define LeftImage @"/Documents/leftControllerHeadImage.jpg"                                             // 左控制器头部背景图片
 #define HeadImage @"/Documents/icon_left_headImage.png"                                                 // 头像保存的路径
-
+#define Documents_IMMessage @"/Documents/IMMessage.plist"                                               // 本地储存IM聊天信息的plist路径
 
 
 

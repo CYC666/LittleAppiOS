@@ -18,42 +18,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="328" height="59.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="问" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyI-dz-s9s">
-                        <rect key="frame" x="283" y="15" width="30" height="30"/>
-                        <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="30" id="Bhz-Ii-79Y"/>
-                            <constraint firstAttribute="height" constant="30" id="Lcg-Uz-Q9K"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="15"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这里是问题" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sx3-42-XRF">
-                        <rect key="frame" x="15" y="30" width="258" height="14.5"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ejQ-0X-aPr">
+                        <rect key="frame" x="15" y="15" width="298" height="29.5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="这里是问题这里是问题这里是问题这里是问题这里是问题这里是问题这里是问题这里是问题" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sx3-42-XRF">
+                        <rect key="frame" x="15" y="15" width="298" height="29.5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                <constraints>
-                    <constraint firstAttribute="trailing" secondItem="iyI-dz-s9s" secondAttribute="trailing" constant="15" id="0G0-VU-5Jo"/>
-                    <constraint firstAttribute="bottom" secondItem="Sx3-42-XRF" secondAttribute="bottom" constant="15" id="DAo-Ab-e9U"/>
-                    <constraint firstItem="iyI-dz-s9s" firstAttribute="leading" secondItem="Sx3-42-XRF" secondAttribute="trailing" constant="10" id="Pid-UP-qTy"/>
-                    <constraint firstItem="Sx3-42-XRF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="SKx-aV-XN4"/>
-                    <constraint firstItem="iyI-dz-s9s" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="YSS-f7-j5h"/>
-                    <constraint firstItem="Sx3-42-XRF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="pAH-K5-zUx"/>
-                </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="contentLabel" destination="Sx3-42-XRF" id="Qhj-tj-Wpp"/>
+                <outlet property="groundImageView" destination="ejQ-0X-aPr" id="Ix4-rB-moo"/>
             </connections>
             <point key="canvasLocation" x="-29" y="-11"/>
         </tableViewCell>

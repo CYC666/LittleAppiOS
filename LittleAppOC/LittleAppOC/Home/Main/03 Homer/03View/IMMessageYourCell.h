@@ -7,16 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+@class IMMessageModel;
 
 @interface IMMessageYourCell : UITableViewCell
 
-
+// 背景图
+@property (weak, nonatomic) IBOutlet UIImageView *groundImageView;
 
 // 内容
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 
 
-
+// 数据
+@property (strong, nonatomic) IMMessageModel *dataModel;
 
 
 @end
