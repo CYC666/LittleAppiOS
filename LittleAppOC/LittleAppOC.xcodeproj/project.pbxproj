@@ -376,6 +376,9 @@
 		9E6EB0F91E3EDA8300E7128A /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6EB0F71E3EDA8300E7128A /* AddressBookUI.framework */; };
 		9E6EB0FE1E3EDD4800E7128A /* CYCLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6EB0FC1E3EDD4800E7128A /* CYCLoginController.m */; };
 		9E6EB0FF1E3EDD4800E7128A /* CYCLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E6EB0FD1E3EDD4800E7128A /* CYCLoginController.xib */; };
+		9E72A2701F9D9D390061990A /* NewsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E72A26E1F9D9D390061990A /* NewsListCell.m */; };
+		9E72A2711F9D9D390061990A /* NewsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E72A26F1F9D9D390061990A /* NewsListCell.xib */; };
+		9E72A2751F9D9F770061990A /* NewsListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E72A2741F9D9F770061990A /* NewsListModel.m */; };
 		9E802F631F4141030092DDAE /* icon_gamer_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E802F611F4141030092DDAE /* icon_gamer_home@2x.png */; };
 		9E802F641F4141030092DDAE /* icon_gamer_home@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E802F621F4141030092DDAE /* icon_gamer_home@3x.png */; };
 		9E802F671F41560F0092DDAE /* ProvincesAndCities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E802F661F41560F0092DDAE /* ProvincesAndCities.plist */; };
@@ -1126,6 +1129,11 @@
 		9E6EB0FB1E3EDD4800E7128A /* CYCLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYCLoginController.h; sourceTree = "<group>"; };
 		9E6EB0FC1E3EDD4800E7128A /* CYCLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYCLoginController.m; sourceTree = "<group>"; };
 		9E6EB0FD1E3EDD4800E7128A /* CYCLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYCLoginController.xib; sourceTree = "<group>"; };
+		9E72A26D1F9D9D390061990A /* NewsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsListCell.h; path = "LittleAppOC/Home/Main/03 Homer/03View/NewsListCell.h"; sourceTree = SOURCE_ROOT; };
+		9E72A26E1F9D9D390061990A /* NewsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsListCell.m; path = "LittleAppOC/Home/Main/03 Homer/03View/NewsListCell.m"; sourceTree = SOURCE_ROOT; };
+		9E72A26F1F9D9D390061990A /* NewsListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsListCell.xib; path = "LittleAppOC/Home/Main/03 Homer/03View/NewsListCell.xib"; sourceTree = SOURCE_ROOT; };
+		9E72A2731F9D9F770061990A /* NewsListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsListModel.h; path = "LittleAppOC/Home/Main/03 Homer/03View/NewsListModel.h"; sourceTree = SOURCE_ROOT; };
+		9E72A2741F9D9F770061990A /* NewsListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsListModel.m; path = "LittleAppOC/Home/Main/03 Homer/03View/NewsListModel.m"; sourceTree = SOURCE_ROOT; };
 		9E802F611F4141030092DDAE /* icon_gamer_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_home@2x.png"; sourceTree = "<group>"; };
 		9E802F621F4141030092DDAE /* icon_gamer_home@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_home@3x.png"; sourceTree = "<group>"; };
 		9E802F661F41560F0092DDAE /* ProvincesAndCities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ProvincesAndCities.plist; sourceTree = "<group>"; };
@@ -1865,6 +1873,8 @@
 		9E1389EC1E2B119B0011701B /* 02 Model */ = {
 			isa = PBXGroup;
 			children = (
+				9E72A2731F9D9F770061990A /* NewsListModel.h */,
+				9E72A2741F9D9F770061990A /* NewsListModel.m */,
 			);
 			path = "02 Model";
 			sourceTree = "<group>";
@@ -1872,6 +1882,9 @@
 		9E1389ED1E2B119B0011701B /* 03 View */ = {
 			isa = PBXGroup;
 			children = (
+				9E72A26D1F9D9D390061990A /* NewsListCell.h */,
+				9E72A26E1F9D9D390061990A /* NewsListCell.m */,
+				9E72A26F1F9D9D390061990A /* NewsListCell.xib */,
 			);
 			path = "03 View";
 			sourceTree = "<group>";
@@ -3330,6 +3343,7 @@
 				9E6EB0E01E3ED9C800E7128A /* SMSSDKUI.bundle in Resources */,
 				9E4E121B1E3569F900A08DAC /* icon_weatner_night_57.png in Resources */,
 				9E12E90A1F4287DA001233B6 /* icon_gamer_die@2x.png in Resources */,
+				9E72A2711F9D9D390061990A /* NewsListCell.xib in Resources */,
 				9E9D6E851E617E2700EB095B /* pull_image_15@2x.png in Resources */,
 				9E138A1A1E2B1DDF0011701B /* icon_tab_homer@3x.png in Resources */,
 				9E66AFDB1F43F3B40095FC41 /* icon_gamer_app@2x.png in Resources */,
@@ -3691,6 +3705,7 @@
 				9E66AFFC1F442BF50095FC41 /* SelectColorController.m in Sources */,
 				9E6EB0D61E3ED9C800E7128A /* YJLocalCountryData.m in Sources */,
 				9E9D6E2A1E61705800EB095B /* MJRefreshAutoGifFooter.m in Sources */,
+				9E72A2701F9D9D390061990A /* NewsListCell.m in Sources */,
 				9EA44B321E2E758900F7761D /* MBProgressHUD.m in Sources */,
 				09453E7A1E8C06850062E5CA /* SHPlot.m in Sources */,
 				9E6EB0DA1E3ED9C800E7128A /* RegViewController.m in Sources */,
@@ -3770,6 +3785,7 @@
 				9E1389B91E2B08390011701B /* main.m in Sources */,
 				9ED17DDE1F6920EB00127760 /* CRankCell.m in Sources */,
 				9E6EB0D91E3ED9C800E7128A /* InvitationViewControllerEx.m in Sources */,
+				9E72A2751F9D9F770061990A /* NewsListModel.m in Sources */,
 				9E9D6E301E61705800EB095B /* MJRefreshGifHeader.m in Sources */,
 				9E6EB0D51E3ED9C800E7128A /* SMS_MBProgressHUD.m in Sources */,
 				9E527DC01E3797350057AF4C /* GamerCell.m in Sources */,

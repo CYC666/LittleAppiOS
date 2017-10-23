@@ -143,7 +143,7 @@
     _tableViewTitles = @[@"曹老师",
                          @"第三方",
                          @"开发日记",
-                         @"分享"];
+                         @"接口测试"];
     _tableViewIcons = @[@"icon_leftCtrl_user",
                         @"icon_leftCtrl_Third",
                         @"icon_leftCtrl_feedBack",
@@ -512,14 +512,12 @@
 #pragma mark - 测试接口
 - (void)testURL {
 
-    [CNetWorking intelligentRobotWithQuestion:@"深圳天气"
-                                      success:^(id response) {
-                                          
-                                          NSLog(@"sssšsss");
-                                          
-                                      } failure:^(NSError *err) {
-                                          NSLog(@"ffffdfdf");
-                                      }];
+    [CNetWorking loadNewsWithType:@"tiyu"
+                          success:^(id response) {
+                              NSLog(@"sssss");
+                          } failure:^(NSError *err) {
+                              NSLog(@"ddddd");
+                          }];
     
     
 

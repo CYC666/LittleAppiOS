@@ -327,7 +327,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
 
-    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+    
 
 }
 
@@ -349,7 +349,14 @@
     //获取高度
     CGFloat height = frame.size.height;
     
+    // 修改输入框高度
     inputView.transform = CGAffineTransformMakeTranslation(0, 50-height);
+    
+    // 修改表视图
+    _listTableView.frame = CGRectMake(0,64, kScreenWidth, kScreenHeight - 64 - 50 - height);
+    CGSize size = _listTableView.contentSize;
+    _listTableView.contentOffset = CGPointMake(0, size.height - (kScreenHeight - 50 - height));
+    
 
 }
 
@@ -357,6 +364,11 @@
 - (void)keyboardWillHide:(NSNotification *)notification {
     
     inputView.transform = CGAffineTransformMakeTranslation(0, 0);
+    
+    _listTableView.frame = CGRectMake(0,64, kScreenWidth, kScreenHeight - 64 - 49 - 50);
+    
+    CGSize size = _listTableView.contentSize;
+    _listTableView.contentOffset = CGPointMake(0, size.height - (kScreenHeight - 49 - 50));
 
 }
 

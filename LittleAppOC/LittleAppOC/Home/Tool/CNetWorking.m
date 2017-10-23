@@ -127,7 +127,24 @@
 
 
 
++ (void)loadNewsWithType:(NSString *)type
+                 success:(void (^)(id response))success
+                 failure:(void (^)(NSError *err))failure {
 
+    NSString *urlStr = [NSString stringWithFormat:@"http://toutiao-ali.juheapi.com/toutiao/index"];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    NSDictionary *dic = @{@"type" : type};
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:[NSString stringWithFormat:@"APPCODE %@", APPCODE] forHTTPHeaderField:@"Authorization"];
+    [manager GET:urlStr parameters:dic success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", [responseObject description]);
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(error);
+    }];
+
+
+}
 
 
 

@@ -39,6 +39,8 @@
     title.textColor = [UIColor whiteColor];
     self.navigationItem.titleView = title;
     
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
     UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     webView.scalesPageToFit = YES;//允许缩放
     [self.view addSubview:webView];
