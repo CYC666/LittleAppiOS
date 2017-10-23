@@ -14,6 +14,7 @@
 #import "UIImageView+WebCache.h"
 #import "CWebViewController.h"
 #import "XLsn0wPopupMenu.h"
+#import "MMDrawerController.h"
 
 @interface DiscoverController () <UITableViewDelegate, UITableViewDataSource> {
 
@@ -61,6 +62,11 @@
     
     [self creatSubViewAction];
     
+    // 设置不允许打开侧滑控制器
+    MMDrawerController *drawCtrl= (MMDrawerController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    [drawCtrl setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
+    
+    
 }
 
 #pragma mark ========================================私有方法=============================================
@@ -69,7 +75,7 @@
 - (void)creatSubViewAction {
     
     // 表视图
-    _listTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 64)
+    _listTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 49)
                                                   style:UITableViewStylePlain ];
     _listTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _listTableView.backgroundColor = [UIColor clearColor];
@@ -101,6 +107,8 @@
                                   [newsArray removeAllObjects];
                               }
                               
+                              
+                              
                               NSArray *list = response[@"result"][@"data"];
                               for (NSDictionary *dic in list) {
                                   
@@ -112,11 +120,25 @@
                                   model.thumbnail_pic_s = [NSString stringWithFormat:@"%@", dic[@"thumbnail_pic_s"]];
                                   model.thumbnail_pic_s02 = [NSString stringWithFormat:@"%@", dic[@"thumbnail_pic_s02"]];
                                   model.thumbnail_pic_s03 = [NSString stringWithFormat:@"%@", dic[@"thumbnail_pic_s03"]];
-                                  model.uniquekey = [NSString stringWithFormat:@"%@", dic[@"tiuniquekeytle"]];
+                                  model.uniquekey = [NSString stringWithFormat:@"%@", dic[@"uniquekey"]];
                                   model.url = [NSString stringWithFormat:@"%@", dic[@"url"]];
                                   
+                                  // 删除不显示的新闻
+                                  NSString *listString = [CUSER objectForKey:NewsHide];
+                                  if (listString == nil || [listString isEqualToString:@""]) {
+
+                                  } else {
+                                      if ([listString rangeOfString:model.uniquekey].location == NSNotFound) {
+                                          
+                                      } else {
+                                          // 找到一致的唯一标识符，不添加
+                                          continue;
+                                      }
+                                  }
                                   [newsArray addObject:model];
                               }
+                              
+                              
                               
                               //主线程更新视图
                               dispatch_async(dispatch_get_main_queue(), ^{
@@ -268,6 +290,39 @@
 
 #pragma mark ========================================代理方法=============================================
 
+#pragma mark - 允许编辑
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    return YES;
+
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"不再显示";
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    // 储存不显示的新闻的唯一标识符
+    NewsListModel *model = newsArray[indexPath.row];
+    NSString *listString = [CUSER objectForKey:NewsHide];
+    if (listString == nil || [listString isEqualToString:@""]) {
+        listString = model.uniquekey;
+        [CUSER setObject:listString forKey:NewsHide];
+    } else {
+        NSMutableArray *list = [[listString componentsSeparatedByString:@";"] mutableCopy];
+        [list addObject:model.uniquekey];
+        NSString *newListString = [list componentsJoinedByString:@";"];
+        [CUSER setObject:newListString forKey:NewsHide];
+        
+    }
+    // 删除元素
+    [newsArray removeObject:model];
+    
+    // 刷新表视图
+    [_listTableView reloadData];
+
+}
 
 #pragma mark ========================================通知================================================
 
