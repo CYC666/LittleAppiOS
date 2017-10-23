@@ -515,6 +515,7 @@
 		9EA44B301E2E758900F7761D /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EA44B2C1E2E758900F7761D /* 37x-Checkmark.png */; };
 		9EA44B311E2E758900F7761D /* 37x-Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EA44B2D1E2E758900F7761D /* 37x-Checkmark@2x.png */; };
 		9EA44B321E2E758900F7761D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA44B2F1E2E758900F7761D /* MBProgressHUD.m */; };
+		9EC8C32F1F9DD3980094CB3E /* NewsCollectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC8C32E1F9DD3980094CB3E /* NewsCollectController.m */; };
 		9ECB1E9A1E6ACF3C002FE2E4 /* setting_touchID.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ECB1E971E6ACF3C002FE2E4 /* setting_touchID.png */; };
 		9ECB1E9B1E6ACF3C002FE2E4 /* setting_touchID@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ECB1E981E6ACF3C002FE2E4 /* setting_touchID@2x.png */; };
 		9ECB1E9C1E6ACF3C002FE2E4 /* setting_touchID@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ECB1E991E6ACF3C002FE2E4 /* setting_touchID@3x.png */; };
@@ -1317,6 +1318,8 @@
 		9EA44B2D1E2E758900F7761D /* 37x-Checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark@2x.png"; sourceTree = "<group>"; };
 		9EA44B2E1E2E758900F7761D /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		9EA44B2F1E2E758900F7761D /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		9EC8C32D1F9DD3980094CB3E /* NewsCollectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCollectController.h; sourceTree = "<group>"; };
+		9EC8C32E1F9DD3980094CB3E /* NewsCollectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCollectController.m; sourceTree = "<group>"; };
 		9ECB1E971E6ACF3C002FE2E4 /* setting_touchID.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_touchID.png; sourceTree = "<group>"; };
 		9ECB1E981E6ACF3C002FE2E4 /* setting_touchID@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting_touchID@2x.png"; sourceTree = "<group>"; };
 		9ECB1E991E6ACF3C002FE2E4 /* setting_touchID@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting_touchID@3x.png"; sourceTree = "<group>"; };
@@ -1876,6 +1879,8 @@
 			children = (
 				9E1389FB1E2B12000011701B /* DiscoverController.h */,
 				9E1389FC1E2B12000011701B /* DiscoverController.m */,
+				9EC8C32D1F9DD3980094CB3E /* NewsCollectController.h */,
+				9EC8C32E1F9DD3980094CB3E /* NewsCollectController.m */,
 			);
 			path = "01 Controller";
 			sourceTree = "<group>";
@@ -3711,6 +3716,7 @@
 				9E6EB0DE1E3ED9C800E7128A /* SMSUIContactsFriendsViewController.m in Sources */,
 				9E6EB0D41E3ED9C800E7128A /* SMS_HYZBadgeView.m in Sources */,
 				9E9D6E931E618A8900EB095B /* MenuController.m in Sources */,
+				9EC8C32F1F9DD3980094CB3E /* NewsCollectController.m in Sources */,
 				9E6EB0D81E3ED9C800E7128A /* CustomCell.m in Sources */,
 				9E5BFDCD1F999A2A005F3544 /* IMMessageModel.m in Sources */,
 				9ED17DB51F6920EB00127760 /* CGameRankModel.m in Sources */,

@@ -15,6 +15,7 @@
 #import "CWebViewController.h"
 #import "XLsn0wPopupMenu.h"
 #import "MMDrawerController.h"
+#import "NewsCollectController.h"
 
 @interface DiscoverController () <UITableViewDelegate, UITableViewDataSource> {
 
@@ -48,6 +49,15 @@
     [rightItem addTarget:self action:@selector(showMenuAction:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightItem];
     self.navigationItem.rightBarButtonItem = rightBarItem;
+    
+    // 导航栏右边的添加按钮
+    UIButton *leftItem = [UIButton buttonWithType:UIButtonTypeCustom];
+    [leftItem setImage:[UIImage imageNamed:@"新闻收藏"]  forState:UIControlStateNormal];
+    [leftItem setTintColor:[UIColor whiteColor]];
+    leftItem.frame = CGRectMake(0, 0, 40, 22);
+    [leftItem addTarget:self action:@selector(showCollectNews) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithCustomView:leftItem];
+    self.navigationItem.leftBarButtonItem = left;
     
     newsArray = [NSMutableArray array];
     
@@ -91,7 +101,69 @@
     
 }
 
+#pragma mark - 收藏新闻
+- (void)collectNewsWithModel:(NewsListModel *)model {
 
+    //获取沙盒路径，
+    NSString *path_sandox = NSHomeDirectory();
+    //创建一个存储plist文件的路径
+    NSString *newPath = [path_sandox stringByAppendingPathComponent:Documents_NewsCollect];
+    //获取plist
+    NSMutableArray *list = [[NSArray arrayWithContentsOfFile:newPath] mutableCopy];
+    
+    if (list == nil) {
+        list = [NSMutableArray array];
+    }
+    
+    // 判断是否已经收藏
+    for (NSDictionary *dic in list) {
+        if ([dic[@"uniquekey"] isEqualToString:model.uniquekey]) {
+            
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
+                                                                           message:@"该新闻已经收藏过啦~"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            [alert addAction:[UIAlertAction actionWithTitle:@"好的"
+                                                      style:UIAlertActionStyleDefault
+                                                    handler:^(UIAlertAction * _Nonnull action) {
+
+                                                    }]];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+            return;
+        }
+    }
+    
+    NSDictionary *dic = @{@"author_name" : model.author_name,
+                          @"category" : model.category,
+                          @"date" : model.date,
+                          @"thumbnail_pic_s" : model.thumbnail_pic_s,
+                          @"thumbnail_pic_s02" : model.thumbnail_pic_s02,
+                          @"thumbnail_pic_s03" : model.thumbnail_pic_s03,
+                          @"title" : model.title,
+                          @"uniquekey" : model.uniquekey,
+                          @"url" : model.url};
+    
+    [list addObject:dic];
+    
+    if ([list writeToFile:newPath atomically:YES]) {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
+                                                                       message:@"收藏成功"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定"
+                                                  style:UIAlertActionStyleDefault
+                                                handler:^(UIAlertAction * _Nonnull action) {
+                                                    
+                                                }]];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    
+    
+
+}
 
 
 #pragma mark ========================================动作响应=============================================
@@ -211,8 +283,43 @@
     
 }
 
+#pragma mark - 查看新闻收藏
+- (void)showCollectNews {
+
+    NewsCollectController *ctrl = [[NewsCollectController alloc] init];
+    ctrl.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:ctrl animated:YES];
+
+}
+
+#pragma mark - 更多，弹出收藏
+- (void)showMoreFuncAction:(UIButton *)button {
+    
+    __block NewsListModel *model = newsArray[button.tag];
+    __weak typeof(self) weakSelf = self;
+    
+    XLsn0wPopupAction *action = [XLsn0wPopupAction actionWithImage:[UIImage imageNamed:@""]
+                                                             title:@"收藏"
+                                                           handler:^(XLsn0wPopupAction *action) {
+                                                               
+                                                               // 将新闻模型储存到本地
+                                                               [weakSelf collectNewsWithModel:model];
+                                                               
+                                                           }];
+    XLsn0wPopupMenu *popupMenu = [[XLsn0wPopupMenu alloc] init];
+    popupMenu.style = XLsn0wPopupMenuStyleBlack;
+    popupMenu.showShade = YES;
+    [popupMenu showToView:button withActions:@[action]];
+
+    
+}
+
 
 #pragma mark ========================================网络请求=============================================
+
+
+
+#pragma mark ========================================代理方法=============================================
 
 #pragma mark - 表视图代理方法
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -255,7 +362,7 @@
     } else {
         NewsListModel *model = newsArray[indexPath.row];
         NewsListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NewsListCell"
-                                                                forIndexPath:indexPath];
+                                                             forIndexPath:indexPath];
         // 图片
         NSString *path = [NSString stringWithFormat:@"%@", model.thumbnail_pic_s];
         [cell.iconImageView sd_setImageWithURL:[NSURL URLWithString:path]
@@ -265,6 +372,9 @@
         cell.contentLabel.text = model.title;
         // 时间
         cell.dateLabel.text = model.date;
+        // 更多
+        cell.moreButton.tag = indexPath.row;
+        [cell.moreButton addTarget:self action:@selector(showMoreFuncAction:) forControlEvents:UIControlEventTouchUpInside];
         
         return cell;
     }
@@ -287,8 +397,6 @@
     
 }
 
-
-#pragma mark ========================================代理方法=============================================
 
 #pragma mark - 允许编辑
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
