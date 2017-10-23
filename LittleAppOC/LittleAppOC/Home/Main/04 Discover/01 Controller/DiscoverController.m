@@ -13,6 +13,7 @@
 #import "NewsListModel.h"
 #import "UIImageView+WebCache.h"
 #import "CWebViewController.h"
+#import "XLsn0wPopupMenu.h"
 
 @interface DiscoverController () <UITableViewDelegate, UITableViewDataSource> {
 
@@ -37,6 +38,15 @@
     title.textColor = [UIColor whiteColor];
     self.navigationItem.titleView = title;
     self.view.backgroundColor = CTHEME.themeColor;
+    
+    // 导航栏右边的添加按钮
+    UIButton *rightItem = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightItem setImage:[UIImage imageNamed:@"菜单"]  forState:UIControlStateNormal];
+    [rightItem setTintColor:[UIColor whiteColor]];
+    rightItem.frame = CGRectMake(0, 0, 40, 22);
+    [rightItem addTarget:self action:@selector(showMenuAction:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightItem];
+    self.navigationItem.rightBarButtonItem = rightBarItem;
     
     newsArray = [NSMutableArray array];
     
@@ -123,7 +133,61 @@
     
 }
 
-
+#pragma mark - +下拉列表
+- (void)showMenuAction:(UIButton *)button {
+    
+    // top(头条，默认),shehui(社会),guonei(国内),guoji(国际),yule(娱乐),tiyu(体育)junshi(军事),keji(科技),caijing(财经),shishang(时尚)
+    __block NSArray *typeArray = @[@"top",
+                           @"sheihui",
+                           @"guonei",
+                           @"guoji",
+                           @"yule",
+                           @"tiyu",
+                           @"junshi",
+                           @"keji",
+                           @"caijing",
+                           @"shishang"];
+    __block NSArray *titleArray = @[@"头条",
+                            @"社会",
+                            @"国内",
+                            @"国际",
+                            @"娱乐",
+                            @"体育",
+                            @"军事",
+                            @"科技",
+                            @"财经",
+                            @"时尚"];
+    
+    
+    NSMutableArray *actionArray = [NSMutableArray array];
+    for (NSInteger i = 0; i < typeArray.count; i++) {
+        XLsn0wPopupAction *action = [XLsn0wPopupAction actionWithImage:[UIImage imageNamed:@""]
+                                                                 title:titleArray[i]
+                                                               handler:^(XLsn0wPopupAction *action) {
+            
+                                                                   if (!isRefresh) {
+                                                                       
+                                                                       [self loadNewsListAction:typeArray[i]];
+                                                                       
+                                                                       // 标题
+                                                                       UILabel *title = (UILabel *)self.navigationItem.titleView;
+                                                                       title.text = [NSString stringWithFormat:@"新闻(%@)", titleArray[i]];
+                                                                   } else {
+                                                                   
+                                                                   }
+            
+        }];
+        [actionArray addObject:action];
+    }
+    
+    
+    
+    XLsn0wPopupMenu *popupMenu = [[XLsn0wPopupMenu alloc] init];
+    popupMenu.style = XLsn0wPopupMenuStyleBlack;
+    popupMenu.showShade = YES;
+    [popupMenu showToView:button withActions:actionArray];
+    
+}
 
 
 #pragma mark ========================================网络请求=============================================
@@ -195,6 +259,7 @@
     } else {
         NewsListModel *model = newsArray[indexPath.row];
         CWebViewController *ctrl = [[CWebViewController alloc] initWithTitle:@"新闻详情" URL:model.url];
+        ctrl.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:ctrl animated:YES];
     }
     
@@ -203,49 +268,6 @@
 
 #pragma mark ========================================代理方法=============================================
 
-- (void)motionBegan:(UIEventSubtype)motion withEvent:(nullable UIEvent *)event NS_AVAILABLE_IOS(3_0) {
-
-    if (isRefresh) {
-        // top(头条，默认),shehui(社会),guonei(国内),guoji(国际),yule(娱乐),tiyu(体育)junshi(军事),keji(科技),caijing(财经),shishang(时尚)
-        NSArray *typeArray = @[@"top",
-                               @"sheihui",
-                               @"guonei",
-                               @"guoji",
-                               @"yule",
-                               @"tiyu",
-                               @"junshi",
-                               @"keji",
-                               @"caijing",
-                               @"shishang"];
-        NSArray *titleArray = @[@"头条",
-                                @"社会",
-                                @"国内",
-                                @"国际",
-                                @"娱乐",
-                                @"体育",
-                                @"军事",
-                                @"科技",
-                                @"财经",
-                                @"时尚"];
-        NSInteger index = arc4random() % typeArray.count;
-        [self loadNewsListAction:typeArray[index]];
-        
-        // 标题
-        UILabel *title = (UILabel *)self.navigationItem.titleView;
-        title.text = [NSString stringWithFormat:@"新闻(%@)", titleArray[index]];
-        
-    
-    } else {
-    
-    }
-
-}
-
-- (void)motionEnded:(UIEventSubtype)motion withEvent:(nullable UIEvent *)event NS_AVAILABLE_IOS(3_0) {
-
-
-
-}
 
 #pragma mark ========================================通知================================================
 
