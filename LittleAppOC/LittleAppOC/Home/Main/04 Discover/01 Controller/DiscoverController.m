@@ -72,11 +72,24 @@
     
     [self creatSubViewAction];
     
-    // 设置不允许打开侧滑控制器
+    
+    
+}
+
+//（1）、视图将要出现的时候,禁用MMDrawCtrls
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    //获取根视图控制器
     MMDrawerController *drawCtrl= (MMDrawerController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    //设置一下打开的区域
     [drawCtrl setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
-    
-    
+}
+//（2）、视图将要消失的时候,还原一下
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    MMDrawerController *drawCtrl= (MMDrawerController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    //设置一下打开的区域
+    [drawCtrl setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
 }
 
 #pragma mark ========================================私有方法=============================================
@@ -363,6 +376,7 @@
         NewsListModel *model = newsArray[indexPath.row];
         NewsListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NewsListCell"
                                                              forIndexPath:indexPath];
+        cell.separatorInset = UIEdgeInsetsMake(0, 10, 0, 0);
         // 图片
         NSString *path = [NSString stringWithFormat:@"%@", model.thumbnail_pic_s];
         [cell.iconImageView sd_setImageWithURL:[NSURL URLWithString:path]

@@ -512,14 +512,25 @@
 #pragma mark - 测试接口
 - (void)testURL {
 
-    [CNetWorking loadNewsWithType:@"tiyu"
-                          success:^(id response) {
-                              NSLog(@"sssss");
-                          } failure:^(NSError *err) {
-                              NSLog(@"ddddd");
-                          }];
+    [CNetWorking creatColorCodeWithQrdata:@"http://www.1314.qq.com"
+                                     size:100
+                                       xt:100
+                                    level:@"M"
+                                  p_color:@"#03cbd2"
+                                  i_color:@"#03cbd2"
+                               back_color:@"#03cbd2"
+                               fore_color:@"#03cbd2"
+                                     logo:@""
+                                    wlogo:100
+                                    hlogo:100
+                                  version:1.1
+                                  success:^(id response) {
+                                      NSLog(@"sssss");
+                                  } failure:^(NSError *err) {
+                                      NSLog(@"ddddd");
+                                  }];
     
-    
+    //    @"qrdata=http://www.1314.qq.com&xt=1&level=M&p_color=%23000000&i_color=#ff0000&back_color=#00f6ff&fore_color=#06ff00&logo=http%3A%2F%2Fwww.wwei.cn%2Fstatic%2Fimages%2Ficon%2Fwwei.png&wlogo=0&hlogo=0&version=1.1"
 
 }
 

@@ -77,8 +77,8 @@
  智能问答
 
  @param question 问题
- @param success 成功回调
- @param failure 失败回调
+ @param success  成功回调
+ @param failure  失败回调
  */
 + (void)intelligentRobotWithQuestion:(NSString *)question
                              success:(void (^)(id response))success
@@ -89,7 +89,7 @@
 /**
  加载新闻头条列表
 
- @param type 类型 top(头条，默认),shehui(社会),guonei(国内),guoji(国际),yule(娱乐),tiyu(体育)junshi(军事),keji(科技),caijing(财经),shishang(时尚)
+ @param type    类型 top(头条，默认),shehui(社会),guonei(国内),guoji(国际),yule(娱乐),tiyu(体育)junshi(军事),keji(科技),caijing(财经),shishang(时尚)
  @param success 成功回调
  @param failure 失败回调
  */
@@ -99,6 +99,38 @@
 
 
 
+/**
+ 生产彩色二维码
+
+ @param qrdata      文本或网址
+ @param size        二维码尺寸 300-1000 px 之间
+ @param xt          0液态 1直角 2圆圈
+ @param level       纠错级别 ，[ L、M、Q、H ]
+ @param p_color     码眼的边框颜色 （有无 # 号都可以，下同）
+ @param i_color     码眼的颜色
+ @param back_color  背景色
+ @param fore_color  前景色
+ @param logo logo   图片远程地址，图片格式 [ jpg、png ]，建议大小不超过 50 KB
+ @param wlogo       logo的宽度，如果为0将自动计算logo大小，适应二维码大小
+ @param hlogo       logo的高度，如果为0将自动计算logo大小，适应二维码大小
+ @param version     当前接口版本号，特殊情况下才会启用
+ @param success     成功回调
+ @param failure     失败回调
+ */
++ (void)creatColorCodeWithQrdata:(NSString *)qrdata
+                            size:(NSInteger )size
+                              xt:(NSInteger )xt
+                           level:(NSString *)level
+                         p_color:(NSString *)p_color
+                         i_color:(NSString *)i_color
+                      back_color:(NSString *)back_color
+                      fore_color:(NSString *)fore_color
+                            logo:(NSString *)logo
+                           wlogo:(NSInteger )wlogo
+                           hlogo:(NSInteger )hlogo
+                         version:(NSInteger )version
+                         success:(void (^)(id response))success
+                         failure:(void (^)(NSError *err))failure;
 
 
 

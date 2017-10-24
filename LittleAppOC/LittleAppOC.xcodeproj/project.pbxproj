@@ -144,6 +144,7 @@
 		9E35FC241E73E1240077D688 /* icon_gamer_target_edit@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E35FC221E73E1240077D688 /* icon_gamer_target_edit@3x.png */; };
 		9E35FC271E73E67C0077D688 /* icon_gamer_target_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E35FC251E73E67C0077D688 /* icon_gamer_target_user@2x.png */; };
 		9E35FC281E73E67C0077D688 /* icon_gamer_target_user@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E35FC261E73E67C0077D688 /* icon_gamer_target_user@3x.png */; };
+		9E4307AC1F9EE996005D773B /* UIImageView+CShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4307AA1F9EE996005D773B /* UIImageView+CShow.m */; };
 		9E4661E41F6A1BD800C7BC65 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E4661E31F6A1BD800C7BC65 /* AVFoundation.framework */; };
 		9E4661E71F6A1BE000C7BC65 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E4661E61F6A1BE000C7BC65 /* MediaPlayer.framework */; };
 		9E472A171E3D914000C6245E /* CScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E472A161E3D914000C6245E /* CScrollView.m */; };
@@ -849,6 +850,8 @@
 		9E35FC221E73E1240077D688 /* icon_gamer_target_edit@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_target_edit@3x.png"; sourceTree = "<group>"; };
 		9E35FC251E73E67C0077D688 /* icon_gamer_target_user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_target_user@2x.png"; sourceTree = "<group>"; };
 		9E35FC261E73E67C0077D688 /* icon_gamer_target_user@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_target_user@3x.png"; sourceTree = "<group>"; };
+		9E4307AA1F9EE996005D773B /* UIImageView+CShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+CShow.m"; sourceTree = "<group>"; };
+		9E4307AB1F9EE996005D773B /* UIImageView+CShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+CShow.h"; sourceTree = "<group>"; };
 		9E4661E31F6A1BD800C7BC65 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9E4661E61F6A1BE000C7BC65 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		9E472A151E3D914000C6245E /* CScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CScrollView.h; sourceTree = "<group>"; };
@@ -1766,6 +1769,8 @@
 				9E5EE2591F3C61D8009C3659 /* CWebViewController.m */,
 				9E1679F61F6288F500B2776E /* CDoubleTableView.h */,
 				9E1679F71F6288F500B2776E /* CDoubleTableView.m */,
+				9E4307AB1F9EE996005D773B /* UIImageView+CShow.h */,
+				9E4307AA1F9EE996005D773B /* UIImageView+CShow.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -3763,6 +3768,7 @@
 				9E118B011E60147800914D9E /* UIImageView+WebCache.m in Sources */,
 				9EA44B181E2E426B00F7761D /* CThemeButton.m in Sources */,
 				9E1389F71E2B11E00011701B /* ZonerController.m in Sources */,
+				9E4307AC1F9EE996005D773B /* UIImageView+CShow.m in Sources */,
 				9ED17D391F68DA4E00127760 /* GameCollectionViewFlowLayout.m in Sources */,
 				9E9D6E281E61705800EB095B /* MJRefreshFooter.m in Sources */,
 				9E72A2791F9DAFEC0061990A /* XLsn0wPopupAction.m in Sources */,
