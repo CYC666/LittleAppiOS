@@ -239,9 +239,9 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         
         [_listTableView reloadData];
-        [_listTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:messageArray.count - 1 inSection:0]
-                              atScrollPosition:UITableViewScrollPositionBottom
-                                      animated:NO];
+//        [_listTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:messageArray.count - 1 inSection:0]
+//                              atScrollPosition:UITableViewScrollPositionBottom
+//                                      animated:NO];
         
     });
     

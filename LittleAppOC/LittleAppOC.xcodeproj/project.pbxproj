@@ -4009,7 +4009,7 @@
 					"$(PROJECT_DIR)/LittleAppOC/Home/Third/SMS_SDK/SMS_SDK",
 					"$(PROJECT_DIR)/LittleAppOC/Home/Third",
 				);
-				GCC_PREFIX_HEADER = "/Users/caoyicheng/Desktop/小应用/LittleAppOC/LittleAppOC/Home/Tool/CYCLittleAppHeader.pch";
+				GCC_PREFIX_HEADER = "/Users/caolaoshi/Desktop/小应用/LittleAppOC/LittleAppOC/Home/Tool/CYCLittleAppHeader.pch";
 				INFOPLIST_FILE = LittleAppOC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -4037,7 +4037,7 @@
 					"$(PROJECT_DIR)/LittleAppOC/Home/Third/SMS_SDK/SMS_SDK",
 					"$(PROJECT_DIR)/LittleAppOC/Home/Third",
 				);
-				GCC_PREFIX_HEADER = "/Users/caoyicheng/Desktop/小应用/LittleAppOC/LittleAppOC/Home/Tool/CYCLittleAppHeader.pch";
+				GCC_PREFIX_HEADER = "/Users/caolaoshi/Desktop/小应用/LittleAppOC/LittleAppOC/Home/Tool/CYCLittleAppHeader.pch";
 				INFOPLIST_FILE = LittleAppOC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
