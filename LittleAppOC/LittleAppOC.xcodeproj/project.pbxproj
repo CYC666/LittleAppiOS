@@ -19,6 +19,9 @@
 		09453E7E1E8C07C40062E5CA /* icon_gamer_line@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09453E7C1E8C07C40062E5CA /* icon_gamer_line@3x.png */; };
 		09D0F8DC1E8AB48D00E2BDFF /* icon_gamer_color@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09D0F8DA1E8AB48D00E2BDFF /* icon_gamer_color@2x.png */; };
 		09D0F8DD1E8AB48D00E2BDFF /* icon_gamer_color@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09D0F8DB1E8AB48D00E2BDFF /* icon_gamer_color@3x.png */; };
+		173E1E711FE03613003621E5 /* SendLoveImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E1E701FE03613003621E5 /* SendLoveImageController.m */; };
+		173E1E741FE0377C003621E5 /* icon_gamer_sendLoveImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 173E1E721FE0377C003621E5 /* icon_gamer_sendLoveImage@3x.png */; };
+		173E1E751FE0377C003621E5 /* icon_gamer_sendLoveImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 173E1E731FE0377C003621E5 /* icon_gamer_sendLoveImage@2x.png */; };
 		9E01D3671F4C272400AA31F3 /* CalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E01D35E1F4C272400AA31F3 /* CalendarCell.m */; };
 		9E01D3681F4C272400AA31F3 /* CalendarMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E01D3601F4C272400AA31F3 /* CalendarMonth.m */; };
 		9E01D3691F4C272400AA31F3 /* CalendarScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E01D3621F4C272400AA31F3 /* CalendarScrollView.m */; };
@@ -682,6 +685,10 @@
 		09453E7C1E8C07C40062E5CA /* icon_gamer_line@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_line@3x.png"; sourceTree = "<group>"; };
 		09D0F8DA1E8AB48D00E2BDFF /* icon_gamer_color@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_color@2x.png"; sourceTree = "<group>"; };
 		09D0F8DB1E8AB48D00E2BDFF /* icon_gamer_color@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_color@3x.png"; sourceTree = "<group>"; };
+		173E1E6F1FE03613003621E5 /* SendLoveImageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SendLoveImageController.h; sourceTree = "<group>"; };
+		173E1E701FE03613003621E5 /* SendLoveImageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendLoveImageController.m; sourceTree = "<group>"; };
+		173E1E721FE0377C003621E5 /* icon_gamer_sendLoveImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_sendLoveImage@3x.png"; sourceTree = "<group>"; };
+		173E1E731FE0377C003621E5 /* icon_gamer_sendLoveImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_sendLoveImage@2x.png"; sourceTree = "<group>"; };
 		89AD2954FF353F7D7A384DDB /* libPods-LittleAppOC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LittleAppOC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D912D9BC42E7A79D868B344 /* Pods-LittleAppOC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LittleAppOC.release.xcconfig"; path = "Pods/Target Support Files/Pods-LittleAppOC/Pods-LittleAppOC.release.xcconfig"; sourceTree = "<group>"; };
 		9E01D35C1F4C272400AA31F3 /* Calendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calendar.h; sourceTree = "<group>"; };
@@ -1541,6 +1548,15 @@
 			path = SHLineGraphView;
 			sourceTree = "<group>";
 		};
+		173E1E6E1FE035FC003621E5 /* SendLoveImage */ = {
+			isa = PBXGroup;
+			children = (
+				173E1E6F1FE03613003621E5 /* SendLoveImageController.h */,
+				173E1E701FE03613003621E5 /* SendLoveImageController.m */,
+			);
+			path = SendLoveImage;
+			sourceTree = "<group>";
+		};
 		9E01D35B1F4C272400AA31F3 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1790,6 +1806,7 @@
 			children = (
 				9E1389F21E2B11D00011701B /* GamerController.h */,
 				9E1389F31E2B11D00011701B /* GamerController.m */,
+				173E1E6E1FE035FC003621E5 /* SendLoveImage */,
 				9ED17D6C1F6920EB00127760 /* Game2048 */,
 				9ED17D3F1F68E47A00127760 /* Animation */,
 				9E60EE221F5FAA2B00A73237 /* ImageSelect */,
@@ -2161,6 +2178,8 @@
 				9E35FC0B1E73CE7A0077D688 /* icon_gamer_target@3x.png */,
 				9E527DC31E379B330057AF4C /* icon_gamer_2048@2x.png */,
 				9E527DC41E379B330057AF4C /* icon_gamer_2048@3x.png */,
+				173E1E731FE0377C003621E5 /* icon_gamer_sendLoveImage@2x.png */,
+				173E1E721FE0377C003621E5 /* icon_gamer_sendLoveImage@3x.png */,
 			);
 			path = GamerImage;
 			sourceTree = "<group>";
@@ -3217,6 +3236,7 @@
 				9ED17DCE1F6920EB00127760 /* icon_gameRank_copper@3x.png in Resources */,
 				9E4E120B1E3569F900A08DAC /* icon_weatner_night_27.png in Resources */,
 				9EF9EC101E2C89D30030023B /* icon_leftController_day.png in Resources */,
+				173E1E751FE0377C003621E5 /* icon_gamer_sendLoveImage@2x.png in Resources */,
 				9EA44A8E1E2DF3FF00F7761D /* home_tab_icon_1.png in Resources */,
 				9E4E11FC1E3569F900A08DAC /* icon_weatner_night_13.png in Resources */,
 				9EF9EC111E2C89D30030023B /* icon_leftController_day@2x.png in Resources */,
@@ -3370,6 +3390,7 @@
 				9E9D6E871E617E2700EB095B /* pull_image_17@2x.png in Resources */,
 				9E336FEB1E43ABB000D8F112 /* icon_weather_search@3x.png in Resources */,
 				9E138A181E2B1DDF0011701B /* icon_tab_homer.png in Resources */,
+				173E1E741FE0377C003621E5 /* icon_gamer_sendLoveImage@3x.png in Resources */,
 				9E4E121A1E3569F900A08DAC /* icon_weatner_night_56.png in Resources */,
 				9E4E120F1E3569F900A08DAC /* icon_weatner_night_30.png in Resources */,
 				0904B6BE1E8AB199009ADD18 /* icon_gamer_group@2x.png in Resources */,
@@ -3766,6 +3787,7 @@
 				9EA44AB61E2E11CD00F7761D /* AFURLRequestSerialization.m in Sources */,
 				9E01D3731F4C288A00AA31F3 /* CalendarViewController.m in Sources */,
 				9E118B011E60147800914D9E /* UIImageView+WebCache.m in Sources */,
+				173E1E711FE03613003621E5 /* SendLoveImageController.m in Sources */,
 				9EA44B181E2E426B00F7761D /* CThemeButton.m in Sources */,
 				9E1389F71E2B11E00011701B /* ZonerController.m in Sources */,
 				9E4307AC1F9EE996005D773B /* UIImageView+CShow.m in Sources */,
@@ -4009,7 +4031,7 @@
 					"$(PROJECT_DIR)/LittleAppOC/Home/Third/SMS_SDK/SMS_SDK",
 					"$(PROJECT_DIR)/LittleAppOC/Home/Third",
 				);
-				GCC_PREFIX_HEADER = "/Users/caolaoshi/Desktop/小应用/LittleAppOC/LittleAppOC/Home/Tool/CYCLittleAppHeader.pch";
+				GCC_PREFIX_HEADER = /Users/caolaoshi/LittleAppiOS/LittleAppOC/LittleAppOC/Home/Tool/CYCLittleAppHeader.pch;
 				INFOPLIST_FILE = LittleAppOC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -4037,7 +4059,7 @@
 					"$(PROJECT_DIR)/LittleAppOC/Home/Third/SMS_SDK/SMS_SDK",
 					"$(PROJECT_DIR)/LittleAppOC/Home/Third",
 				);
-				GCC_PREFIX_HEADER = "/Users/caolaoshi/Desktop/小应用/LittleAppOC/LittleAppOC/Home/Tool/CYCLittleAppHeader.pch";
+				GCC_PREFIX_HEADER = /Users/caolaoshi/LittleAppiOS/LittleAppOC/LittleAppOC/Home/Tool/CYCLittleAppHeader.pch;
 				INFOPLIST_FILE = LittleAppOC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

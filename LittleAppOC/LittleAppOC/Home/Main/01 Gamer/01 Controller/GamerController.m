@@ -28,6 +28,7 @@
 #import "GameCollectionViewFlowLayout.h"
 #import "AnimationController.h"
 #import "F3HNumberTileGameViewController.h"
+#import "SendLoveImageController.h"
 
 
 
@@ -100,7 +101,8 @@
                @"icon_gamer_calendar",
                @"icon_gamer_input",
                @"icon_gamer_image",
-               @"icon_gamer_image_animation"];
+               @"icon_gamer_image_animation",
+               @"icon_gamer_sendLoveImage"];
     
     titles = @[@"2048",
                @"目标",
@@ -121,7 +123,8 @@
                @"日历",
                @"输入法",
                @"照片",
-               @"动画"];
+               @"动画",
+               @"点赞"];
 
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     UICollectionView *gamesCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(20, 0, kScreenWidth - 40, kScreenHeight - 49)
@@ -317,6 +320,13 @@
                 ctrl.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:ctrl animated:YES];
                 
+            } else if ([cell.gameNameLabel.text isEqualToString:@"点赞"]) {
+                
+                // 动画
+                SendLoveImageController *ctrl = [[SendLoveImageController alloc] init];
+                ctrl.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:ctrl animated:YES];
+                
             }
             
         }];
@@ -329,15 +339,15 @@
     
 }
 
-- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-
-    GamerCell *theCell = (GamerCell *)cell;
-    
-    
-    
-    
-
-}
+//- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+//
+//
+//
+//
+//
+//
+//
+//}
 
 
 #pragma mark - 退出程序
