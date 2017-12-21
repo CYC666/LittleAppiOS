@@ -41,11 +41,6 @@
     // 修改状态栏颜色
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    _inputField.layer.cornerRadius = 25;
-    _inputField.layer.borderWidth = 2;
-    _inputField.layer.borderColor = C_MAIN_COLOR.CGColor;
-    
-    _loginButton.layer.cornerRadius = 25;
     
     // 添加手势，隐藏键盘
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
@@ -74,10 +69,7 @@
         [hideView addGestureRecognizer:tap];
         
         _receiveView = [[UIView alloc] initWithFrame:CGRectMake((kScreenWidth - 300)/2.0, 200, 300, 200)];
-        _receiveView.backgroundColor = CRGB(88, 225, 74, 1);
-        _receiveView.layer.cornerRadius = 10;
-        _receiveView.layer.borderWidth = 1;
-        _receiveView.layer.borderColor = [UIColor yellowColor].CGColor;
+        _receiveView.backgroundColor = CRGB(102, 204, 255, 1);
         [self.view addSubview:_receiveView];
         
         // 请输入验证码
@@ -92,7 +84,6 @@
         _compareField = [[UITextField alloc] initWithFrame:CGRectMake((300 - 100)/2.0, 70, 100, 50)];
         _compareField.borderStyle = UITextBorderStyleNone;
         _compareField.backgroundColor = [UIColor whiteColor];
-        _compareField.layer.cornerRadius = 25;
         _compareField.textAlignment = NSTextAlignmentCenter;
         _compareField.keyboardType = UIKeyboardTypePhonePad;
         _compareField.clearButtonMode = UITextFieldViewModeWhileEditing;
@@ -103,7 +94,6 @@
         UIButton *sureButton = [UIButton buttonWithType:UIButtonTypeCustom];
         sureButton.frame = CGRectMake((300 - 100)/2.0, 130, 100, 50);
         [sureButton setBackgroundColor:CRGB(40, 170, 235, 1)];
-        sureButton.layer.cornerRadius = 25;
         [sureButton setTitle:@"确定" forState:UIWindowLevelNormal];
         [sureButton addTarget:self action:@selector(sureButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         [_receiveView addSubview:sureButton];
