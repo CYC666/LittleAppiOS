@@ -22,6 +22,10 @@
 		173E1E711FE03613003621E5 /* SendLoveImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E1E701FE03613003621E5 /* SendLoveImageController.m */; };
 		173E1E741FE0377C003621E5 /* icon_gamer_sendLoveImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 173E1E721FE0377C003621E5 /* icon_gamer_sendLoveImage@3x.png */; };
 		173E1E751FE0377C003621E5 /* icon_gamer_sendLoveImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 173E1E731FE0377C003621E5 /* icon_gamer_sendLoveImage@2x.png */; };
+		1756054E201816440089EF46 /* guaiqiao.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1756054C201816440089EF46 /* guaiqiao.gif */; };
+		1756054F201819790089EF46 /* libYYKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17560550201819790089EF46 /* libYYKit.a */; };
+		17560551201819FD0089EF46 /* libYYKit.a in Sources */ = {isa = PBXBuildFile; fileRef = 17560550201819790089EF46 /* libYYKit.a */; };
+		17560553201821000089EF46 /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17560552201821000089EF46 /* WebP.framework */; };
 		9E01D3671F4C272400AA31F3 /* CalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E01D35E1F4C272400AA31F3 /* CalendarCell.m */; };
 		9E01D3681F4C272400AA31F3 /* CalendarMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E01D3601F4C272400AA31F3 /* CalendarMonth.m */; };
 		9E01D3691F4C272400AA31F3 /* CalendarScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E01D3621F4C272400AA31F3 /* CalendarScrollView.m */; };
@@ -689,6 +693,9 @@
 		173E1E701FE03613003621E5 /* SendLoveImageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendLoveImageController.m; sourceTree = "<group>"; };
 		173E1E721FE0377C003621E5 /* icon_gamer_sendLoveImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_sendLoveImage@3x.png"; sourceTree = "<group>"; };
 		173E1E731FE0377C003621E5 /* icon_gamer_sendLoveImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_sendLoveImage@2x.png"; sourceTree = "<group>"; };
+		1756054C201816440089EF46 /* guaiqiao.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = guaiqiao.gif; sourceTree = "<group>"; };
+		17560550201819790089EF46 /* libYYKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libYYKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		17560552201821000089EF46 /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebP.framework; path = Pods/YYKit/Vendor/WebP.framework; sourceTree = "<group>"; };
 		89AD2954FF353F7D7A384DDB /* libPods-LittleAppOC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LittleAppOC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D912D9BC42E7A79D868B344 /* Pods-LittleAppOC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LittleAppOC.release.xcconfig"; path = "Pods/Target Support Files/Pods-LittleAppOC/Pods-LittleAppOC.release.xcconfig"; sourceTree = "<group>"; };
 		9E01D35C1F4C272400AA31F3 /* Calendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calendar.h; sourceTree = "<group>"; };
@@ -1490,6 +1497,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17560553201821000089EF46 /* WebP.framework in Frameworks */,
+				1756054F201819790089EF46 /* libYYKit.a in Frameworks */,
 				9E4661E71F6A1BE000C7BC65 /* MediaPlayer.framework in Frameworks */,
 				9E4661E41F6A1BD800C7BC65 /* AVFoundation.framework in Frameworks */,
 				9E64DE061F4AB4B9002E6A3F /* libsqlite3.tbd in Frameworks */,
@@ -2507,6 +2516,8 @@
 		9E6EB0E51E3EDA2E00E7128A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				17560552201821000089EF46 /* WebP.framework */,
+				17560550201819790089EF46 /* libYYKit.a */,
 				9E4661E61F6A1BE000C7BC65 /* MediaPlayer.framework */,
 				9E4661E31F6A1BD800C7BC65 /* AVFoundation.framework */,
 				9E2E4F041F5908220025B0FF /* Photos.framework */,
@@ -2893,6 +2904,7 @@
 				9ED17D401F68E49600127760 /* AnimationController.h */,
 				9ED17D411F68E49600127760 /* AnimationController.m */,
 				9ED17D421F68E49600127760 /* AnimationController.xib */,
+				1756054C201816440089EF46 /* guaiqiao.gif */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -3576,6 +3588,7 @@
 				9EA44AF91E2E24BC00F7761D /* 24.png in Resources */,
 				9E220D421E30A4A6009D7146 /* new_14.png in Resources */,
 				9E138A161E2B1DDF0011701B /* icon_tab_gamer@2x.png in Resources */,
+				1756054E201816440089EF46 /* guaiqiao.gif in Resources */,
 				9E220D401E30A4A6009D7146 /* new_12.png in Resources */,
 				9EF53D0E1E2BDE2000F55033 /* icon_leftCtrl_Third.png in Resources */,
 				9EF53D0B1E2BDE2000F55033 /* icon_leftCtrl_function.png in Resources */,
@@ -3706,6 +3719,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17560551201819FD0089EF46 /* libYYKit.a in Sources */,
 				9E01D3681F4C272400AA31F3 /* CalendarMonth.m in Sources */,
 				9E648E121F61379500FB2705 /* ScanCell.m in Sources */,
 				9E66B0341F4458730095FC41 /* 简特细等线.ttf in Sources */,
@@ -4022,6 +4036,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B27FFFD44B2A9F5E60BFB930 /* Pods-LittleAppOC.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = XTKV8S84MB;
@@ -4030,6 +4045,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/LittleAppOC/Home/Third/SMS_SDK/SMS_SDK",
 					"$(PROJECT_DIR)/LittleAppOC/Home/Third",
+					"$(PROJECT_DIR)/Pods/YYKit/Vendor",
 				);
 				GCC_PREFIX_HEADER = /Users/caolaoshi/LittleAppiOS/LittleAppOC/LittleAppOC/Home/Tool/CYCLittleAppHeader.pch;
 				INFOPLIST_FILE = LittleAppOC/Info.plist;
@@ -4042,7 +4058,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "36c29a49-6f02-4d1b-b6be-2b27a74046c7";
 				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: *";
-				VALID_ARCHS = "armv7 armv7s i386 arm64 x86_64";
+				VALID_ARCHS = "armv7 armv7s x86_64 arm64";
 			};
 			name = Debug;
 		};
@@ -4050,6 +4066,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9D912D9BC42E7A79D868B344 /* Pods-LittleAppOC.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = XTKV8S84MB;
@@ -4058,6 +4075,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/LittleAppOC/Home/Third/SMS_SDK/SMS_SDK",
 					"$(PROJECT_DIR)/LittleAppOC/Home/Third",
+					"$(PROJECT_DIR)/Pods/YYKit/Vendor",
 				);
 				GCC_PREFIX_HEADER = /Users/caolaoshi/LittleAppiOS/LittleAppOC/LittleAppOC/Home/Tool/CYCLittleAppHeader.pch;
 				INFOPLIST_FILE = LittleAppOC/Info.plist;
@@ -4070,7 +4088,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "12bb8245-6c50-41b2-8469-6d9de498cd5f";
 				PROVISIONING_PROFILE_SPECIFIER = LittleAppiOSDevelopment;
-				VALID_ARCHS = "armv7 armv7s i386 arm64 x86_64";
+				VALID_ARCHS = "armv7 armv7s x86_64 arm64";
 			};
 			name = Release;
 		};

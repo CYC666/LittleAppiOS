@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnimationController">
             <connections>
                 <outlet property="animationPicker" destination="lKN-ez-M34" id="3xS-7i-Cbd"/>
+                <outlet property="gifView" destination="xpS-u1-GfR" id="iie-dL-MEM"/>
                 <outlet property="startButton" destination="Hig-fQ-64K" id="1fx-xG-FH0"/>
                 <outlet property="testView" destination="2Xr-Io-f3j" id="b3c-0G-0ES"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -55,20 +56,30 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpS-u1-GfR">
+                    <rect key="frame" x="112.5" y="240" width="150" height="120"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="bfx-TM-ZjT"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="xpS-u1-GfR" firstAttribute="top" secondItem="2Xr-Io-f3j" secondAttribute="bottom" constant="10" id="5Mo-UZ-R7V"/>
                 <constraint firstAttribute="trailing" secondItem="Hig-fQ-64K" secondAttribute="trailing" constant="30" id="AeB-Eu-xYY"/>
                 <constraint firstAttribute="trailing" secondItem="lKN-ez-M34" secondAttribute="trailing" id="Es2-4r-HFC"/>
+                <constraint firstItem="xpS-u1-GfR" firstAttribute="trailing" secondItem="2Xr-Io-f3j" secondAttribute="trailing" id="Hfk-SB-yC5"/>
                 <constraint firstAttribute="bottom" secondItem="Hig-fQ-64K" secondAttribute="bottom" constant="60" id="Nb9-Zq-ZLs"/>
                 <constraint firstItem="lKN-ez-M34" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RPp-K2-Hwf"/>
                 <constraint firstItem="2Xr-Io-f3j" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RhD-LE-lH9"/>
                 <constraint firstItem="Hig-fQ-64K" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="TxB-6R-jdX"/>
                 <constraint firstItem="2Xr-Io-f3j" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="u3r-S1-Kgv"/>
                 <constraint firstItem="Hig-fQ-64K" firstAttribute="top" secondItem="lKN-ez-M34" secondAttribute="bottom" id="vI6-34-bfL"/>
+                <constraint firstItem="xpS-u1-GfR" firstAttribute="leading" secondItem="2Xr-Io-f3j" secondAttribute="leading" id="wZv-5L-0B6"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
-            <point key="canvasLocation" x="24.5" y="52.5"/>
+            <point key="canvasLocation" x="-15" y="56"/>
         </view>
     </objects>
 </document>

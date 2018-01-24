@@ -22,4 +22,10 @@
 // 标志是否正在动画中
 @property (assign, nonatomic) BOOL isAnimation;
 
+// 播放gif
+@property (weak, nonatomic) IBOutlet UIView *gifView;
+
+
+
+
 @end
