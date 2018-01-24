@@ -7,8 +7,7 @@
 //
 
 #import "AnimationController.h"
-#import <YYImage.h>
-
+#import "UIImage+GIF.h"
 
 
 @interface AnimationController () <UIPickerViewDelegate, UIPickerViewDataSource> {
@@ -62,12 +61,8 @@
     
     
     
-    // 播放gif图
-//    YYImage *image = [YYImage imageNamed:@"guaiqiao.gif"];
-//    YYAnimatedImageView *imageView = [[YYAnimatedImageView alloc] initWithImage:image];
-//    imageView.frame = CGRectMake(0, 0, 150, 120);
-//    [_gifView addSubview:imageView];
-    _gifView.hidden = YES;
+    
+
     
     
 }

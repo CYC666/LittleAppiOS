@@ -7,6 +7,7 @@
 //
 
 #import "SendLoveImageController.h"
+#import "UIImage+GIF.h"
 
 @interface SendLoveImageController ()
 
@@ -20,11 +21,22 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(self.view.bounds.size.width * 0.5 - 30, self.view.bounds.size.height - 60, 60, 60);
+    button.frame = CGRectMake(self.view.bounds.size.width * 0.5 - 30, self.view.bounds.size.height - 80, 60, 60);
     [button setImage:[UIImage imageNamed:@"吐舌"] forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:@"闭眼"] forState:UIControlStateHighlighted];
     [button addTarget:self action:@selector(showAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
+    
+    
+    // 播放gif图
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"guaiqiao" ofType:@"gif"];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    UIImage *gifImage = [UIImage sd_animatedGIFWithData:data];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(Nav_Height, kScreenWidth * 0.5 - 75, 150, 120)];
+    imageView.image = gifImage;
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view addSubview:imageView];
     
     
 }
