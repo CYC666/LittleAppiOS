@@ -43,9 +43,11 @@
 #pragma mark - 初始化子标签控制器
 - (void)creatSubController {
     
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     self.tabBar.barTintColor = [UIColor blackColor];
     self.tabBar.tintColor = [UIColor whiteColor];
     self.tabBar.translucent = NO;
+    
     
     NSArray *tabControllerArray = @[@"GamerController",
                                     @"ZonerController",

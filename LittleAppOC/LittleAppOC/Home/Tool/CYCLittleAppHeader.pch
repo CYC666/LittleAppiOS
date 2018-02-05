@@ -15,6 +15,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "ThemeManager.h"
+#import "FadeAlertView.h"
 #endif
 
 //-----------------------------------------------------尺寸-----------------------------------------------------

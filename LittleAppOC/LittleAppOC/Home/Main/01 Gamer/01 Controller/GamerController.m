@@ -29,7 +29,7 @@
 #import "AnimationController.h"
 #import "F3HNumberTileGameViewController.h"
 #import "SendLoveImageController.h"
-
+#import "TestViewController.h"
 
 
 
@@ -102,7 +102,8 @@
                @"icon_gamer_input",
                @"icon_gamer_image",
                @"icon_gamer_image_animation",
-               @"icon_gamer_sendLoveImage"];
+               @"icon_gamer_sendLoveImage",
+               @"icon_gamer_image_test"];
     
     titles = @[@"2048",
                @"目标",
@@ -124,7 +125,8 @@
                @"输入法",
                @"照片",
                @"动画",
-               @"点赞"];
+               @"点赞",
+               @"测试"];
 
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     UICollectionView *gamesCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(20, 0, kScreenWidth - 40, kScreenHeight - TabBar_Height)
@@ -324,6 +326,13 @@
                 
                 // 动画
                 SendLoveImageController *ctrl = [[SendLoveImageController alloc] init];
+                ctrl.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:ctrl animated:YES];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"测试"]) {
+                
+                // 测试
+                TestViewController *ctrl = [[TestViewController alloc] init];
                 ctrl.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:ctrl animated:YES];
                 

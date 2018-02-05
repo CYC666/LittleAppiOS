@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TestCell" id="gTV-IL-0wX" customClass="TestCell">
+            <rect key="frame" x="0.0" y="0.0" width="326" height="418"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="326" height="418"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dim-sg-ijn" userLabel="main">
+                        <rect key="frame" x="0.0" y="0.0" width="326" height="418"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbV-4R-IfH">
+                                <rect key="frame" x="0.0" y="0.0" width="326" height="418"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pbV-4R-IfH" firstAttribute="top" secondItem="Dim-sg-ijn" secondAttribute="top" id="TUS-ig-C6z"/>
+                            <constraint firstAttribute="trailing" secondItem="pbV-4R-IfH" secondAttribute="trailing" id="eMH-tA-CIS"/>
+                            <constraint firstAttribute="bottom" secondItem="pbV-4R-IfH" secondAttribute="bottom" id="f9s-OG-0FQ"/>
+                            <constraint firstItem="pbV-4R-IfH" firstAttribute="leading" secondItem="Dim-sg-ijn" secondAttribute="leading" id="uOd-Vc-AwO"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Dim-sg-ijn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="6hS-p6-5Kv"/>
+                <constraint firstItem="Dim-sg-ijn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="YZy-QW-hPj"/>
+                <constraint firstAttribute="bottom" secondItem="Dim-sg-ijn" secondAttribute="bottom" id="a4V-mb-Tag"/>
+                <constraint firstAttribute="trailing" secondItem="Dim-sg-ijn" secondAttribute="trailing" id="kfb-tU-faJ"/>
+            </constraints>
+            <size key="customSize" width="326" height="418"/>
+            <connections>
+                <outlet property="nameLabel" destination="pbV-4R-IfH" id="VY9-Ph-42o"/>
+            </connections>
+            <point key="canvasLocation" x="5" y="12"/>
+        </collectionViewCell>
+    </objects>
+</document>

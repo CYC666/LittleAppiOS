@@ -26,6 +26,14 @@
 		1756054F201819790089EF46 /* libYYKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17560550201819790089EF46 /* libYYKit.a */; };
 		17560551201819FD0089EF46 /* libYYKit.a in Sources */ = {isa = PBXBuildFile; fileRef = 17560550201819790089EF46 /* libYYKit.a */; };
 		17560553201821000089EF46 /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17560552201821000089EF46 /* WebP.framework */; };
+		17FF656F20280D4500308B6D /* icon_gamer_image_test@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17FF656C20280D4500308B6D /* icon_gamer_image_test@2x.png */; };
+		17FF657020280D4500308B6D /* icon_gamer_image_test@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17FF656E20280D4500308B6D /* icon_gamer_image_test@3x.png */; };
+		17FF657420280DA800308B6D /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FF657320280DA800308B6D /* TestViewController.m */; };
+		17FF657820280E0F00308B6D /* TestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FF657620280E0F00308B6D /* TestCell.m */; };
+		17FF657920280E0F00308B6D /* TestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17FF657720280E0F00308B6D /* TestCell.xib */; };
+		17FF657C20282C5800308B6D /* RollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FF657B20282C5800308B6D /* RollView.m */; };
+		17FF657F20282E5600308B6D /* RollLabelInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FF657E20282E5600308B6D /* RollLabelInfo.m */; };
+		17FF65822028390700308B6D /* FadeAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FF65802028390600308B6D /* FadeAlertView.m */; };
 		9E01D3671F4C272400AA31F3 /* CalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E01D35E1F4C272400AA31F3 /* CalendarCell.m */; };
 		9E01D3681F4C272400AA31F3 /* CalendarMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E01D3601F4C272400AA31F3 /* CalendarMonth.m */; };
 		9E01D3691F4C272400AA31F3 /* CalendarScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E01D3621F4C272400AA31F3 /* CalendarScrollView.m */; };
@@ -696,6 +704,19 @@
 		1756054C201816440089EF46 /* guaiqiao.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = guaiqiao.gif; sourceTree = "<group>"; };
 		17560550201819790089EF46 /* libYYKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libYYKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		17560552201821000089EF46 /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebP.framework; path = Pods/YYKit/Vendor/WebP.framework; sourceTree = "<group>"; };
+		17FF656C20280D4500308B6D /* icon_gamer_image_test@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_test@2x.png"; sourceTree = "<group>"; };
+		17FF656E20280D4500308B6D /* icon_gamer_image_test@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_test@3x.png"; sourceTree = "<group>"; };
+		17FF657220280DA800308B6D /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		17FF657320280DA800308B6D /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		17FF657520280E0F00308B6D /* TestCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCell.h; sourceTree = "<group>"; };
+		17FF657620280E0F00308B6D /* TestCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCell.m; sourceTree = "<group>"; };
+		17FF657720280E0F00308B6D /* TestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCell.xib; sourceTree = "<group>"; };
+		17FF657A20282C5800308B6D /* RollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RollView.h; sourceTree = "<group>"; };
+		17FF657B20282C5800308B6D /* RollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RollView.m; sourceTree = "<group>"; };
+		17FF657D20282E5600308B6D /* RollLabelInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollLabelInfo.h; sourceTree = "<group>"; };
+		17FF657E20282E5600308B6D /* RollLabelInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollLabelInfo.m; sourceTree = "<group>"; };
+		17FF65802028390600308B6D /* FadeAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FadeAlertView.m; sourceTree = "<group>"; };
+		17FF65812028390600308B6D /* FadeAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FadeAlertView.h; sourceTree = "<group>"; };
 		89AD2954FF353F7D7A384DDB /* libPods-LittleAppOC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LittleAppOC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D912D9BC42E7A79D868B344 /* Pods-LittleAppOC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LittleAppOC.release.xcconfig"; path = "Pods/Target Support Files/Pods-LittleAppOC/Pods-LittleAppOC.release.xcconfig"; sourceTree = "<group>"; };
 		9E01D35C1F4C272400AA31F3 /* Calendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calendar.h; sourceTree = "<group>"; };
@@ -1566,6 +1587,22 @@
 			path = SendLoveImage;
 			sourceTree = "<group>";
 		};
+		17FF657120280D8D00308B6D /* test */ = {
+			isa = PBXGroup;
+			children = (
+				17FF657220280DA800308B6D /* TestViewController.h */,
+				17FF657320280DA800308B6D /* TestViewController.m */,
+				17FF657520280E0F00308B6D /* TestCell.h */,
+				17FF657620280E0F00308B6D /* TestCell.m */,
+				17FF657720280E0F00308B6D /* TestCell.xib */,
+				17FF657A20282C5800308B6D /* RollView.h */,
+				17FF657B20282C5800308B6D /* RollView.m */,
+				17FF657D20282E5600308B6D /* RollLabelInfo.h */,
+				17FF657E20282E5600308B6D /* RollLabelInfo.m */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
 		9E01D35B1F4C272400AA31F3 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1777,6 +1814,8 @@
 			isa = PBXGroup;
 			children = (
 				9E802F661F41560F0092DDAE /* ProvincesAndCities.plist */,
+				17FF65812028390600308B6D /* FadeAlertView.h */,
+				17FF65802028390600308B6D /* FadeAlertView.m */,
 				9E138A241E2B20B50011701B /* CYCLittleAppHeader.pch */,
 				9EA44AB91E2E121300F7761D /* CNetWorking.h */,
 				9EA44ABA1E2E121300F7761D /* CNetWorking.m */,
@@ -1815,6 +1854,7 @@
 			children = (
 				9E1389F21E2B11D00011701B /* GamerController.h */,
 				9E1389F31E2B11D00011701B /* GamerController.m */,
+				17FF657120280D8D00308B6D /* test */,
 				173E1E6E1FE035FC003621E5 /* SendLoveImage */,
 				9ED17D6C1F6920EB00127760 /* Game2048 */,
 				9ED17D3F1F68E47A00127760 /* Animation */,
@@ -2130,6 +2170,8 @@
 		9E527DC21E3799460057AF4C /* GamerImage */ = {
 			isa = PBXGroup;
 			children = (
+				17FF656C20280D4500308B6D /* icon_gamer_image_test@2x.png */,
+				17FF656E20280D4500308B6D /* icon_gamer_image_test@3x.png */,
 				9ED17D3B1F68E45200127760 /* icon_gamer_image_animation@2x.png */,
 				9ED17D3C1F68E45200127760 /* icon_gamer_image_animation@3x.png */,
 				9E60EE2D1F5FB1B900A73237 /* icon_gamer_image_add@2x.png */,
@@ -3234,6 +3276,7 @@
 				9E66B02C1F444BF60095FC41 /* DFW_WW7.TTF in Resources */,
 				9ED17DC61F6920EB00127760 /* icon_game_detial_select@3x.png in Resources */,
 				9EA44A921E2DF3FF00F7761D /* home_tab_icon_3.png in Resources */,
+				17FF656F20280D4500308B6D /* icon_gamer_image_test@2x.png in Resources */,
 				9EF837891E3F677B0094BE84 /* icon_login_input@3x.png in Resources */,
 				9EA44A961E2DF3FF00F7761D /* home_tab_icon_5.png in Resources */,
 				9E9D6E781E617E2700EB095B /* pull_image_2@2x.png in Resources */,
@@ -3294,6 +3337,7 @@
 				9E66B0131F442C790095FC41 /* CityListController.xib in Resources */,
 				9ED17DBD1F6920EB00127760 /* icon_best_score@2x.png in Resources */,
 				9E138A2F1E2B375E0011701B /* Icon-60.png in Resources */,
+				17FF657920280E0F00308B6D /* TestCell.xib in Resources */,
 				9EA44B0A1E2E24BD00F7761D /* 5.png in Resources */,
 				9E4E11E11E3569F900A08DAC /* icon_weatner_day_29.png in Resources */,
 				9E4E11E51E3569F900A08DAC /* icon_weatner_day_302.png in Resources */,
@@ -3434,6 +3478,7 @@
 				9EFAB7381E2EFCA50039C853 /* icon_weatherController_location@2x.png in Resources */,
 				9EA44B031E2E24BD00F7761D /* 33.png in Resources */,
 				9E527DC61E379B330057AF4C /* icon_gamer_2048@3x.png in Resources */,
+				17FF657020280D4500308B6D /* icon_gamer_image_test@3x.png in Resources */,
 				9EF53D0A1E2BDE2000F55033 /* icon_leftCtrl_feedBack@3x.png in Resources */,
 				9E4E11E81E3569F900A08DAC /* icon_weatner_day_39.png in Resources */,
 				9E138A1D1E2B1DDF0011701B /* icon_tab_settinger@3x.png in Resources */,
@@ -3750,6 +3795,7 @@
 				9E118ACE1E6000D800914D9E /* SongModel.m in Sources */,
 				9E01D36B1F4C272400AA31F3 /* NSDate+Calendar.m in Sources */,
 				9E66B0021F442C1A0095FC41 /* TranslateController.m in Sources */,
+				17FF657F20282E5600308B6D /* RollLabelInfo.m in Sources */,
 				9E9D6E341E61705800EB095B /* MJRefreshConst.m in Sources */,
 				9E118AFE1E60147800914D9E /* UIImage+MultiFormat.m in Sources */,
 				9EA44B261E2E6FBD00F7761D /* WeatherModel.m in Sources */,
@@ -3796,6 +3842,7 @@
 				9E9D6E321E61705800EB095B /* MJRefreshStateHeader.m in Sources */,
 				9ED17DB81F6920EB00127760 /* F3HMoveOrder.m in Sources */,
 				9E9D6E2E1E61705800EB095B /* MJRefreshBackNormalFooter.m in Sources */,
+				17FF657420280DA800308B6D /* TestViewController.m in Sources */,
 				9ED17DB31F6920EB00127760 /* F3HNumberTileGameViewController.m in Sources */,
 				9E118AFC1E60147800914D9E /* UIButton+WebCache.m in Sources */,
 				9EA44AB61E2E11CD00F7761D /* AFURLRequestSerialization.m in Sources */,
@@ -3817,6 +3864,7 @@
 				9E9D6E2D1E61705800EB095B /* MJRefreshBackGifFooter.m in Sources */,
 				9E9D6E311E61705800EB095B /* MJRefreshNormalHeader.m in Sources */,
 				9EA44AB01E2E11CD00F7761D /* AFHTTPRequestOperation.m in Sources */,
+				17FF65822028390700308B6D /* FadeAlertView.m in Sources */,
 				9E1389DD1E2B101F0011701B /* CYCTabBarController.m in Sources */,
 				9EA44AB41E2E11CD00F7761D /* AFSecurityPolicy.m in Sources */,
 				9E4FE1DD1E6950D200AF3885 /* FXBlurView.m in Sources */,
@@ -3842,9 +3890,11 @@
 				09453E791E8C06850062E5CA /* SHLineGraphView.m in Sources */,
 				9ED17DE11F6920EB00127760 /* F3HControlView.m in Sources */,
 				9E9D6E251E61705800EB095B /* MJRefreshAutoFooter.m in Sources */,
+				17FF657C20282C5800308B6D /* RollView.m in Sources */,
 				9ED17DE41F6920EB00127760 /* F3HTileView.m in Sources */,
 				9E0672261F4D7C2100C1ABEE /* InputViewController.m in Sources */,
 				9E1679F81F6288F500B2776E /* CDoubleTableView.m in Sources */,
+				17FF657820280E0F00308B6D /* TestCell.m in Sources */,
 				9E6EB0DF1E3ED9C800E7128A /* SMSUIVerificationCodeViewController.m in Sources */,
 				9E66AFEB1F442AD80095FC41 /* FontViewController.m in Sources */,
 				9E66B0121F442C790095FC41 /* CityListController.m in Sources */,
