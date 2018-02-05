@@ -29,8 +29,8 @@
 
     if (self = [super init]) {
         [self creatSubController];
-        [self deleteSubTbaBarButton];
-        [self setTabBar];
+//        [self deleteSubTbaBarButton];
+//        [self setTabBar];
     }
     return self;
 
@@ -43,12 +43,19 @@
 #pragma mark - 初始化子标签控制器
 - (void)creatSubController {
     
+    self.tabBar.barTintColor = [UIColor blackColor];
+    self.tabBar.tintColor = [UIColor whiteColor];
+    self.tabBar.translucent = NO;
     
     NSArray *tabControllerArray = @[@"GamerController",
                                     @"ZonerController",
                                     @"HomerController",
                                     @"DiscoverController",
                                     @"SettingerController"];
+    NSArray *titleName = @[@"小玩意", @"音乐", @"机器人" ,@"新闻" ,@"我的"];
+    NSArray *imageOn = @[@"tabbar11", @"tabbar22", @"tabbar33", @"tabbar44", @"tabbar55"];
+    NSArray *imageOff = @[@"tabbar1", @"tabbar2", @"tabbar3", @"tabbar4", @"tabbar5"];
+    
     _subArray = [NSMutableArray arrayWithCapacity:5];
     for (int i = 0; i < tabControllerArray.count; i++) {
         UIViewController *controller = [[NSClassFromString(tabControllerArray[i]) alloc] init];
@@ -63,6 +70,13 @@
             nav.navigationBar.translucent = YES;
         }
         
+        controller.title = titleName[i];
+        controller.tabBarItem.title = titleName[i];
+        controller.tabBarItem.image = [[UIImage imageNamed:imageOff[i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        controller.tabBarItem.selectedImage = [[UIImage imageNamed:imageOn[i]] imageWithRenderingMode:UIImageRenderingModeAutomatic];
+        
+        // 设置title在选择状态下的颜色:
+        [controller.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateSelected];
         
         [_subArray addObject:nav];
     }

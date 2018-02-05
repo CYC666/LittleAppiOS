@@ -86,7 +86,7 @@
     
 
     // 表视图
-    _listTableView = [[UITableView alloc] initWithFrame:CGRectMake(0,64, kScreenWidth, kScreenHeight - 64 - 49 - 50)
+    _listTableView = [[UITableView alloc] initWithFrame:CGRectMake(0,Nav_Height, kScreenWidth, kScreenHeight - Nav_Height - TabBar_Height - 50)
                                                   style:UITableViewStylePlain ];
     _listTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _listTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -101,8 +101,8 @@
     [self.view addSubview:_listTableView];
     
     
-    inputView = [[UIView alloc] initWithFrame:CGRectMake(0, kScreenHeight - 49 - 50, kScreenWidth, 50)];
-    inputView.backgroundColor = [UIColor orangeColor];
+    inputView = [[UIView alloc] initWithFrame:CGRectMake(0, kScreenHeight - TabBar_Height - 50, kScreenWidth, 50)];
+    inputView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:inputView];
     // 输入框
     IMInputBar *inputBar = [IMInputBar viewFromXIB];
@@ -353,9 +353,9 @@
     inputView.transform = CGAffineTransformMakeTranslation(0, 50-height);
     
     // 修改表视图
-    _listTableView.frame = CGRectMake(0,64, kScreenWidth, kScreenHeight - 64 - 50 - height);
-    CGSize size = _listTableView.contentSize;
-    _listTableView.contentOffset = CGPointMake(0, size.height - (kScreenHeight - 50 - height));
+    _listTableView.frame = CGRectMake(0,Nav_Height, kScreenWidth, kScreenHeight - Nav_Height - TabBar_Height - height);
+//    CGSize size = _listTableView.contentSize;
+//    _listTableView.contentOffset = CGPointMake(0, size.height - (height));
     
 
 }
@@ -365,10 +365,11 @@
     
     inputView.transform = CGAffineTransformMakeTranslation(0, 0);
     
-    _listTableView.frame = CGRectMake(0,64, kScreenWidth, kScreenHeight - 64 - 49 - 50);
+    _listTableView.frame = CGRectMake(0,Nav_Height, kScreenWidth, kScreenHeight - Nav_Height - TabBar_Height - 50);
     
-    CGSize size = _listTableView.contentSize;
-    _listTableView.contentOffset = CGPointMake(0, size.height - (kScreenHeight - 49 - 50));
+//    CGSize size = _listTableView.contentSize;
+//    _listTableView.contentOffset = CGPointMake(0, size.height - (kScreenHeight - TabBar_Height - 50));[_listTableView scrollToBottom];
+    
 
 }
 

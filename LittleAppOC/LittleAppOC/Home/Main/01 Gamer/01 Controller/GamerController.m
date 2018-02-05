@@ -127,7 +127,7 @@
                @"点赞"];
 
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    UICollectionView *gamesCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(20, 0, kScreenWidth - 40, kScreenHeight - 49)
+    UICollectionView *gamesCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(20, 0, kScreenWidth - 40, kScreenHeight - TabBar_Height)
                                                                collectionViewLayout:flowLayout];
     gamesCollectionView.backgroundColor = [UIColor clearColor];
     gamesCollectionView.showsVerticalScrollIndicator = NO;
