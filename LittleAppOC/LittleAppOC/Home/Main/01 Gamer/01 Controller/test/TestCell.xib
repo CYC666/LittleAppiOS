@@ -21,19 +21,19 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dim-sg-ijn" userLabel="main">
                         <rect key="frame" x="0.0" y="0.0" width="326" height="418"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbV-4R-IfH">
-                                <rect key="frame" x="0.0" y="0.0" width="326" height="418"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8s-lk-mOe" userLabel="Roll View 40" customClass="RollView">
+                                <rect key="frame" x="0.0" y="0.0" width="326" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="qxG-X6-hxz"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="pbV-4R-IfH" firstAttribute="top" secondItem="Dim-sg-ijn" secondAttribute="top" id="TUS-ig-C6z"/>
-                            <constraint firstAttribute="trailing" secondItem="pbV-4R-IfH" secondAttribute="trailing" id="eMH-tA-CIS"/>
-                            <constraint firstAttribute="bottom" secondItem="pbV-4R-IfH" secondAttribute="bottom" id="f9s-OG-0FQ"/>
-                            <constraint firstItem="pbV-4R-IfH" firstAttribute="leading" secondItem="Dim-sg-ijn" secondAttribute="leading" id="uOd-Vc-AwO"/>
+                            <constraint firstItem="e8s-lk-mOe" firstAttribute="top" secondItem="Dim-sg-ijn" secondAttribute="top" id="16m-AY-AVu"/>
+                            <constraint firstItem="e8s-lk-mOe" firstAttribute="leading" secondItem="Dim-sg-ijn" secondAttribute="leading" id="bfM-KY-1Kx"/>
+                            <constraint firstAttribute="trailing" secondItem="e8s-lk-mOe" secondAttribute="trailing" id="e6L-lT-gig"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -47,9 +47,9 @@
             </constraints>
             <size key="customSize" width="326" height="418"/>
             <connections>
-                <outlet property="nameLabel" destination="pbV-4R-IfH" id="VY9-Ph-42o"/>
+                <outlet property="rollView" destination="e8s-lk-mOe" id="d4X-Kx-Fk3"/>
             </connections>
-            <point key="canvasLocation" x="5" y="12"/>
+            <point key="canvasLocation" x="-170" y="70"/>
         </collectionViewCell>
     </objects>
 </document>

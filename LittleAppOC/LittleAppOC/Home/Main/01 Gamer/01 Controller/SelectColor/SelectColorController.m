@@ -52,6 +52,11 @@
     UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightItem];
     self.navigationItem.rightBarButtonItem = rightBarItem;
     
+    // 长按保存单色图片
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(saveImageAction:)];
+    longPress.minimumPressDuration = 1;
+    [_colorView addGestureRecognizer:longPress];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -70,6 +75,47 @@
     // 关闭点击显示、隐藏导航栏
     self.navigationController.hidesBarsOnTap = NO;
 
+}
+
+#pragma mark - 保存单色背景图
+- (void)saveImageAction:(UILongPressGestureRecognizer *)press {
+    
+    if (press.state == UIGestureRecognizerStateBegan) {
+        
+        // 弹框提示是否执行
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
+                                                                       message:@"是否将此颜色存为图片？"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"取消"
+                                                  style:UIAlertActionStyleDefault
+                                                handler:^(UIAlertAction * _Nonnull action) {
+                                                    
+                                                }]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定"
+                                                  style:UIAlertActionStyleDefault
+                                                handler:^(UIAlertAction * _Nonnull action) {
+                                                    
+                                                    // 生成单色图片
+                                                    CGRect rect = CGRectMake(0, 0, kScreenWidth, kScreenHeight);  //图片尺寸
+                                                    UIGraphicsBeginImageContext(rect.size); //填充画笔
+                                                    CGContextRef context = UIGraphicsGetCurrentContext(); //根据所传颜色绘制
+                                                    CGContextSetFillColorWithColor(context, CRGB(_redField.text.floatValue, _greenField.text.floatValue, _greenField.text.floatValue, _alphaField.text.floatValue).CGColor);
+                                                    CGContextFillRect(context, rect); //联系显示区域
+                                                    UIImage * image = UIGraphicsGetImageFromCurrentImageContext(); // 得到图片信息
+                                                    UIGraphicsEndImageContext(); //消除画笔
+                                                    
+                                                    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+                                                    
+                                                    FadeAlertView *showMessage = [[FadeAlertView alloc] init];
+                                                    [showMessage showAlertWith:@"已经将图片保存到相册中"];
+                                                    
+                                                }]];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
+    }
+    
 }
 
 

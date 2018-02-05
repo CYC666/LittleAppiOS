@@ -11,7 +11,7 @@
 #import "RollView.h"
 #import "RollLabelInfo.h"
 
-@interface TestViewController () <UICollectionViewDelegate, UICollectionViewDataSource, RollViewDlegate> {
+@interface TestViewController () <UICollectionViewDelegate, UICollectionViewDataSource> {
     
     
     // 集合视图
@@ -33,12 +33,12 @@
     
     // 集合视图
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.itemSize = CGSizeMake(15, 200);
+    layout.itemSize = CGSizeMake(kScreenWidth, kScreenHeight - Nav_Height);
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing = 0;
-    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+//    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
-    _listCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, Nav_Height, kScreenWidth, 200)
+    _listCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, Nav_Height, kScreenWidth, kScreenHeight - Nav_Height)
                                              collectionViewLayout:layout];
     _listCollectionView.backgroundColor = [UIColor clearColor];
     [_listCollectionView registerNib:[UINib nibWithNibName:@"TestCell" bundle:[NSBundle mainBundle]]
@@ -57,19 +57,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     
-    // 滚动文本
-    RollView *rollView = [[RollView alloc] initWithFrame:CGRectMake(20, Nav_Height + 200 + 20, kScreenWidth - 40, 40)];
-    rollView.delegate = self;
-    [self.view addSubview:rollView];
     
-    NSMutableArray *dataArray = [NSMutableArray array];
-    for (int i = 0; i < 5; i++) {
-        RollLabelInfo *model = [[RollLabelInfo alloc] init];
-        model.fullhead = [NSString stringWithFormat:@"这里是第%d个元素", i];
-        [dataArray addObject:model];
-    }
-    
-    rollView.dataArray = dataArray;
     
 }
 
@@ -94,7 +82,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return 100;
+    return 1;
     
     
     
@@ -107,19 +95,6 @@
     // 商品列表
     TestCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TestCell" forIndexPath:indexPath];
     
-    NSDate *currentDate = [NSDate date];
-    NSCalendar * cal = [NSCalendar currentCalendar];
-    NSUInteger unitFlags = kCFCalendarUnitYear|
-                           kCFCalendarUnitMonth|
-                           kCFCalendarUnitDay|
-                           kCFCalendarUnitHour|
-                           kCFCalendarUnitMinute|
-                           kCFCalendarUnitSecond;
-    NSDateComponents * conponent = [cal components:unitFlags fromDate:currentDate];
-    
-    cell.nameLabel.text = [NSString stringWithFormat:@"%ld%ld%ld%ld%ld%ld", conponent.year, conponent.month, conponent.day, conponent.hour, conponent.minute, conponent.second];
-
-    
     return cell;
     
     
@@ -129,14 +104,7 @@
 }
 
 
-#pragma mark - 点击了跑马灯
-- (void)didSelectRollLabel:(NSInteger)index {
-    
-    FadeAlertView *showMessage = [[FadeAlertView alloc] init];
-    [showMessage showAlertWith:[NSString stringWithFormat:@"点击了跑马灯，序号为:%ld", index]];
-    
-    
-}
+
 
 
 #pragma mark ========================================通知================================================

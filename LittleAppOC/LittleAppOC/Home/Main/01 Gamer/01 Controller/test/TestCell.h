@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class RollView;
 
 @interface TestCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-
+@property (weak, nonatomic) IBOutlet RollView *rollView;
 
 
 

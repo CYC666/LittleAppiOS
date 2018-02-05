@@ -31,6 +31,15 @@
     
 }
 
+- (void)awakeFromNib {
+    
+    [super awakeFromNib];
+    
+    [self creatSubviewsAction];
+    
+}
+
+
 -(void)dealloc {
     
     if (_timer) {
@@ -48,10 +57,30 @@
     _index = 0;
     self.clipsToBounds = YES;
     
-    _labelA = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, height)];
-    _labelA.textAlignment = NSTextAlignmentLeft;
-    _labelA.textColor = [UIColor blackColor];
-    [self addSubview:_labelA];
+    if (!_timer) {
+        _timer = [NSTimer timerWithTimeInterval:3 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
+        [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+    }
+    
+    // 设置初始显示
+    RollLabelInfo *model = _dataArray.firstObject;
+    self.labelA.text = model.fullhead;
+    
+    // 点击事件
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+    [self addGestureRecognizer:tap];
+    
+}
+
+- (UILabel *)labelA {
+    
+    if (!_labelA) {
+        _labelA = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, height)];
+        _labelA.textAlignment = NSTextAlignmentLeft;
+        _labelA.textColor = [UIColor blackColor];
+        [self addSubview:_labelA];
+    }
+    return _labelA;
     
 }
 
@@ -104,19 +133,6 @@
     
     if (dataArray.count > 0) {
         _dataArray = dataArray;
-        
-        if (!_timer) {
-            _timer = [NSTimer timerWithTimeInterval:3 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
-            [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
-        }
-        
-        // 设置初始显示
-        RollLabelInfo *model = _dataArray.firstObject;
-        _labelA.text = model.fullhead;
-        
-        // 点击事件
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
-        [self addGestureRecognizer:tap];
         
     }
     
