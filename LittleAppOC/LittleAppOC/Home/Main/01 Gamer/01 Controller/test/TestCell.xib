@@ -23,17 +23,37 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8s-lk-mOe" userLabel="Roll View 40" customClass="RollView">
                                 <rect key="frame" x="0.0" y="0.0" width="326" height="40"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="0.066165453767123295" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="qxG-X6-hxz"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J0T-lQ-qQf" customClass="PageView">
+                                <rect key="frame" x="0.0" y="40" width="326" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="0.065737371575342471" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ydm-ZJ-KYX"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LEj-u6-cpJ">
+                                <rect key="frame" x="0.0" y="80" width="326" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="0.1133080051369863" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ze7-hJ-LZu"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="e8s-lk-mOe" firstAttribute="top" secondItem="Dim-sg-ijn" secondAttribute="top" id="16m-AY-AVu"/>
+                            <constraint firstAttribute="trailing" secondItem="J0T-lQ-qQf" secondAttribute="trailing" id="Abh-xW-AYP"/>
+                            <constraint firstItem="J0T-lQ-qQf" firstAttribute="top" secondItem="e8s-lk-mOe" secondAttribute="bottom" id="Tve-Yr-fU7"/>
+                            <constraint firstItem="LEj-u6-cpJ" firstAttribute="top" secondItem="J0T-lQ-qQf" secondAttribute="bottom" id="ZeI-Jb-mhl"/>
+                            <constraint firstItem="J0T-lQ-qQf" firstAttribute="leading" secondItem="Dim-sg-ijn" secondAttribute="leading" id="bVG-GX-UWO"/>
                             <constraint firstItem="e8s-lk-mOe" firstAttribute="leading" secondItem="Dim-sg-ijn" secondAttribute="leading" id="bfM-KY-1Kx"/>
                             <constraint firstAttribute="trailing" secondItem="e8s-lk-mOe" secondAttribute="trailing" id="e6L-lT-gig"/>
+                            <constraint firstItem="LEj-u6-cpJ" firstAttribute="leading" secondItem="Dim-sg-ijn" secondAttribute="leading" id="ijj-dk-Cke"/>
+                            <constraint firstAttribute="trailing" secondItem="LEj-u6-cpJ" secondAttribute="trailing" id="rRF-uu-1Rj"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -47,9 +67,11 @@
             </constraints>
             <size key="customSize" width="326" height="418"/>
             <connections>
+                <outlet property="pageFrameView" destination="LEj-u6-cpJ" id="ilR-EL-VVj"/>
+                <outlet property="pageView" destination="J0T-lQ-qQf" id="wmV-f5-D0r"/>
                 <outlet property="rollView" destination="e8s-lk-mOe" id="d4X-Kx-Fk3"/>
             </connections>
-            <point key="canvasLocation" x="-170" y="70"/>
+            <point key="canvasLocation" x="-258" y="23"/>
         </collectionViewCell>
     </objects>
 </document>

@@ -196,9 +196,12 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.row == 4) {
-        //使用第三方框架SDWebImage缓存图片，才能对应的清除缓存图片
+        //显示风火轮
         [[SDImageCache sharedImageCache] clearDisk];
-        [_setTableView reloadData];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            //使用第三方框架SDWebImage缓存图片，才能对应的清除缓存图片
+            [_setTableView reloadData];
+        });
     }
 
 }

@@ -34,6 +34,7 @@
 		17FF657C20282C5800308B6D /* RollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FF657B20282C5800308B6D /* RollView.m */; };
 		17FF657F20282E5600308B6D /* RollLabelInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FF657E20282E5600308B6D /* RollLabelInfo.m */; };
 		17FF65822028390700308B6D /* FadeAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FF65802028390600308B6D /* FadeAlertView.m */; };
+		17FF659220297DE200308B6D /* PageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FF659120297DE200308B6D /* PageView.m */; };
 		9E01D3671F4C272400AA31F3 /* CalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E01D35E1F4C272400AA31F3 /* CalendarCell.m */; };
 		9E01D3681F4C272400AA31F3 /* CalendarMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E01D3601F4C272400AA31F3 /* CalendarMonth.m */; };
 		9E01D3691F4C272400AA31F3 /* CalendarScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E01D3621F4C272400AA31F3 /* CalendarScrollView.m */; };
@@ -717,6 +718,8 @@
 		17FF657E20282E5600308B6D /* RollLabelInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollLabelInfo.m; sourceTree = "<group>"; };
 		17FF65802028390600308B6D /* FadeAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FadeAlertView.m; sourceTree = "<group>"; };
 		17FF65812028390600308B6D /* FadeAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FadeAlertView.h; sourceTree = "<group>"; };
+		17FF659020297DE200308B6D /* PageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageView.h; sourceTree = "<group>"; };
+		17FF659120297DE200308B6D /* PageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageView.m; sourceTree = "<group>"; };
 		89AD2954FF353F7D7A384DDB /* libPods-LittleAppOC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LittleAppOC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D912D9BC42E7A79D868B344 /* Pods-LittleAppOC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LittleAppOC.release.xcconfig"; path = "Pods/Target Support Files/Pods-LittleAppOC/Pods-LittleAppOC.release.xcconfig"; sourceTree = "<group>"; };
 		9E01D35C1F4C272400AA31F3 /* Calendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calendar.h; sourceTree = "<group>"; };
@@ -1599,6 +1602,8 @@
 				17FF657B20282C5800308B6D /* RollView.m */,
 				17FF657D20282E5600308B6D /* RollLabelInfo.h */,
 				17FF657E20282E5600308B6D /* RollLabelInfo.m */,
+				17FF659020297DE200308B6D /* PageView.h */,
+				17FF659120297DE200308B6D /* PageView.m */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -3825,6 +3830,7 @@
 				9E6EB0D61E3ED9C800E7128A /* YJLocalCountryData.m in Sources */,
 				9E9D6E2A1E61705800EB095B /* MJRefreshAutoGifFooter.m in Sources */,
 				9EA44B321E2E758900F7761D /* MBProgressHUD.m in Sources */,
+				17FF659220297DE200308B6D /* PageView.m in Sources */,
 				09453E7A1E8C06850062E5CA /* SHPlot.m in Sources */,
 				9E6EB0DA1E3ED9C800E7128A /* RegViewController.m in Sources */,
 				9E60EE2B1F5FAB5500A73237 /* ImageSelectViewCell.m in Sources */,

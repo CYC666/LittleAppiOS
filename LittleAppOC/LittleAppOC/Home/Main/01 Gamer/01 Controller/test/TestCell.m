@@ -9,6 +9,7 @@
 #import "TestCell.h"
 #import "RollView.h"
 #import "RollLabelInfo.h"
+#import "PageView.h"
 
 @interface TestCell () <RollViewDlegate> {
     
@@ -20,6 +21,7 @@
 @implementation TestCell
 
 - (void)awakeFromNib {
+    
     [super awakeFromNib];
     
     // 滚动文本
@@ -33,6 +35,34 @@
     }
     
     _rollView.dataArray = dataArray;
+    
+}
+
+- (void)layoutSubviews {
+    
+    [super layoutSubviews];
+    
+    
+    
+    // 这里获取到_pageFrameView的frame，是在xib中的frame，并不是适配后的最终的frame
+    __block PageView *pageFrameView = [[PageView alloc] initWithFrame:_pageFrameView.bounds pageCount:10];
+    [_pageFrameView addSubview:pageFrameView];
+    
+    __block NSInteger count = 0;
+    __block NSInteger frameCount = 0;
+    [NSTimer scheduledTimerWithTimeInterval:3 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        
+        self.pageView.currentPage = count++;
+        if (count >= 3) {
+            count = 0;
+        }
+        
+        pageFrameView.currentPage = frameCount++;
+        if (frameCount >= 10) {
+            frameCount = 0;
+        }
+        
+    }];
     
     
 }

@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-@class RollView;
+@class RollView, PageView;
 
 @interface TestCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet RollView *rollView;
+@property (weak, nonatomic) IBOutlet PageView *pageView;
+@property (weak, nonatomic) IBOutlet UIView *pageFrameView;
 
 
 
