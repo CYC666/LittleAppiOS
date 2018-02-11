@@ -105,6 +105,10 @@
     }
     
     // 当前页
+    if (currentLayer) {
+        [currentLayer removeFromSuperlayer];
+        currentLayer = nil;
+    }
     currentLayer = [[CALayer alloc] init];
     currentLayer.frame = CGRectMake(xStart, (selfHeight - pointHeight) * 0.5, pointWidth, pointHeight);
     currentLayer.cornerRadius = pointHeight * 0.5;

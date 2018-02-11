@@ -42,16 +42,26 @@
                                     <constraint firstAttribute="height" constant="40" id="ze7-hJ-LZu"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x5e-LP-Vh5" customClass="tableViewA">
+                                <rect key="frame" x="0.0" y="120" width="326" height="80"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="0.039089255136986301" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="5Tg-oe-xLF"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="e8s-lk-mOe" firstAttribute="top" secondItem="Dim-sg-ijn" secondAttribute="top" id="16m-AY-AVu"/>
+                            <constraint firstAttribute="trailing" secondItem="x5e-LP-Vh5" secondAttribute="trailing" id="9hZ-5B-X33"/>
                             <constraint firstAttribute="trailing" secondItem="J0T-lQ-qQf" secondAttribute="trailing" id="Abh-xW-AYP"/>
+                            <constraint firstItem="x5e-LP-Vh5" firstAttribute="leading" secondItem="Dim-sg-ijn" secondAttribute="leading" id="GZf-xg-EpR"/>
                             <constraint firstItem="J0T-lQ-qQf" firstAttribute="top" secondItem="e8s-lk-mOe" secondAttribute="bottom" id="Tve-Yr-fU7"/>
                             <constraint firstItem="LEj-u6-cpJ" firstAttribute="top" secondItem="J0T-lQ-qQf" secondAttribute="bottom" id="ZeI-Jb-mhl"/>
                             <constraint firstItem="J0T-lQ-qQf" firstAttribute="leading" secondItem="Dim-sg-ijn" secondAttribute="leading" id="bVG-GX-UWO"/>
                             <constraint firstItem="e8s-lk-mOe" firstAttribute="leading" secondItem="Dim-sg-ijn" secondAttribute="leading" id="bfM-KY-1Kx"/>
                             <constraint firstAttribute="trailing" secondItem="e8s-lk-mOe" secondAttribute="trailing" id="e6L-lT-gig"/>
+                            <constraint firstItem="x5e-LP-Vh5" firstAttribute="top" secondItem="LEj-u6-cpJ" secondAttribute="bottom" id="eXg-dk-yxP"/>
                             <constraint firstItem="LEj-u6-cpJ" firstAttribute="leading" secondItem="Dim-sg-ijn" secondAttribute="leading" id="ijj-dk-Cke"/>
                             <constraint firstAttribute="trailing" secondItem="LEj-u6-cpJ" secondAttribute="trailing" id="rRF-uu-1Rj"/>
                         </constraints>

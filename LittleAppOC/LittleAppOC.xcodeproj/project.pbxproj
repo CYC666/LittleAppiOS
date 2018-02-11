@@ -26,6 +26,12 @@
 		1756054F201819790089EF46 /* libYYKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17560550201819790089EF46 /* libYYKit.a */; };
 		17560551201819FD0089EF46 /* libYYKit.a in Sources */ = {isa = PBXBuildFile; fileRef = 17560550201819790089EF46 /* libYYKit.a */; };
 		17560553201821000089EF46 /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17560552201821000089EF46 /* WebP.framework */; };
+		17601CDA202FF6AB009A84B7 /* PanoramaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17601CD9202FF6AB009A84B7 /* PanoramaController.m */; };
+		17601CDF202FF6EA009A84B7 /* YQPanoramaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17601CDE202FF6EA009A84B7 /* YQPanoramaView.m */; };
+		17601CE1202FF739009A84B7 /* WechatIMG72.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 17601CE0202FF739009A84B7 /* WechatIMG72.jpeg */; };
+		1795566C202FF58900BC996A /* icon_gamer_image_PanoramaView@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1795566A202FF58800BC996A /* icon_gamer_image_PanoramaView@3x.png */; };
+		1795566D202FF58900BC996A /* icon_gamer_image_PanoramaView@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1795566B202FF58900BC996A /* icon_gamer_image_PanoramaView@2x.png */; };
+		17ACF732202C037E0086B5D2 /* tableViewA.m in Sources */ = {isa = PBXBuildFile; fileRef = 17ACF731202C037E0086B5D2 /* tableViewA.m */; };
 		17FF656F20280D4500308B6D /* icon_gamer_image_test@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17FF656C20280D4500308B6D /* icon_gamer_image_test@2x.png */; };
 		17FF657020280D4500308B6D /* icon_gamer_image_test@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17FF656E20280D4500308B6D /* icon_gamer_image_test@3x.png */; };
 		17FF657420280DA800308B6D /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FF657320280DA800308B6D /* TestViewController.m */; };
@@ -705,6 +711,15 @@
 		1756054C201816440089EF46 /* guaiqiao.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = guaiqiao.gif; sourceTree = "<group>"; };
 		17560550201819790089EF46 /* libYYKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libYYKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		17560552201821000089EF46 /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebP.framework; path = Pods/YYKit/Vendor/WebP.framework; sourceTree = "<group>"; };
+		17601CD8202FF6AB009A84B7 /* PanoramaController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PanoramaController.h; sourceTree = "<group>"; };
+		17601CD9202FF6AB009A84B7 /* PanoramaController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PanoramaController.m; sourceTree = "<group>"; };
+		17601CDD202FF6EA009A84B7 /* YQPanoramaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQPanoramaView.h; sourceTree = "<group>"; };
+		17601CDE202FF6EA009A84B7 /* YQPanoramaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQPanoramaView.m; sourceTree = "<group>"; };
+		17601CE0202FF739009A84B7 /* WechatIMG72.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG72.jpeg; sourceTree = "<group>"; };
+		1795566A202FF58800BC996A /* icon_gamer_image_PanoramaView@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_PanoramaView@3x.png"; sourceTree = "<group>"; };
+		1795566B202FF58900BC996A /* icon_gamer_image_PanoramaView@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_PanoramaView@2x.png"; sourceTree = "<group>"; };
+		17ACF730202C037E0086B5D2 /* tableViewA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tableViewA.h; sourceTree = "<group>"; };
+		17ACF731202C037E0086B5D2 /* tableViewA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tableViewA.m; sourceTree = "<group>"; };
 		17FF656C20280D4500308B6D /* icon_gamer_image_test@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_test@2x.png"; sourceTree = "<group>"; };
 		17FF656E20280D4500308B6D /* icon_gamer_image_test@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_test@3x.png"; sourceTree = "<group>"; };
 		17FF657220280DA800308B6D /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
@@ -1590,6 +1605,26 @@
 			path = SendLoveImage;
 			sourceTree = "<group>";
 		};
+		17601CDC202FF6EA009A84B7 /* YQPanoramaView */ = {
+			isa = PBXGroup;
+			children = (
+				17601CDD202FF6EA009A84B7 /* YQPanoramaView.h */,
+				17601CDE202FF6EA009A84B7 /* YQPanoramaView.m */,
+			);
+			path = YQPanoramaView;
+			sourceTree = "<group>";
+		};
+		17955668202FF47B00BC996A /* PanoramaView */ = {
+			isa = PBXGroup;
+			children = (
+				17601CDC202FF6EA009A84B7 /* YQPanoramaView */,
+				17601CD8202FF6AB009A84B7 /* PanoramaController.h */,
+				17601CD9202FF6AB009A84B7 /* PanoramaController.m */,
+				17601CE0202FF739009A84B7 /* WechatIMG72.jpeg */,
+			);
+			path = PanoramaView;
+			sourceTree = "<group>";
+		};
 		17FF657120280D8D00308B6D /* test */ = {
 			isa = PBXGroup;
 			children = (
@@ -1604,6 +1639,8 @@
 				17FF657E20282E5600308B6D /* RollLabelInfo.m */,
 				17FF659020297DE200308B6D /* PageView.h */,
 				17FF659120297DE200308B6D /* PageView.m */,
+				17ACF730202C037E0086B5D2 /* tableViewA.h */,
+				17ACF731202C037E0086B5D2 /* tableViewA.m */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -1859,6 +1896,7 @@
 			children = (
 				9E1389F21E2B11D00011701B /* GamerController.h */,
 				9E1389F31E2B11D00011701B /* GamerController.m */,
+				17955668202FF47B00BC996A /* PanoramaView */,
 				17FF657120280D8D00308B6D /* test */,
 				173E1E6E1FE035FC003621E5 /* SendLoveImage */,
 				9ED17D6C1F6920EB00127760 /* Game2048 */,
@@ -2175,6 +2213,8 @@
 		9E527DC21E3799460057AF4C /* GamerImage */ = {
 			isa = PBXGroup;
 			children = (
+				1795566B202FF58900BC996A /* icon_gamer_image_PanoramaView@2x.png */,
+				1795566A202FF58800BC996A /* icon_gamer_image_PanoramaView@3x.png */,
 				17FF656C20280D4500308B6D /* icon_gamer_image_test@2x.png */,
 				17FF656E20280D4500308B6D /* icon_gamer_image_test@3x.png */,
 				9ED17D3B1F68E45200127760 /* icon_gamer_image_animation@2x.png */,
@@ -3335,6 +3375,7 @@
 				9E9D6E901E61896900EB095B /* music_menu@3x.png in Resources */,
 				9EFAB73F1E2F01030039C853 /* DailyController.xib in Resources */,
 				9ED17DD91F6920EB00127760 /* icon_ranking_score@2x.png in Resources */,
+				1795566D202FF58900BC996A /* icon_gamer_image_PanoramaView@2x.png in Resources */,
 				9E9D6E8F1E61896900EB095B /* music_menu@2x.png in Resources */,
 				9E9D6E7B1E617E2700EB095B /* pull_image_5@2x.png in Resources */,
 				9E53B4A31E648E670015FA02 /* SongViewController.xib in Resources */,
@@ -3448,6 +3489,7 @@
 				9E53B4C81E64A2F10015FA02 /* music_song_play@3x.png in Resources */,
 				9E220D3E1E30A4A6009D7146 /* new_10.png in Resources */,
 				9E4E121D1E3569F900A08DAC /* icon_weatner_night_6.png in Resources */,
+				1795566C202FF58900BC996A /* icon_gamer_image_PanoramaView@3x.png in Resources */,
 				9E9D6E871E617E2700EB095B /* pull_image_17@2x.png in Resources */,
 				9E336FEB1E43ABB000D8F112 /* icon_weather_search@3x.png in Resources */,
 				9E138A181E2B1DDF0011701B /* icon_tab_homer.png in Resources */,
@@ -3677,6 +3719,7 @@
 				9E279D291F3DA8B1004E9FB4 /* icon_gamer_translate@2x.png in Resources */,
 				9EFAB7391E2EFCA50039C853 /* icon_weatherController_location@3x.png in Resources */,
 				9ED17DCF1F6920EB00127760 /* icon_gameRank_font@2x@2x.png in Resources */,
+				17601CE1202FF739009A84B7 /* WechatIMG72.jpeg in Resources */,
 				9E66AFDF1F43F4130095FC41 /* icon_gamer_font@2x.png in Resources */,
 				9E279CA41F3D9390004E9FB4 /* icon_gamer_bankCard@3x.png in Resources */,
 				9E4E11EA1E3569F900A08DAC /* icon_weatner_day_49.png in Resources */,
@@ -3826,6 +3869,7 @@
 				9E53B4A21E648E670015FA02 /* SongViewController.m in Sources */,
 				9ED17DBA1F6920EB00127760 /* F3HTileModel.m in Sources */,
 				9E138A001E2B120E0011701B /* SettingerController.m in Sources */,
+				17601CDF202FF6EA009A84B7 /* YQPanoramaView.m in Sources */,
 				9E66AFFC1F442BF50095FC41 /* SelectColorController.m in Sources */,
 				9E6EB0D61E3ED9C800E7128A /* YJLocalCountryData.m in Sources */,
 				9E9D6E2A1E61705800EB095B /* MJRefreshAutoGifFooter.m in Sources */,
@@ -3893,6 +3937,7 @@
 				9ED17DB91F6920EB00127760 /* F3HQueueCommand.m in Sources */,
 				9E9D6E371E61705800EB095B /* UIScrollView+MJRefresh.m in Sources */,
 				9E6EB0D71E3ED9C800E7128A /* SMSSDKUI.m in Sources */,
+				17ACF732202C037E0086B5D2 /* tableViewA.m in Sources */,
 				09453E791E8C06850062E5CA /* SHLineGraphView.m in Sources */,
 				9ED17DE11F6920EB00127760 /* F3HControlView.m in Sources */,
 				9E9D6E251E61705800EB095B /* MJRefreshAutoFooter.m in Sources */,
@@ -3934,6 +3979,7 @@
 				9E66B0201F442CDA0095FC41 /* VSliderView.m in Sources */,
 				9E4E73A61F98A92F00D869DF /* IMMessageYourCell.m in Sources */,
 				9E9EB63A1E62A46C005A0F2B /* PasswordController.m in Sources */,
+				17601CDA202FF6AB009A84B7 /* PanoramaController.m in Sources */,
 				9E9D6E351E61705800EB095B /* NSBundle+MJRefresh.m in Sources */,
 				9E118AF31E60147800914D9E /* MKAnnotationView+WebCache.m in Sources */,
 				9ED17DE21F6920EB00127760 /* F3HGameboardView.m in Sources */,

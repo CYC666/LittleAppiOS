@@ -41,6 +41,7 @@
     _listCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, Nav_Height, kScreenWidth, kScreenHeight - Nav_Height)
                                              collectionViewLayout:layout];
     _listCollectionView.backgroundColor = [UIColor clearColor];
+    _listCollectionView.alwaysBounceVertical = YES;
     [_listCollectionView registerNib:[UINib nibWithNibName:@"TestCell" bundle:[NSBundle mainBundle]]
           forCellWithReuseIdentifier:@"TestCell"];
     _listCollectionView.delegate = self;
