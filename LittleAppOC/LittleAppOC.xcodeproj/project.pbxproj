@@ -29,6 +29,13 @@
 		17601CDA202FF6AB009A84B7 /* PanoramaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17601CD9202FF6AB009A84B7 /* PanoramaController.m */; };
 		17601CDF202FF6EA009A84B7 /* YQPanoramaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17601CDE202FF6EA009A84B7 /* YQPanoramaView.m */; };
 		17601CE1202FF739009A84B7 /* WechatIMG72.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 17601CE0202FF739009A84B7 /* WechatIMG72.jpeg */; };
+		17601CE820301FCD009A84B7 /* CharBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17601CE620301FCD009A84B7 /* CharBarController.m */; };
+		17601CE920301FCD009A84B7 /* CharBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17601CE720301FCD009A84B7 /* CharBarController.xib */; };
+		17601CEC203020B6009A84B7 /* icon_gamer_image_CharBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17601CEA203020B6009A84B7 /* icon_gamer_image_CharBar@2x.png */; };
+		17601CED203020B6009A84B7 /* icon_gamer_image_CharBar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17601CEB203020B6009A84B7 /* icon_gamer_image_CharBar@3x.png */; };
+		17601CF62030214A009A84B7 /* YQChartBar_YView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17601CF32030214A009A84B7 /* YQChartBar_YView.m */; };
+		17601CF72030214A009A84B7 /* YQCharBarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17601CF42030214A009A84B7 /* YQCharBarCell.m */; };
+		17601CF82030214A009A84B7 /* YQChartBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17601CF52030214A009A84B7 /* YQChartBarView.m */; };
 		1795566C202FF58900BC996A /* icon_gamer_image_PanoramaView@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1795566A202FF58800BC996A /* icon_gamer_image_PanoramaView@3x.png */; };
 		1795566D202FF58900BC996A /* icon_gamer_image_PanoramaView@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1795566B202FF58900BC996A /* icon_gamer_image_PanoramaView@2x.png */; };
 		17ACF732202C037E0086B5D2 /* tableViewA.m in Sources */ = {isa = PBXBuildFile; fileRef = 17ACF731202C037E0086B5D2 /* tableViewA.m */; };
@@ -716,6 +723,17 @@
 		17601CDD202FF6EA009A84B7 /* YQPanoramaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQPanoramaView.h; sourceTree = "<group>"; };
 		17601CDE202FF6EA009A84B7 /* YQPanoramaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQPanoramaView.m; sourceTree = "<group>"; };
 		17601CE0202FF739009A84B7 /* WechatIMG72.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG72.jpeg; sourceTree = "<group>"; };
+		17601CE520301FCD009A84B7 /* CharBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharBarController.h; sourceTree = "<group>"; };
+		17601CE620301FCD009A84B7 /* CharBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharBarController.m; sourceTree = "<group>"; };
+		17601CE720301FCD009A84B7 /* CharBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharBarController.xib; sourceTree = "<group>"; };
+		17601CEA203020B6009A84B7 /* icon_gamer_image_CharBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_CharBar@2x.png"; sourceTree = "<group>"; };
+		17601CEB203020B6009A84B7 /* icon_gamer_image_CharBar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_CharBar@3x.png"; sourceTree = "<group>"; };
+		17601CF02030214A009A84B7 /* YQChartBar_YView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQChartBar_YView.h; sourceTree = "<group>"; };
+		17601CF12030214A009A84B7 /* YQCharBarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQCharBarCell.h; sourceTree = "<group>"; };
+		17601CF22030214A009A84B7 /* YQChartBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQChartBarView.h; sourceTree = "<group>"; };
+		17601CF32030214A009A84B7 /* YQChartBar_YView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQChartBar_YView.m; sourceTree = "<group>"; };
+		17601CF42030214A009A84B7 /* YQCharBarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQCharBarCell.m; sourceTree = "<group>"; };
+		17601CF52030214A009A84B7 /* YQChartBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQChartBarView.m; sourceTree = "<group>"; };
 		1795566A202FF58800BC996A /* icon_gamer_image_PanoramaView@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_PanoramaView@3x.png"; sourceTree = "<group>"; };
 		1795566B202FF58900BC996A /* icon_gamer_image_PanoramaView@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_PanoramaView@2x.png"; sourceTree = "<group>"; };
 		17ACF730202C037E0086B5D2 /* tableViewA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tableViewA.h; sourceTree = "<group>"; };
@@ -1614,6 +1632,38 @@
 			path = YQPanoramaView;
 			sourceTree = "<group>";
 		};
+		17601CE320301FB7009A84B7 /* CharBarView */ = {
+			isa = PBXGroup;
+			children = (
+				17601CEE2030214A009A84B7 /* YQCharView */,
+				17601CE520301FCD009A84B7 /* CharBarController.h */,
+				17601CE620301FCD009A84B7 /* CharBarController.m */,
+				17601CE720301FCD009A84B7 /* CharBarController.xib */,
+			);
+			path = CharBarView;
+			sourceTree = "<group>";
+		};
+		17601CEE2030214A009A84B7 /* YQCharView */ = {
+			isa = PBXGroup;
+			children = (
+				17601CEF2030214A009A84B7 /* YQCharBarView */,
+			);
+			path = YQCharView;
+			sourceTree = "<group>";
+		};
+		17601CEF2030214A009A84B7 /* YQCharBarView */ = {
+			isa = PBXGroup;
+			children = (
+				17601CF02030214A009A84B7 /* YQChartBar_YView.h */,
+				17601CF12030214A009A84B7 /* YQCharBarCell.h */,
+				17601CF22030214A009A84B7 /* YQChartBarView.h */,
+				17601CF32030214A009A84B7 /* YQChartBar_YView.m */,
+				17601CF42030214A009A84B7 /* YQCharBarCell.m */,
+				17601CF52030214A009A84B7 /* YQChartBarView.m */,
+			);
+			path = YQCharBarView;
+			sourceTree = "<group>";
+		};
 		17955668202FF47B00BC996A /* PanoramaView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1896,6 +1946,7 @@
 			children = (
 				9E1389F21E2B11D00011701B /* GamerController.h */,
 				9E1389F31E2B11D00011701B /* GamerController.m */,
+				17601CE320301FB7009A84B7 /* CharBarView */,
 				17955668202FF47B00BC996A /* PanoramaView */,
 				17FF657120280D8D00308B6D /* test */,
 				173E1E6E1FE035FC003621E5 /* SendLoveImage */,
@@ -2213,6 +2264,8 @@
 		9E527DC21E3799460057AF4C /* GamerImage */ = {
 			isa = PBXGroup;
 			children = (
+				17601CEA203020B6009A84B7 /* icon_gamer_image_CharBar@2x.png */,
+				17601CEB203020B6009A84B7 /* icon_gamer_image_CharBar@3x.png */,
 				1795566B202FF58900BC996A /* icon_gamer_image_PanoramaView@2x.png */,
 				1795566A202FF58800BC996A /* icon_gamer_image_PanoramaView@3x.png */,
 				17FF656C20280D4500308B6D /* icon_gamer_image_test@2x.png */,
@@ -3359,6 +3412,7 @@
 				9ED17DD71F6920EB00127760 /* icon_number_score@2x.png in Resources */,
 				9E4E12021E3569F900A08DAC /* icon_weatner_night_19.png in Resources */,
 				9E4E11E61E3569F900A08DAC /* icon_weatner_day_31.png in Resources */,
+				17601CEC203020B6009A84B7 /* icon_gamer_image_CharBar@2x.png in Resources */,
 				9E8297E61E65B76100143EB4 /* music_song_order.png in Resources */,
 				9E4E11F91E3569F900A08DAC /* icon_weatner_night_10.png in Resources */,
 				9EA44AFA1E2E24BC00F7761D /* 25.png in Resources */,
@@ -3387,6 +3441,7 @@
 				9EA44B0A1E2E24BD00F7761D /* 5.png in Resources */,
 				9E4E11E11E3569F900A08DAC /* icon_weatner_day_29.png in Resources */,
 				9E4E11E51E3569F900A08DAC /* icon_weatner_day_302.png in Resources */,
+				17601CED203020B6009A84B7 /* icon_gamer_image_CharBar@3x.png in Resources */,
 				9E802F671F41560F0092DDAE /* ProvincesAndCities.plist in Resources */,
 				9E4E11E01E3569F900A08DAC /* icon_weatner_day_28.png in Resources */,
 				9E64DE6C1F4AE5D0002E6A3F /* icon_home_saoyisao@3x.png in Resources */,
@@ -3498,6 +3553,7 @@
 				9E4E120F1E3569F900A08DAC /* icon_weatner_night_30.png in Resources */,
 				0904B6BE1E8AB199009ADD18 /* icon_gamer_group@2x.png in Resources */,
 				9ED17DBF1F6920EB00127760 /* icon_game2048_back@2x.png in Resources */,
+				17601CE920301FCD009A84B7 /* CharBarController.xib in Resources */,
 				9E6EB0E01E3ED9C800E7128A /* SMSSDKUI.bundle in Resources */,
 				9E4E121B1E3569F900A08DAC /* icon_weatner_night_57.png in Resources */,
 				9E12E90A1F4287DA001233B6 /* icon_gamer_die@2x.png in Resources */,
@@ -3829,6 +3885,7 @@
 				9E648E131F61379500FB2705 /* ScanCollectionView.m in Sources */,
 				9E01D3671F4C272400AA31F3 /* CalendarCell.m in Sources */,
 				9E4E12281E356E3D00A08DAC /* Ali_AQI_Model.m in Sources */,
+				17601CF62030214A009A84B7 /* YQChartBar_YView.m in Sources */,
 				9E66B0241F4432C60095FC41 /* SelectFontSizeViewController.m in Sources */,
 				9ED17DDF1F6920EB00127760 /* CYCBangBiScoreView.m in Sources */,
 				9E4E739A1F983E7B00D869DF /* CollisionView.m in Sources */,
@@ -3850,6 +3907,7 @@
 				9E6EB0DE1E3ED9C800E7128A /* SMSUIContactsFriendsViewController.m in Sources */,
 				9E6EB0D41E3ED9C800E7128A /* SMS_HYZBadgeView.m in Sources */,
 				9E9D6E931E618A8900EB095B /* MenuController.m in Sources */,
+				17601CF72030214A009A84B7 /* YQCharBarCell.m in Sources */,
 				9EC8C32F1F9DD3980094CB3E /* NewsCollectController.m in Sources */,
 				9E6EB0D81E3ED9C800E7128A /* CustomCell.m in Sources */,
 				9E5BFDCD1F999A2A005F3544 /* IMMessageModel.m in Sources */,
@@ -3899,6 +3957,7 @@
 				9E01D3731F4C288A00AA31F3 /* CalendarViewController.m in Sources */,
 				9E118B011E60147800914D9E /* UIImageView+WebCache.m in Sources */,
 				173E1E711FE03613003621E5 /* SendLoveImageController.m in Sources */,
+				17601CE820301FCD009A84B7 /* CharBarController.m in Sources */,
 				9EA44B181E2E426B00F7761D /* CThemeButton.m in Sources */,
 				9E1389F71E2B11E00011701B /* ZonerController.m in Sources */,
 				9E4307AC1F9EE996005D773B /* UIImageView+CShow.m in Sources */,
@@ -3945,6 +4004,7 @@
 				9ED17DE41F6920EB00127760 /* F3HTileView.m in Sources */,
 				9E0672261F4D7C2100C1ABEE /* InputViewController.m in Sources */,
 				9E1679F81F6288F500B2776E /* CDoubleTableView.m in Sources */,
+				17601CF82030214A009A84B7 /* YQChartBarView.m in Sources */,
 				17FF657820280E0F00308B6D /* TestCell.m in Sources */,
 				9E6EB0DF1E3ED9C800E7128A /* SMSUIVerificationCodeViewController.m in Sources */,
 				9E66AFEB1F442AD80095FC41 /* FontViewController.m in Sources */,

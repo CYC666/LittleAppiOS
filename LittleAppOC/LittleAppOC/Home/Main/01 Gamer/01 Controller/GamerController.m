@@ -31,7 +31,7 @@
 #import "SendLoveImageController.h"
 #import "TestViewController.h"
 #import "PanoramaController.h"
-
+#import "CharBarController.h"
 
 
 #define GamerCellID @"GamerCellID"  
@@ -105,7 +105,8 @@
                @"icon_gamer_image_animation",
                @"icon_gamer_sendLoveImage",
                @"icon_gamer_image_test",
-               @"icon_gamer_image_PanoramaView"];
+               @"icon_gamer_image_PanoramaView",
+               @"icon_gamer_image_CharBar"];
     
     titles = @[@"2048",
                @"目标",
@@ -129,7 +130,8 @@
                @"动画",
                @"点赞",
                @"测试",
-               @"全景图"];
+               @"全景图",
+               @"柱形图"];
 
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     UICollectionView *gamesCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(20, 0, kScreenWidth - 40, kScreenHeight - TabBar_Height)
@@ -342,6 +344,12 @@
             } else if ([cell.gameNameLabel.text isEqualToString:@"全景图"]) {
                 
                 PanoramaController *ctrl = [[PanoramaController alloc] init];
+                ctrl.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:ctrl animated:YES];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"柱形图"]) {
+                
+                CharBarController *ctrl = [[CharBarController alloc] init];
                 ctrl.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:ctrl animated:YES];
                 
