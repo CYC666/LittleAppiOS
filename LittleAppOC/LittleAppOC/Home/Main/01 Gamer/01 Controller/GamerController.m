@@ -32,6 +32,7 @@
 #import "TestViewController.h"
 #import "PanoramaController.h"
 #import "CharBarController.h"
+#import "NoteViewController.h"
 
 
 #define GamerCellID @"GamerCellID"  
@@ -106,7 +107,8 @@
                @"icon_gamer_sendLoveImage",
                @"icon_gamer_image_test",
                @"icon_gamer_image_PanoramaView",
-               @"icon_gamer_image_CharBar"];
+               @"icon_gamer_image_CharBar",
+               @"icon_gamer_image_Note"];
     
     titles = @[@"2048",
                @"目标",
@@ -131,7 +133,8 @@
                @"点赞",
                @"测试",
                @"全景图",
-               @"柱形图"];
+               @"柱形图",
+               @"笔记"];
 
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     UICollectionView *gamesCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(20, 0, kScreenWidth - 40, kScreenHeight - TabBar_Height)
@@ -350,6 +353,12 @@
             } else if ([cell.gameNameLabel.text isEqualToString:@"柱形图"]) {
                 
                 CharBarController *ctrl = [[CharBarController alloc] init];
+                ctrl.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:ctrl animated:YES];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"笔记"]) {
+                
+                NoteViewController *ctrl = [[NoteViewController alloc] init];
                 ctrl.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:ctrl animated:YES];
                 

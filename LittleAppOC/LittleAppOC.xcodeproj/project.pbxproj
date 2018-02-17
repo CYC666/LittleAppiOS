@@ -19,6 +19,12 @@
 		09453E7E1E8C07C40062E5CA /* icon_gamer_line@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09453E7C1E8C07C40062E5CA /* icon_gamer_line@3x.png */; };
 		09D0F8DC1E8AB48D00E2BDFF /* icon_gamer_color@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09D0F8DA1E8AB48D00E2BDFF /* icon_gamer_color@2x.png */; };
 		09D0F8DD1E8AB48D00E2BDFF /* icon_gamer_color@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09D0F8DB1E8AB48D00E2BDFF /* icon_gamer_color@3x.png */; };
+		171F33D42038269700D0A23A /* icon_gamer_image_Note@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 171F33D12038269600D0A23A /* icon_gamer_image_Note@3x.png */; };
+		171F33D52038269700D0A23A /* icon_gamer_image_Note@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 171F33D32038269600D0A23A /* icon_gamer_image_Note@2x.png */; };
+		171F33D9203826AC00D0A23A /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 171F33D8203826AC00D0A23A /* NoteViewController.m */; };
+		171F33DD203827B100D0A23A /* NoteListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 171F33DB203827B100D0A23A /* NoteListCell.m */; };
+		171F33DE203827B100D0A23A /* NoteListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 171F33DC203827B100D0A23A /* NoteListCell.xib */; };
+		171F33E12038297700D0A23A /* NoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 171F33E02038297700D0A23A /* NoteModel.m */; };
 		173E1E711FE03613003621E5 /* SendLoveImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E1E701FE03613003621E5 /* SendLoveImageController.m */; };
 		173E1E741FE0377C003621E5 /* icon_gamer_sendLoveImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 173E1E721FE0377C003621E5 /* icon_gamer_sendLoveImage@3x.png */; };
 		173E1E751FE0377C003621E5 /* icon_gamer_sendLoveImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 173E1E731FE0377C003621E5 /* icon_gamer_sendLoveImage@2x.png */; };
@@ -711,6 +717,15 @@
 		09453E7C1E8C07C40062E5CA /* icon_gamer_line@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_line@3x.png"; sourceTree = "<group>"; };
 		09D0F8DA1E8AB48D00E2BDFF /* icon_gamer_color@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_color@2x.png"; sourceTree = "<group>"; };
 		09D0F8DB1E8AB48D00E2BDFF /* icon_gamer_color@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_color@3x.png"; sourceTree = "<group>"; };
+		171F33D12038269600D0A23A /* icon_gamer_image_Note@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_Note@3x.png"; sourceTree = "<group>"; };
+		171F33D32038269600D0A23A /* icon_gamer_image_Note@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_Note@2x.png"; sourceTree = "<group>"; };
+		171F33D7203826AC00D0A23A /* NoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
+		171F33D8203826AC00D0A23A /* NoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
+		171F33DA203827B100D0A23A /* NoteListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteListCell.h; sourceTree = "<group>"; };
+		171F33DB203827B100D0A23A /* NoteListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteListCell.m; sourceTree = "<group>"; };
+		171F33DC203827B100D0A23A /* NoteListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteListCell.xib; sourceTree = "<group>"; };
+		171F33DF2038297700D0A23A /* NoteModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteModel.h; sourceTree = "<group>"; };
+		171F33E02038297700D0A23A /* NoteModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteModel.m; sourceTree = "<group>"; };
 		173E1E6F1FE03613003621E5 /* SendLoveImageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SendLoveImageController.h; sourceTree = "<group>"; };
 		173E1E701FE03613003621E5 /* SendLoveImageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendLoveImageController.m; sourceTree = "<group>"; };
 		173E1E721FE0377C003621E5 /* icon_gamer_sendLoveImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_sendLoveImage@3x.png"; sourceTree = "<group>"; };
@@ -1614,6 +1629,20 @@
 			path = SHLineGraphView;
 			sourceTree = "<group>";
 		};
+		171F33D62038269F00D0A23A /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				171F33D7203826AC00D0A23A /* NoteViewController.h */,
+				171F33D8203826AC00D0A23A /* NoteViewController.m */,
+				171F33DF2038297700D0A23A /* NoteModel.h */,
+				171F33E02038297700D0A23A /* NoteModel.m */,
+				171F33DA203827B100D0A23A /* NoteListCell.h */,
+				171F33DB203827B100D0A23A /* NoteListCell.m */,
+				171F33DC203827B100D0A23A /* NoteListCell.xib */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
 		173E1E6E1FE035FC003621E5 /* SendLoveImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1946,6 +1975,7 @@
 			children = (
 				9E1389F21E2B11D00011701B /* GamerController.h */,
 				9E1389F31E2B11D00011701B /* GamerController.m */,
+				171F33D62038269F00D0A23A /* Note */,
 				17601CE320301FB7009A84B7 /* CharBarView */,
 				17955668202FF47B00BC996A /* PanoramaView */,
 				17FF657120280D8D00308B6D /* test */,
@@ -2264,6 +2294,8 @@
 		9E527DC21E3799460057AF4C /* GamerImage */ = {
 			isa = PBXGroup;
 			children = (
+				171F33D32038269600D0A23A /* icon_gamer_image_Note@2x.png */,
+				171F33D12038269600D0A23A /* icon_gamer_image_Note@3x.png */,
 				17601CEA203020B6009A84B7 /* icon_gamer_image_CharBar@2x.png */,
 				17601CEB203020B6009A84B7 /* icon_gamer_image_CharBar@3x.png */,
 				1795566B202FF58900BC996A /* icon_gamer_image_PanoramaView@2x.png */,
@@ -3486,6 +3518,7 @@
 				9E138A361E2B375E0011701B /* Icon-Spotlight-40@2x.png in Resources */,
 				9E336FE91E43ABB000D8F112 /* icon_weather_search.png in Resources */,
 				9EEA41FF1E66EBFB0081F8E5 /* music_search@2x.png in Resources */,
+				171F33D52038269700D0A23A /* icon_gamer_image_Note@2x.png in Resources */,
 				9E485AAF1F452E1B0014ECE6 /* icon_gamer_overColor@3x.png in Resources */,
 				9E220D411E30A4A6009D7146 /* new_13.png in Resources */,
 				9E9D6E7C1E617E2700EB095B /* pull_image_6@2x.png in Resources */,
@@ -3617,6 +3650,7 @@
 				9EF53D121E2BDE2000F55033 /* icon_leftCtrl_user@2x.png in Resources */,
 				9E118ACA1E5FFD0200914D9E /* music_menuButton@2x.png in Resources */,
 				9E53B4BB1E64A2F10015FA02 /* music_song_last@2x.png in Resources */,
+				171F33D42038269700D0A23A /* icon_gamer_image_Note@3x.png in Resources */,
 				9E4E12101E3569F900A08DAC /* icon_weatner_night_301.png in Resources */,
 				9ED17DCB1F6920EB00127760 /* icon_gameRank_banner@2x.png in Resources */,
 				9E527DC51E379B330057AF4C /* icon_gamer_2048@2x.png in Resources */,
@@ -3701,6 +3735,7 @@
 				9ED17DC31F6920EB00127760 /* icon_game2048_reset@2x.png in Resources */,
 				9E138A171E2B1DDF0011701B /* icon_tab_gamer@3x.png in Resources */,
 				9EA44B0B1E2E24BD00F7761D /* 6.png in Resources */,
+				171F33DE203827B100D0A23A /* NoteListCell.xib in Resources */,
 				9E53B4BF1E64A2F10015FA02 /* music_song_list@3x.png in Resources */,
 				9ED17DBE1F6920EB00127760 /* icon_best_score@3x.png in Resources */,
 				9E66AFDC1F43F3B40095FC41 /* icon_gamer_app@3x.png in Resources */,
@@ -3869,6 +3904,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17560551201819FD0089EF46 /* libYYKit.a in Sources */,
+				171F33E12038297700D0A23A /* NoteModel.m in Sources */,
 				9E01D3681F4C272400AA31F3 /* CalendarMonth.m in Sources */,
 				9E648E121F61379500FB2705 /* ScanCell.m in Sources */,
 				9E66B0341F4458730095FC41 /* 简特细等线.ttf in Sources */,
@@ -3986,12 +4022,14 @@
 				9E118AF61E60147800914D9E /* SDWebImageCompat.m in Sources */,
 				9E66B00C1F442C620095FC41 /* BoomController.m in Sources */,
 				9EA44B151E2E425A00F7761D /* CThemeLabel.m in Sources */,
+				171F33D9203826AC00D0A23A /* NoteViewController.m in Sources */,
 				9E64DE3D1F4ACB5C002E6A3F /* CodeViewController.m in Sources */,
 				9ED17DE01F6920EB00127760 /* CYCBestScoreView.m in Sources */,
 				9E1389FD1E2B12000011701B /* DiscoverController.m in Sources */,
 				9E4E73971F983CFF00D869DF /* TileView.m in Sources */,
 				9E66B01C1F442CB50095FC41 /* brokenLineController.m in Sources */,
 				9E485AB31F45319A0014ECE6 /* OverColorViewController.m in Sources */,
+				171F33DD203827B100D0A23A /* NoteListCell.m in Sources */,
 				9EFAB7421E2F07D10039C853 /* WeatherCellFlowLayout.m in Sources */,
 				9ED17DB91F6920EB00127760 /* F3HQueueCommand.m in Sources */,
 				9E9D6E371E61705800EB095B /* UIScrollView+MJRefresh.m in Sources */,
