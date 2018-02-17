@@ -9,6 +9,8 @@
 #import "NoteViewController.h"
 #import "NoteListCell.h"
 #import "NoteModel.h"
+#import "AddNoteViewController.h"
+#import "ShowNoteViewController.h"
 
 @interface NoteViewController () <UITableViewDelegate, UITableViewDataSource> {
     
@@ -39,10 +41,16 @@
     UIButton *rightItem = [UIButton buttonWithType:UIButtonTypeCustom];
     [rightItem setImage:[UIImage imageNamed:@"白色添加"]  forState:UIControlStateNormal];
     [rightItem setTintColor:[UIColor whiteColor]];
-    rightItem.frame = CGRectMake(0, 0, 40, 22);
+    rightItem.frame = CGRectMake(0, 0, 30, 22);
     [rightItem addTarget:self action:@selector(addButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightItem];
-    self.navigationItem.rightBarButtonItem = rightBarItem;
+    UIButton *rightItem1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightItem1 setImage:[UIImage imageNamed:@"白色放大镜"]  forState:UIControlStateNormal];
+    [rightItem1 setTintColor:[UIColor whiteColor]];
+    rightItem1.frame = CGRectMake(0, 0, 30, 22);
+    [rightItem1 addTarget:self action:@selector(searchButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightBarItem1 = [[UIBarButtonItem alloc] initWithCustomView:rightItem1];
+    self.navigationItem.rightBarButtonItems = @[rightBarItem, rightBarItem1];
     
     
     
@@ -60,12 +68,21 @@
          forCellReuseIdentifier:@"NoteListCell"];
     [self.view addSubview:_listTableView];
     
-    dataArray = [self loadListAction];
-    [_listTableView reloadData];
     
 //    NSDictionary *dic = @{@"title" : @"这是一个笑话",
 //                          @"content" : @"本次与世界500强公司5个亿的项目圆满完成，经过多天的合作，共获利2.28元，期待下一年的合作。"
 //                          };
+    
+}
+
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    
+    dataArray = [self loadListAction];
+    [_listTableView reloadData];
+    
     
 }
 
@@ -96,9 +113,18 @@
 #pragma mark - 添加
 - (void)addButtonAction:(UIButton *)button {
     
+    AddNoteViewController *ctrl = [[AddNoteViewController alloc] init];
+    [self.navigationController pushViewController:ctrl animated:YES];
+    
+}
+
+#pragma mark - 搜索
+- (void)searchButtonAction:(UIButton *)button {
+    
     
     
 }
+
 
 
 
@@ -147,6 +173,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.row < dataArray.count) {
+        
+        NoteModel *model = dataArray[indexPath.row];
+        ShowNoteViewController *ctrl = [[ShowNoteViewController alloc] init];
+        ctrl.model = model;
+        [self.navigationController pushViewController:ctrl animated:YES];
+    }
+    
+    
     
 }
 

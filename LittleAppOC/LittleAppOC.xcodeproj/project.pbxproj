@@ -25,6 +25,12 @@
 		171F33DD203827B100D0A23A /* NoteListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 171F33DB203827B100D0A23A /* NoteListCell.m */; };
 		171F33DE203827B100D0A23A /* NoteListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 171F33DC203827B100D0A23A /* NoteListCell.xib */; };
 		171F33E12038297700D0A23A /* NoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 171F33E02038297700D0A23A /* NoteModel.m */; };
+		171F33E52038593800D0A23A /* AddNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 171F33E32038593800D0A23A /* AddNoteViewController.m */; };
+		171F33E62038593800D0A23A /* AddNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 171F33E42038593800D0A23A /* AddNoteViewController.xib */; };
+		171F33EA20385E5300D0A23A /* ShowNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 171F33E820385E5300D0A23A /* ShowNoteViewController.m */; };
+		171F33EB20385E5300D0A23A /* ShowNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 171F33E920385E5300D0A23A /* ShowNoteViewController.xib */; };
+		171F33EE20386DF200D0A23A /* NoteSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 171F33ED20386DF200D0A23A /* NoteSearchView.m */; };
+		171F33F020386DFF00D0A23A /* NoteSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 171F33EF20386DFF00D0A23A /* NoteSearchView.xib */; };
 		173E1E711FE03613003621E5 /* SendLoveImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E1E701FE03613003621E5 /* SendLoveImageController.m */; };
 		173E1E741FE0377C003621E5 /* icon_gamer_sendLoveImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 173E1E721FE0377C003621E5 /* icon_gamer_sendLoveImage@3x.png */; };
 		173E1E751FE0377C003621E5 /* icon_gamer_sendLoveImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 173E1E731FE0377C003621E5 /* icon_gamer_sendLoveImage@2x.png */; };
@@ -726,6 +732,15 @@
 		171F33DC203827B100D0A23A /* NoteListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteListCell.xib; sourceTree = "<group>"; };
 		171F33DF2038297700D0A23A /* NoteModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteModel.h; sourceTree = "<group>"; };
 		171F33E02038297700D0A23A /* NoteModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteModel.m; sourceTree = "<group>"; };
+		171F33E22038593700D0A23A /* AddNoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddNoteViewController.h; sourceTree = "<group>"; };
+		171F33E32038593800D0A23A /* AddNoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddNoteViewController.m; sourceTree = "<group>"; };
+		171F33E42038593800D0A23A /* AddNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNoteViewController.xib; sourceTree = "<group>"; };
+		171F33E720385E5300D0A23A /* ShowNoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowNoteViewController.h; sourceTree = "<group>"; };
+		171F33E820385E5300D0A23A /* ShowNoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowNoteViewController.m; sourceTree = "<group>"; };
+		171F33E920385E5300D0A23A /* ShowNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowNoteViewController.xib; sourceTree = "<group>"; };
+		171F33EC20386DF200D0A23A /* NoteSearchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteSearchView.h; sourceTree = "<group>"; };
+		171F33ED20386DF200D0A23A /* NoteSearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteSearchView.m; sourceTree = "<group>"; };
+		171F33EF20386DFF00D0A23A /* NoteSearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteSearchView.xib; sourceTree = "<group>"; };
 		173E1E6F1FE03613003621E5 /* SendLoveImageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SendLoveImageController.h; sourceTree = "<group>"; };
 		173E1E701FE03613003621E5 /* SendLoveImageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendLoveImageController.m; sourceTree = "<group>"; };
 		173E1E721FE0377C003621E5 /* icon_gamer_sendLoveImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_sendLoveImage@3x.png"; sourceTree = "<group>"; };
@@ -1634,6 +1649,15 @@
 			children = (
 				171F33D7203826AC00D0A23A /* NoteViewController.h */,
 				171F33D8203826AC00D0A23A /* NoteViewController.m */,
+				171F33E22038593700D0A23A /* AddNoteViewController.h */,
+				171F33E32038593800D0A23A /* AddNoteViewController.m */,
+				171F33E42038593800D0A23A /* AddNoteViewController.xib */,
+				171F33E720385E5300D0A23A /* ShowNoteViewController.h */,
+				171F33E820385E5300D0A23A /* ShowNoteViewController.m */,
+				171F33E920385E5300D0A23A /* ShowNoteViewController.xib */,
+				171F33EC20386DF200D0A23A /* NoteSearchView.h */,
+				171F33ED20386DF200D0A23A /* NoteSearchView.m */,
+				171F33EF20386DFF00D0A23A /* NoteSearchView.xib */,
 				171F33DF2038297700D0A23A /* NoteModel.h */,
 				171F33E02038297700D0A23A /* NoteModel.m */,
 				171F33DA203827B100D0A23A /* NoteListCell.h */,
@@ -3436,6 +3460,7 @@
 				9EA44AFC1E2E24BC00F7761D /* 27.png in Resources */,
 				9E802F641F4141030092DDAE /* icon_gamer_home@3x.png in Resources */,
 				9E9EB6421E62B86C005A0F2B /* setting_password@2x.png in Resources */,
+				171F33F020386DFF00D0A23A /* NoteSearchView.xib in Resources */,
 				9EF9EC121E2C89D30030023B /* icon_leftController_day@3x.png in Resources */,
 				9E60EE271F5FAA6600A73237 /* ImageSelectViewController.xib in Resources */,
 				9E4E11F81E3569F900A08DAC /* icon_weatner_night_1.png in Resources */,
@@ -3491,9 +3516,11 @@
 				9EA44A8F1E2DF3FF00F7761D /* home_tab_icon_1@2x.png in Resources */,
 				9E4E11CD1E3569F900A08DAC /* icon_weatner_day_10.png in Resources */,
 				9E5BFDD51F99DEF4005F3544 /* IMInputBar.xib in Resources */,
+				171F33EB20385E5300D0A23A /* ShowNoteViewController.xib in Resources */,
 				09D0F8DC1E8AB48D00E2BDFF /* icon_gamer_color@2x.png in Resources */,
 				9E4E12011E3569F900A08DAC /* icon_weatner_night_18.png in Resources */,
 				9E4E12091E3569F900A08DAC /* icon_weatner_night_25.png in Resources */,
+				171F33E62038593800D0A23A /* AddNoteViewController.xib in Resources */,
 				9E53B4C11E64A2F10015FA02 /* music_song_next@2x.png in Resources */,
 				9E4E11DD1E3569F900A08DAC /* icon_weatner_day_25.png in Resources */,
 				9E01D3701F4C283E00AA31F3 /* icon_gamer_calendar@3x.png in Resources */,
@@ -3920,6 +3947,7 @@
 				9E9D6E381E61705800EB095B /* UIView+MJExtension.m in Sources */,
 				9E648E131F61379500FB2705 /* ScanCollectionView.m in Sources */,
 				9E01D3671F4C272400AA31F3 /* CalendarCell.m in Sources */,
+				171F33EA20385E5300D0A23A /* ShowNoteViewController.m in Sources */,
 				9E4E12281E356E3D00A08DAC /* Ali_AQI_Model.m in Sources */,
 				17601CF62030214A009A84B7 /* YQChartBar_YView.m in Sources */,
 				9E66B0241F4432C60095FC41 /* SelectFontSizeViewController.m in Sources */,
@@ -3939,6 +3967,7 @@
 				17FF657F20282E5600308B6D /* RollLabelInfo.m in Sources */,
 				9E9D6E341E61705800EB095B /* MJRefreshConst.m in Sources */,
 				9E118AFE1E60147800914D9E /* UIImage+MultiFormat.m in Sources */,
+				171F33E52038593800D0A23A /* AddNoteViewController.m in Sources */,
 				9EA44B261E2E6FBD00F7761D /* WeatherModel.m in Sources */,
 				9E6EB0DE1E3ED9C800E7128A /* SMSUIContactsFriendsViewController.m in Sources */,
 				9E6EB0D41E3ED9C800E7128A /* SMS_HYZBadgeView.m in Sources */,
@@ -4030,6 +4059,7 @@
 				9E66B01C1F442CB50095FC41 /* brokenLineController.m in Sources */,
 				9E485AB31F45319A0014ECE6 /* OverColorViewController.m in Sources */,
 				171F33DD203827B100D0A23A /* NoteListCell.m in Sources */,
+				171F33EE20386DF200D0A23A /* NoteSearchView.m in Sources */,
 				9EFAB7421E2F07D10039C853 /* WeatherCellFlowLayout.m in Sources */,
 				9ED17DB91F6920EB00127760 /* F3HQueueCommand.m in Sources */,
 				9E9D6E371E61705800EB095B /* UIScrollView+MJRefresh.m in Sources */,

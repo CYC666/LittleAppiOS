@@ -69,6 +69,7 @@
             nav.navigationBar.translucent = NO;
         } else {
             nav.navigationBar.barTintColor = [UIColor blackColor];
+            nav.navigationBar.tintColor = [UIColor whiteColor];
             nav.navigationBar.translucent = YES;
         }
         
