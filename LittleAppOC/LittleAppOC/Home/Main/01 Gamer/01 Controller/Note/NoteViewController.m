@@ -11,6 +11,7 @@
 #import "NoteModel.h"
 #import "AddNoteViewController.h"
 #import "ShowNoteViewController.h"
+#import "NoteSearchViewController.h"
 
 @interface NoteViewController () <UITableViewDelegate, UITableViewDataSource> {
     
@@ -121,7 +122,8 @@
 #pragma mark - 搜索
 - (void)searchButtonAction:(UIButton *)button {
     
-    
+    NoteSearchViewController *ctrl = [[NoteSearchViewController alloc] init];
+    [self.navigationController pushViewController:ctrl animated:YES];
     
 }
 
