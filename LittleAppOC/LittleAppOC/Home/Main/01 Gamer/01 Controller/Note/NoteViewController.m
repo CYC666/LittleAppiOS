@@ -12,6 +12,7 @@
 #import "AddNoteViewController.h"
 #import "ShowNoteViewController.h"
 #import "NoteSearchViewController.h"
+#import "MMDrawerController.h"
 
 @interface NoteViewController () <UITableViewDelegate, UITableViewDataSource> {
     
@@ -85,6 +86,22 @@
     [_listTableView reloadData];
     
     
+}
+
+//（1）、视图将要出现的时候,禁用MMDrawCtrls
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    //获取根视图控制器
+    MMDrawerController *drawCtrl= (MMDrawerController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    //设置一下打开的区域
+    [drawCtrl setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
+}
+//（2）、视图将要消失的时候,还原一下
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    MMDrawerController *drawCtrl= (MMDrawerController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    //设置一下打开的区域
+    [drawCtrl setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
 }
 
 #pragma mark - 获取数据
@@ -187,5 +204,43 @@
     
     
 }
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return YES;
+    
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"删除";
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // 1、获取应用程序沙盒下的Documents目录（购物车列表）
+    NSString *filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES).firstObject stringByAppendingPathComponent:@"NoteList.plist"];
+    NSMutableArray *list = [[NSMutableArray alloc] initWithContentsOfFile:filePath];
+    [list removeObjectAtIndex:indexPath.row];
+    
+    // 文件写入
+    if ([list writeToFile:filePath atomically:YES]) {
+        
+        [dataArray removeObjectAtIndex:indexPath.row];
+        [_listTableView reloadData];
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
 
 @end
