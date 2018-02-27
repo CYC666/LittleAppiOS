@@ -68,8 +68,6 @@
 		9E01D36F1F4C283E00AA31F3 /* icon_gamer_calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E01D36D1F4C283E00AA31F3 /* icon_gamer_calendar@2x.png */; };
 		9E01D3701F4C283E00AA31F3 /* icon_gamer_calendar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E01D36E1F4C283E00AA31F3 /* icon_gamer_calendar@3x.png */; };
 		9E01D3731F4C288A00AA31F3 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E01D3721F4C288A00AA31F3 /* CalendarViewController.m */; };
-		9E0672141F4D7AA100C1ABEE /* KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0672131F4D7AA100C1ABEE /* KeyboardViewController.m */; };
-		9E0672181F4D7AA100C1ABEE /* CKeyBoard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9E0672101F4D7AA100C1ABEE /* CKeyBoard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9E0672201F4D7BDA00C1ABEE /* icon_gamer_input@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E06721E1F4D7BDA00C1ABEE /* icon_gamer_input@2x.png */; };
 		9E0672211F4D7BDA00C1ABEE /* icon_gamer_input@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E06721F1F4D7BDA00C1ABEE /* icon_gamer_input@3x.png */; };
 		9E0672261F4D7C2100C1ABEE /* InputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0672241F4D7C2100C1ABEE /* InputViewController.m */; };
@@ -391,8 +389,6 @@
 		9E66B0311F444D910095FC41 /* 迷你简胖娃.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 9E66B02B1F444BF60095FC41 /* 迷你简胖娃.ttf */; };
 		9E66B0321F44562D0095FC41 /* 汉仪清雅体简.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 9E118ACF1E600B0F00914D9E /* 汉仪清雅体简.ttf */; };
 		9E66B0341F4458730095FC41 /* 简特细等线.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 9E66B0331F44582F0095FC41 /* 简特细等线.ttf */; };
-		9E6B61E41F5E96ED002A7463 /* input_globe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6B61E21F5E96ED002A7463 /* input_globe@2x.png */; };
-		9E6B61E51F5E96ED002A7463 /* input_globe@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6B61E31F5E96ED002A7463 /* input_globe@3x.png */; };
 		9E6EB0D11E3ED9C800E7128A /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6EB0AC1E3ED9C800E7128A /* MOBFoundation.framework */; };
 		9E6EB0D21E3ED9C800E7128A /* MOBFoundationEx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6EB0AD1E3ED9C800E7128A /* MOBFoundationEx.framework */; };
 		9E6EB0D31E3ED9C800E7128A /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6EB0AE1E3ED9C800E7128A /* SMS_SDK.framework */; };
@@ -675,13 +671,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9E0672161F4D7AA100C1ABEE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9E1389AC1E2B08390011701B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9E06720F1F4D7AA100C1ABEE;
-			remoteInfo = CKeyBoard;
-		};
 		9E6EB0E21E3ED9C800E7128A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9E6EB0CD1E3ED9C800E7128A /* SMSSDUI.xcodeproj */;
@@ -690,20 +679,6 @@
 			remoteInfo = SMSSDUI;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		9E06721D1F4D7AA100C1ABEE /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				9E0672181F4D7AA100C1ABEE /* CKeyBoard.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0904B6BB1E8AB199009ADD18 /* icon_gamer_group@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_group@3x.png"; sourceTree = "<group>"; };
@@ -801,9 +776,6 @@
 		9E01D3711F4C288A00AA31F3 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		9E01D3721F4C288A00AA31F3 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		9E0672101F4D7AA100C1ABEE /* CKeyBoard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CKeyBoard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E0672121F4D7AA100C1ABEE /* KeyboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardViewController.h; sourceTree = "<group>"; };
-		9E0672131F4D7AA100C1ABEE /* KeyboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardViewController.m; sourceTree = "<group>"; };
-		9E0672151F4D7AA100C1ABEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E06721E1F4D7BDA00C1ABEE /* icon_gamer_input@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_input@2x.png"; sourceTree = "<group>"; };
 		9E06721F1F4D7BDA00C1ABEE /* icon_gamer_input@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_input@3x.png"; sourceTree = "<group>"; };
 		9E0672231F4D7C2100C1ABEE /* InputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputViewController.h; sourceTree = "<group>"; };
@@ -1193,8 +1165,6 @@
 		9E66B0291F444BF60095FC41 /* DFW_WW7.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = DFW_WW7.TTF; sourceTree = "<group>"; };
 		9E66B02B1F444BF60095FC41 /* 迷你简胖娃.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "迷你简胖娃.ttf"; sourceTree = "<group>"; };
 		9E66B0331F44582F0095FC41 /* 简特细等线.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "简特细等线.ttf"; sourceTree = "<group>"; };
-		9E6B61E21F5E96ED002A7463 /* input_globe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_globe@2x.png"; sourceTree = "<group>"; };
-		9E6B61E31F5E96ED002A7463 /* input_globe@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_globe@3x.png"; sourceTree = "<group>"; };
 		9E6EB0AC1E3ED9C800E7128A /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
 		9E6EB0AD1E3ED9C800E7128A /* MOBFoundationEx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundationEx.framework; sourceTree = "<group>"; };
 		9E6EB0AE1E3ED9C800E7128A /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
@@ -1768,17 +1738,6 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
-		9E0672111F4D7AA100C1ABEE /* CKeyBoard */ = {
-			isa = PBXGroup;
-			children = (
-				9E6B61E11F5E96ED002A7463 /* images */,
-				9E0672121F4D7AA100C1ABEE /* KeyboardViewController.h */,
-				9E0672131F4D7AA100C1ABEE /* KeyboardViewController.m */,
-				9E0672151F4D7AA100C1ABEE /* Info.plist */,
-			);
-			path = CKeyBoard;
-			sourceTree = "<group>";
-		};
 		9E0672221F4D7C1500C1ABEE /* Input */ = {
 			isa = PBXGroup;
 			children = (
@@ -1878,7 +1837,6 @@
 			isa = PBXGroup;
 			children = (
 				9E1389B61E2B08390011701B /* LittleAppOC */,
-				9E0672111F4D7AA100C1ABEE /* CKeyBoard */,
 				9E1389B51E2B08390011701B /* Products */,
 				9E6EB0E51E3EDA2E00E7128A /* Frameworks */,
 				0640C5F269A698980B991631 /* Pods */,
@@ -2607,15 +2565,6 @@
 			path = FontList;
 			sourceTree = "<group>";
 		};
-		9E6B61E11F5E96ED002A7463 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				9E6B61E21F5E96ED002A7463 /* input_globe@2x.png */,
-				9E6B61E31F5E96ED002A7463 /* input_globe@3x.png */,
-			);
-			path = images;
-			sourceTree = "<group>";
-		};
 		9E6EB0AA1E3ED9C800E7128A /* SMS_SDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -3326,14 +3275,12 @@
 				9E1389B01E2B08390011701B /* Sources */,
 				9E1389B11E2B08390011701B /* Frameworks */,
 				9E1389B21E2B08390011701B /* Resources */,
-				9E06721D1F4D7AA100C1ABEE /* Embed App Extensions */,
 				1D8C4A7FBB12B82527A5ECD7 /* [CP] Embed Pods Frameworks */,
 				49356EBE7C33F575EFC95F6C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9E0672171F4D7AA100C1ABEE /* PBXTargetDependency */,
 			);
 			name = LittleAppOC;
 			productName = LittleAppOC;
@@ -3409,8 +3356,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E6B61E51F5E96ED002A7463 /* input_globe@3x.png in Resources */,
-				9E6B61E41F5E96ED002A7463 /* input_globe@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3922,7 +3867,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E0672141F4D7AA100C1ABEE /* KeyboardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4125,14 +4069,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		9E0672171F4D7AA100C1ABEE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9E06720F1F4D7AA100C1ABEE /* CKeyBoard */;
-			targetProxy = 9E0672161F4D7AA100C1ABEE /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9E1389C51E2B08390011701B /* LaunchScreen.storyboard */ = {
