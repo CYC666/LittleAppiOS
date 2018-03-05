@@ -33,6 +33,7 @@
 #import "PanoramaController.h"
 #import "CharBarController.h"
 #import "NoteViewController.h"
+#import "WCViewController.h"
 
 
 #define GamerCellID @"GamerCellID"  
@@ -108,7 +109,8 @@
                @"icon_gamer_image_test",
                @"icon_gamer_image_PanoramaView",
                @"icon_gamer_image_CharBar",
-               @"icon_gamer_image_Note"];
+               @"icon_gamer_image_Note",
+               @"icon_gamer_image_WC"];
     
     titles = @[@"2048",
                @"目标",
@@ -134,7 +136,8 @@
                @"测试",
                @"全景图",
                @"柱形图",
-               @"笔记"];
+               @"笔记",
+               @"地铁厕所"];
 
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     UICollectionView *gamesCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(20, 0, kScreenWidth - 40, kScreenHeight - TabBar_Height)
@@ -359,6 +362,12 @@
             } else if ([cell.gameNameLabel.text isEqualToString:@"笔记"]) {
                 
                 NoteViewController *ctrl = [[NoteViewController alloc] init];
+                ctrl.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:ctrl animated:YES];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"地铁厕所"]) {
+                
+                WCViewController *ctrl = [[WCViewController alloc] init];
                 ctrl.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:ctrl animated:YES];
                 

@@ -196,9 +196,29 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.row == 4) {
+        float totalSize = 0;
+        NSString * diskCachePath = NSSearchPathForDirectoriesInDomains ( NSCachesDirectory , NSUserDomainMask , YES )[0];
+        NSDirectoryEnumerator *fileEnumerator = [[NSFileManager defaultManager] enumeratorAtPath:diskCachePath];
+        for (NSString *fileName in fileEnumerator) {
+            NSString *filePath = [diskCachePath stringByAppendingPathComponent:fileName];
+            NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil];
+            unsigned long long length = [attrs fileSize];
+            totalSize += length / 1024.0 / 1024.0;
+        }
+        // 根据大小计算清缓存时间
+        float showTime = 0.0f;
+        if (totalSize < 10) {
+            showTime = 1.0;
+        } else if(showTime >= 10 && showTime < 50) {
+            showTime = 2.0;
+        } else {
+            showTime = 3.0;
+        }
+        
         //显示风火轮
         [[SDImageCache sharedImageCache] clearDisk];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        //显示风火轮
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(showTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             //使用第三方框架SDWebImage缓存图片，才能对应的清除缓存图片
             [_setTableView reloadData];
         });

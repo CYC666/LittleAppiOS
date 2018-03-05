@@ -19,6 +19,19 @@
 		09453E7E1E8C07C40062E5CA /* icon_gamer_line@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09453E7C1E8C07C40062E5CA /* icon_gamer_line@3x.png */; };
 		09D0F8DC1E8AB48D00E2BDFF /* icon_gamer_color@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09D0F8DA1E8AB48D00E2BDFF /* icon_gamer_color@2x.png */; };
 		09D0F8DD1E8AB48D00E2BDFF /* icon_gamer_color@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09D0F8DB1E8AB48D00E2BDFF /* icon_gamer_color@3x.png */; };
+		17119247204A526400E28893 /* icon_gamer_image_WC@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17119244204A526300E28893 /* icon_gamer_image_WC@3x.png */; };
+		17119248204A526400E28893 /* icon_gamer_image_WC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17119246204A526400E28893 /* icon_gamer_image_WC@2x.png */; };
+		1711924C204A52AD00E28893 /* WCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1711924B204A52AD00E28893 /* WCViewController.m */; };
+		1711925D204CDD4000E28893 /* 7号线.png in Resources */ = {isa = PBXBuildFile; fileRef = 17119255204CDD3F00E28893 /* 7号线.png */; };
+		1711925E204CDD4000E28893 /* 4号线.png in Resources */ = {isa = PBXBuildFile; fileRef = 17119256204CDD3F00E28893 /* 4号线.png */; };
+		1711925F204CDD4000E28893 /* 1号线.png in Resources */ = {isa = PBXBuildFile; fileRef = 17119257204CDD3F00E28893 /* 1号线.png */; };
+		17119260204CDD4000E28893 /* 11号线.png in Resources */ = {isa = PBXBuildFile; fileRef = 17119258204CDD3F00E28893 /* 11号线.png */; };
+		17119261204CDD4000E28893 /* 5号线.png in Resources */ = {isa = PBXBuildFile; fileRef = 17119259204CDD3F00E28893 /* 5号线.png */; };
+		17119262204CDD4000E28893 /* 3号线.png in Resources */ = {isa = PBXBuildFile; fileRef = 1711925A204CDD3F00E28893 /* 3号线.png */; };
+		17119263204CDD4000E28893 /* 9号线.png in Resources */ = {isa = PBXBuildFile; fileRef = 1711925B204CDD3F00E28893 /* 9号线.png */; };
+		17119264204CDD4000E28893 /* 2号线.png in Resources */ = {isa = PBXBuildFile; fileRef = 1711925C204CDD3F00E28893 /* 2号线.png */; };
+		17119268204CE34B00E28893 /* WCLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17119266204CE34B00E28893 /* WCLineCell.m */; };
+		17119269204CE34B00E28893 /* WCLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17119267204CE34B00E28893 /* WCLineCell.xib */; };
 		171F33D42038269700D0A23A /* icon_gamer_image_Note@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 171F33D12038269600D0A23A /* icon_gamer_image_Note@3x.png */; };
 		171F33D52038269700D0A23A /* icon_gamer_image_Note@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 171F33D32038269600D0A23A /* icon_gamer_image_Note@2x.png */; };
 		171F33D9203826AC00D0A23A /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 171F33D8203826AC00D0A23A /* NoteViewController.m */; };
@@ -698,6 +711,21 @@
 		09453E7C1E8C07C40062E5CA /* icon_gamer_line@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_line@3x.png"; sourceTree = "<group>"; };
 		09D0F8DA1E8AB48D00E2BDFF /* icon_gamer_color@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_color@2x.png"; sourceTree = "<group>"; };
 		09D0F8DB1E8AB48D00E2BDFF /* icon_gamer_color@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_color@3x.png"; sourceTree = "<group>"; };
+		17119244204A526300E28893 /* icon_gamer_image_WC@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_WC@3x.png"; sourceTree = "<group>"; };
+		17119246204A526400E28893 /* icon_gamer_image_WC@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_WC@2x.png"; sourceTree = "<group>"; };
+		1711924A204A52AD00E28893 /* WCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCViewController.h; sourceTree = "<group>"; };
+		1711924B204A52AD00E28893 /* WCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCViewController.m; sourceTree = "<group>"; };
+		17119255204CDD3F00E28893 /* 7号线.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7号线.png"; sourceTree = "<group>"; };
+		17119256204CDD3F00E28893 /* 4号线.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4号线.png"; sourceTree = "<group>"; };
+		17119257204CDD3F00E28893 /* 1号线.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1号线.png"; sourceTree = "<group>"; };
+		17119258204CDD3F00E28893 /* 11号线.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11号线.png"; sourceTree = "<group>"; };
+		17119259204CDD3F00E28893 /* 5号线.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5号线.png"; sourceTree = "<group>"; };
+		1711925A204CDD3F00E28893 /* 3号线.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3号线.png"; sourceTree = "<group>"; };
+		1711925B204CDD3F00E28893 /* 9号线.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "9号线.png"; sourceTree = "<group>"; };
+		1711925C204CDD3F00E28893 /* 2号线.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2号线.png"; sourceTree = "<group>"; };
+		17119265204CE34B00E28893 /* WCLineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCLineCell.h; sourceTree = "<group>"; };
+		17119266204CE34B00E28893 /* WCLineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCLineCell.m; sourceTree = "<group>"; };
+		17119267204CE34B00E28893 /* WCLineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WCLineCell.xib; sourceTree = "<group>"; };
 		171F33D12038269600D0A23A /* icon_gamer_image_Note@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_Note@3x.png"; sourceTree = "<group>"; };
 		171F33D32038269600D0A23A /* icon_gamer_image_Note@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_Note@2x.png"; sourceTree = "<group>"; };
 		171F33D7203826AC00D0A23A /* NoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
@@ -1614,6 +1642,34 @@
 			path = SHLineGraphView;
 			sourceTree = "<group>";
 		};
+		17119249204A529B00E28893 /* WC */ = {
+			isa = PBXGroup;
+			children = (
+				1711924A204A52AD00E28893 /* WCViewController.h */,
+				1711924B204A52AD00E28893 /* WCViewController.m */,
+				17119265204CE34B00E28893 /* WCLineCell.h */,
+				17119266204CE34B00E28893 /* WCLineCell.m */,
+				17119267204CE34B00E28893 /* WCLineCell.xib */,
+				17119253204CDD3200E28893 /* images */,
+			);
+			path = WC;
+			sourceTree = "<group>";
+		};
+		17119253204CDD3200E28893 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				17119257204CDD3F00E28893 /* 1号线.png */,
+				1711925C204CDD3F00E28893 /* 2号线.png */,
+				1711925A204CDD3F00E28893 /* 3号线.png */,
+				17119256204CDD3F00E28893 /* 4号线.png */,
+				17119259204CDD3F00E28893 /* 5号线.png */,
+				17119255204CDD3F00E28893 /* 7号线.png */,
+				1711925B204CDD3F00E28893 /* 9号线.png */,
+				17119258204CDD3F00E28893 /* 11号线.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		171F33D62038269F00D0A23A /* Note */ = {
 			isa = PBXGroup;
 			children = (
@@ -1957,6 +2013,7 @@
 			children = (
 				9E1389F21E2B11D00011701B /* GamerController.h */,
 				9E1389F31E2B11D00011701B /* GamerController.m */,
+				17119249204A529B00E28893 /* WC */,
 				171F33D62038269F00D0A23A /* Note */,
 				17601CE320301FB7009A84B7 /* CharBarView */,
 				17955668202FF47B00BC996A /* PanoramaView */,
@@ -2276,6 +2333,8 @@
 		9E527DC21E3799460057AF4C /* GamerImage */ = {
 			isa = PBXGroup;
 			children = (
+				17119246204A526400E28893 /* icon_gamer_image_WC@2x.png */,
+				17119244204A526300E28893 /* icon_gamer_image_WC@3x.png */,
 				171F33D32038269600D0A23A /* icon_gamer_image_Note@2x.png */,
 				171F33D12038269600D0A23A /* icon_gamer_image_Note@3x.png */,
 				17601CEA203020B6009A84B7 /* icon_gamer_image_CharBar@2x.png */,
@@ -3462,6 +3521,7 @@
 				9E5BFDD51F99DEF4005F3544 /* IMInputBar.xib in Resources */,
 				171F33EB20385E5300D0A23A /* ShowNoteViewController.xib in Resources */,
 				09D0F8DC1E8AB48D00E2BDFF /* icon_gamer_color@2x.png in Resources */,
+				17119262204CDD4000E28893 /* 3号线.png in Resources */,
 				9E4E12011E3569F900A08DAC /* icon_weatner_night_18.png in Resources */,
 				9E4E12091E3569F900A08DAC /* icon_weatner_night_25.png in Resources */,
 				171F33E62038593800D0A23A /* AddNoteViewController.xib in Resources */,
@@ -3469,6 +3529,7 @@
 				9E4E11DD1E3569F900A08DAC /* icon_weatner_day_25.png in Resources */,
 				9E01D3701F4C283E00AA31F3 /* icon_gamer_calendar@3x.png in Resources */,
 				9EA44AEF1E2E24BC00F7761D /* 15.png in Resources */,
+				17119248204A526400E28893 /* icon_gamer_image_WC@2x.png in Resources */,
 				9E53B4BA1E64A2F10015FA02 /* music_song_last.png in Resources */,
 				9EF53D091E2BDE2000F55033 /* icon_leftCtrl_feedBack@2x.png in Resources */,
 				9E12E9021F427CA8001233B6 /* setting_lock@3x.png in Resources */,
@@ -3479,6 +3540,7 @@
 				9EEA41FE1E66EBFB0081F8E5 /* music_search.png in Resources */,
 				9E5EE25D1F3C6BD3009C3659 /* icon_gamer_subway@3x.png in Resources */,
 				9E4E11D71E3569F900A08DAC /* icon_weatner_day_2.png in Resources */,
+				17119261204CDD4000E28893 /* 5号线.png in Resources */,
 				9ED17DCD1F6920EB00127760 /* icon_gameRank_copper@2x.png in Resources */,
 				9EA44AE81E2E24BC00F7761D /* 0.png in Resources */,
 				9EA44AF81E2E24BC00F7761D /* 23.png in Resources */,
@@ -3506,6 +3568,7 @@
 				9E4E11D81E3569F900A08DAC /* icon_weatner_day_20.png in Resources */,
 				9E4E11F61E3569F900A08DAC /* icon_weatner_day_99.png in Resources */,
 				9E138A131E2B1DDF0011701B /* icon_tab_discover@2x.png in Resources */,
+				17119247204A526400E28893 /* icon_gamer_image_WC@3x.png in Resources */,
 				9ED17D3E1F68E45200127760 /* icon_gamer_image_animation@3x.png in Resources */,
 				9E9D6E7E1E617E2700EB095B /* pull_image_8@2x.png in Resources */,
 				9E4E11DE1E3569F900A08DAC /* icon_weatner_day_26.png in Resources */,
@@ -3525,6 +3588,7 @@
 				9E9D6E891E617E2700EB095B /* pull_image_19@2x.png in Resources */,
 				9EA44AF51E2E24BC00F7761D /* 20.png in Resources */,
 				9E220D341E30A4A6009D7146 /* new_0.png in Resources */,
+				17119269204CE34B00E28893 /* WCLineCell.xib in Resources */,
 				9E4E11F71E3569F900A08DAC /* icon_weatner_night_0.png in Resources */,
 				9EF53D0C1E2BDE2000F55033 /* icon_leftCtrl_function@2x.png in Resources */,
 				9ED17DDA1F6920EB00127760 /* icon_ranking_score@3x.png in Resources */,
@@ -3539,6 +3603,7 @@
 				9E9EB63B1E62A46C005A0F2B /* PasswordController.xib in Resources */,
 				9E4E11D41E3569F900A08DAC /* icon_weatner_day_17.png in Resources */,
 				9E9D6E811E617E2700EB095B /* pull_image_11@2x.png in Resources */,
+				1711925F204CDD4000E28893 /* 1号线.png in Resources */,
 				9E4E120C1E3569F900A08DAC /* icon_weatner_night_28.png in Resources */,
 				9E4E11EF1E3569F900A08DAC /* icon_weatner_day_56.png in Resources */,
 				9EF53D0D1E2BDE2000F55033 /* icon_leftCtrl_function@3x.png in Resources */,
@@ -3679,9 +3744,12 @@
 				9EA44AF41E2E24BC00F7761D /* 2.png in Resources */,
 				9EA44B0F1E2E24BD00F7761D /* 99.png in Resources */,
 				9E64DE471F4AD403002E6A3F /* icon_gamer_code_A.gif in Resources */,
+				1711925D204CDD4000E28893 /* 7号线.png in Resources */,
 				9E4E12361E35889E00A08DAC /* icon_weather_back@2x.png in Resources */,
 				9ED17DD21F6920EB00127760 /* icon_gameRank_gold@3x.png in Resources */,
+				17119264204CDD4000E28893 /* 2号线.png in Resources */,
 				9E9EB6411E62B86C005A0F2B /* setting_password.png in Resources */,
+				17119260204CDD4000E28893 /* 11号线.png in Resources */,
 				9E64DE6B1F4AE5D0002E6A3F /* icon_home_saoyisao@2x.png in Resources */,
 				9ED17DC11F6920EB00127760 /* icon_game2048_detial@2x.png in Resources */,
 				9EF9EC1F1E2CD01A0030023B /* icon_tab_Bar@2x.png in Resources */,
@@ -3708,6 +3776,7 @@
 				9E138A171E2B1DDF0011701B /* icon_tab_gamer@3x.png in Resources */,
 				9EA44B0B1E2E24BD00F7761D /* 6.png in Resources */,
 				171F33DE203827B100D0A23A /* NoteListCell.xib in Resources */,
+				1711925E204CDD4000E28893 /* 4号线.png in Resources */,
 				9E53B4BF1E64A2F10015FA02 /* music_song_list@3x.png in Resources */,
 				9ED17DBE1F6920EB00127760 /* icon_best_score@3x.png in Resources */,
 				9E66AFDC1F43F3B40095FC41 /* icon_gamer_app@3x.png in Resources */,
@@ -3749,6 +3818,7 @@
 				9EF53D0B1E2BDE2000F55033 /* icon_leftCtrl_function.png in Resources */,
 				9E138A351E2B375E0011701B /* Icon-Spotlight-40.png in Resources */,
 				9EF27B9F1E40F9D20076C9B9 /* icon_left_headImage.png in Resources */,
+				17119263204CDD4000E28893 /* 9号线.png in Resources */,
 				9E4E12171E3569F900A08DAC /* icon_weatner_night_53.png in Resources */,
 				9EA44AFF1E2E24BC00F7761D /* 3.png in Resources */,
 				9E01D36F1F4C283E00AA31F3 /* icon_gamer_calendar@2x.png in Resources */,
@@ -3880,6 +3950,7 @@
 				9E648E121F61379500FB2705 /* ScanCell.m in Sources */,
 				9E66B0341F4458730095FC41 /* 简特细等线.ttf in Sources */,
 				9E66B0321F44562D0095FC41 /* 汉仪清雅体简.ttf in Sources */,
+				1711924C204A52AD00E28893 /* WCViewController.m in Sources */,
 				9E66B02F1F444D910095FC41 /* DFW_WW7.TTF in Sources */,
 				9E648E141F61379500FB2705 /* ScanViewController.m in Sources */,
 				9E5BFDD31F99DEE7005F3544 /* IMInputBar.m in Sources */,
@@ -3918,6 +3989,7 @@
 				9E9D6E931E618A8900EB095B /* MenuController.m in Sources */,
 				17601CF72030214A009A84B7 /* YQCharBarCell.m in Sources */,
 				9EC8C32F1F9DD3980094CB3E /* NewsCollectController.m in Sources */,
+				17119268204CE34B00E28893 /* WCLineCell.m in Sources */,
 				9E6EB0D81E3ED9C800E7128A /* CustomCell.m in Sources */,
 				9E5BFDCD1F999A2A005F3544 /* IMMessageModel.m in Sources */,
 				9ED17DB51F6920EB00127760 /* CGameRankModel.m in Sources */,
