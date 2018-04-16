@@ -269,7 +269,7 @@
     NSMutableArray *actionArray = [NSMutableArray array];
     for (NSInteger i = 0; i < typeArray.count; i++) {
         XLsn0wPopupAction *action = [XLsn0wPopupAction actionWithImage:[UIImage imageNamed:@""]
-                                                                 title:titleArray[i]
+                                                                 title:[NSString stringWithFormat:@"  %@  ", titleArray[i]]
                                                                handler:^(XLsn0wPopupAction *action) {
             
                                                                    if (!isRefresh) {
@@ -399,15 +399,15 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    // 查看新闻H5页面
-    if (newsArray.count == 0) {
-        return;
-    } else {
-        NewsListModel *model = newsArray[indexPath.row];
-        CWebViewController *ctrl = [[CWebViewController alloc] initWithTitle:@"新闻详情" URL:model.url];
-        ctrl.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:ctrl animated:YES];
-    }
+//    // 查看新闻H5页面
+//    if (newsArray.count == 0) {
+//        return;
+//    } else {
+//        NewsListModel *model = newsArray[indexPath.row];
+//        CWebViewController *ctrl = [[CWebViewController alloc] initWithTitle:@"新闻详情" URL:model.url];
+//        ctrl.hidesBottomBarWhenPushed = YES;
+//        [self.navigationController pushViewController:ctrl animated:YES];
+//    }
     
 }
 

@@ -12,14 +12,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TestCell" id="gTV-IL-0wX" customClass="TestCell">
-            <rect key="frame" x="0.0" y="0.0" width="326" height="418"/>
+            <rect key="frame" x="0.0" y="0.0" width="326" height="626"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="326" height="418"/>
+                <rect key="frame" x="0.0" y="0.0" width="326" height="626"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dim-sg-ijn" userLabel="main">
-                        <rect key="frame" x="0.0" y="0.0" width="326" height="418"/>
+                        <rect key="frame" x="0.0" y="0.0" width="326" height="626"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8s-lk-mOe" userLabel="Roll View 40" customClass="RollView">
                                 <rect key="frame" x="0.0" y="0.0" width="326" height="40"/>
@@ -49,6 +49,13 @@
                                     <constraint firstAttribute="height" constant="80" id="5Tg-oe-xLF"/>
                                 </constraints>
                             </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLk-VL-kXb" customClass="TestCollectionView">
+                                <rect key="frame" x="0.0" y="200" width="326" height="300"/>
+                                <color key="backgroundColor" red="0.89858402653478486" green="1" blue="0.98561147605848176" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="aTk-An-fzr"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -62,7 +69,10 @@
                             <constraint firstItem="e8s-lk-mOe" firstAttribute="leading" secondItem="Dim-sg-ijn" secondAttribute="leading" id="bfM-KY-1Kx"/>
                             <constraint firstAttribute="trailing" secondItem="e8s-lk-mOe" secondAttribute="trailing" id="e6L-lT-gig"/>
                             <constraint firstItem="x5e-LP-Vh5" firstAttribute="top" secondItem="LEj-u6-cpJ" secondAttribute="bottom" id="eXg-dk-yxP"/>
+                            <constraint firstItem="cLk-VL-kXb" firstAttribute="leading" secondItem="Dim-sg-ijn" secondAttribute="leading" id="flH-6E-Pg4"/>
+                            <constraint firstAttribute="trailing" secondItem="cLk-VL-kXb" secondAttribute="trailing" id="hfb-c4-435"/>
                             <constraint firstItem="LEj-u6-cpJ" firstAttribute="leading" secondItem="Dim-sg-ijn" secondAttribute="leading" id="ijj-dk-Cke"/>
+                            <constraint firstItem="cLk-VL-kXb" firstAttribute="top" secondItem="x5e-LP-Vh5" secondAttribute="bottom" id="jD8-w5-qmE"/>
                             <constraint firstAttribute="trailing" secondItem="LEj-u6-cpJ" secondAttribute="trailing" id="rRF-uu-1Rj"/>
                         </constraints>
                     </view>
@@ -75,13 +85,13 @@
                 <constraint firstAttribute="bottom" secondItem="Dim-sg-ijn" secondAttribute="bottom" id="a4V-mb-Tag"/>
                 <constraint firstAttribute="trailing" secondItem="Dim-sg-ijn" secondAttribute="trailing" id="kfb-tU-faJ"/>
             </constraints>
-            <size key="customSize" width="326" height="418"/>
+            <size key="customSize" width="326" height="626"/>
             <connections>
                 <outlet property="pageFrameView" destination="LEj-u6-cpJ" id="ilR-EL-VVj"/>
                 <outlet property="pageView" destination="J0T-lQ-qQf" id="wmV-f5-D0r"/>
                 <outlet property="rollView" destination="e8s-lk-mOe" id="d4X-Kx-Fk3"/>
             </connections>
-            <point key="canvasLocation" x="-258" y="23"/>
+            <point key="canvasLocation" x="-258" y="127"/>
         </collectionViewCell>
     </objects>
 </document>

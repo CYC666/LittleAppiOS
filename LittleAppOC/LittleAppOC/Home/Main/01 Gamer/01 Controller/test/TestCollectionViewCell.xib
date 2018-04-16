@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TestCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="229" height="222"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="229" height="222"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EU1-3Q-0bJ">
+                        <rect key="frame" x="0.0" y="0.0" width="229" height="222"/>
+                        <color key="backgroundColor" red="0.98328930139541626" green="0.94834263177487188" blue="0.98198786748811318" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="EU1-3Q-0bJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="COO-hn-rAl"/>
+                <constraint firstAttribute="trailing" secondItem="EU1-3Q-0bJ" secondAttribute="trailing" id="VFv-lE-Zkb"/>
+                <constraint firstAttribute="bottom" secondItem="EU1-3Q-0bJ" secondAttribute="bottom" id="dnP-gu-hDy"/>
+                <constraint firstItem="EU1-3Q-0bJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vJR-Tj-EQe"/>
+            </constraints>
+            <size key="customSize" width="229" height="222"/>
+            <point key="canvasLocation" x="123.5" y="140"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="思念小饭团" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Glg-2E-Ici">
-                    <rect key="frame" x="10" y="70" width="355" height="200"/>
+                    <rect key="frame" x="10" y="80" width="355" height="200"/>
                     <color key="backgroundColor" red="0.92539256811141968" green="0.9255480170249939" blue="0.92537075281143188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="nnB-kO-Ttj"/>
@@ -37,7 +37,7 @@
                     </userDefinedRuntimeAttributes>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52o-Nh-dU5">
-                    <rect key="frame" x="10" y="280" width="355" height="54"/>
+                    <rect key="frame" x="10" y="290" width="355" height="54"/>
                     <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="54" id="NN5-3c-y4Y"/>
@@ -55,7 +55,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLn-cm-d1s">
-                    <rect key="frame" x="10" y="344" width="355" height="54"/>
+                    <rect key="frame" x="10" y="354" width="355" height="54"/>
                     <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="54" id="KGg-j8-Wmo"/>
@@ -72,7 +72,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zsS-dx-K7m" userLabel="字体颜色预览">
-                    <rect key="frame" x="321" y="290" width="34" height="34"/>
+                    <rect key="frame" x="321" y="300" width="34" height="34"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="zsS-dx-K7m" secondAttribute="height" id="1XC-VV-d9g"/>
@@ -82,7 +82,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CuY-69-xNu" userLabel="背景颜色预览">
-                    <rect key="frame" x="321" y="354" width="34" height="34"/>
+                    <rect key="frame" x="321" y="364" width="34" height="34"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="CuY-69-xNu" secondAttribute="height" id="dSF-lD-eJz"/>
@@ -92,7 +92,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qvq-Tf-YCG">
-                    <rect key="frame" x="10" y="408" width="355" height="54"/>
+                    <rect key="frame" x="10" y="418" width="355" height="54"/>
                     <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="54" id="weZ-eZ-XA9"/>
@@ -109,7 +109,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBN-be-jeQ">
-                    <rect key="frame" x="10" y="472" width="355" height="54"/>
+                    <rect key="frame" x="10" y="482" width="355" height="54"/>
                     <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="54" id="JTV-FU-2AG"/>
@@ -138,7 +138,7 @@
                 <constraint firstItem="lLn-cm-d1s" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="JzR-bI-lAy"/>
                 <constraint firstItem="52o-Nh-dU5" firstAttribute="top" secondItem="Glg-2E-Ici" secondAttribute="bottom" constant="10" id="LW1-Z5-TCH"/>
                 <constraint firstItem="CuY-69-xNu" firstAttribute="width" secondItem="CuY-69-xNu" secondAttribute="height" id="NhL-yt-2sU"/>
-                <constraint firstItem="Glg-2E-Ici" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="X5p-SJ-Poc"/>
+                <constraint firstItem="Glg-2E-Ici" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="X5p-SJ-Poc"/>
                 <constraint firstItem="lLn-cm-d1s" firstAttribute="top" secondItem="52o-Nh-dU5" secondAttribute="bottom" constant="10" id="Zmj-up-Wxz"/>
                 <constraint firstItem="CuY-69-xNu" firstAttribute="trailing" secondItem="lLn-cm-d1s" secondAttribute="trailing" constant="-10" id="aAY-u5-jQL"/>
                 <constraint firstAttribute="trailing" secondItem="lLn-cm-d1s" secondAttribute="trailing" constant="10" id="ag8-km-uwj"/>

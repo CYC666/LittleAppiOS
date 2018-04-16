@@ -24,6 +24,7 @@
 #import <CoreMotion/CoreMotion.h>
 #import "TileView.h"
 #import "CollisionView.h"
+#import "PSCC_enc_pwd.h"
 
 #define CYCLeftControllerCellID @"CYCLeftControllerCellID"  // 单元格重用标识符
 
@@ -386,7 +387,7 @@
 #pragma mark - 表视图代理方法
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 4;
+    return 3;
 
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -511,26 +512,34 @@
 
 #pragma mark - 测试接口
 - (void)testURL {
-
-    [CNetWorking creatColorCodeWithQrdata:@"http://www.1314.qq.com"
-                                     size:100
-                                       xt:100
-                                    level:@"M"
-                                  p_color:@"#03cbd2"
-                                  i_color:@"#03cbd2"
-                               back_color:@"#03cbd2"
-                               fore_color:@"#03cbd2"
-                                     logo:@""
-                                    wlogo:100
-                                    hlogo:100
-                                  version:1.1
-                                  success:^(id response) {
-                                      NSLog(@"sssss");
-                                  } failure:^(NSError *err) {
-                                      NSLog(@"ddddd");
-                                  }];
     
-    //    @"qrdata=http://www.1314.qq.com&xt=1&level=M&p_color=%23000000&i_color=#ff0000&back_color=#00f6ff&fore_color=#06ff00&logo=http%3A%2F%2Fwww.wwei.cn%2Fstatic%2Fimages%2Ficon%2Fwwei.png&wlogo=0&hlogo=0&version=1.1"
+    NSString *password = @"key=dnpxa-vqis1-mcxez-2repg-kp8di-vhujq-pxccv&version=2";
+    char *encData = NULL;
+    const char *a = [password UTF8String];
+
+    EncryptPassword(a, &encData, NULL);
+    
+    NSString *encPassword = [NSString stringWithUTF8String:encData];
+    
+    NSLog(@"%@", encPassword);
+    
+    NSDictionary *para = @{@"signature" : encPassword};
+    
+    NSString *urlPath = @"https://api.btctrade.com/api/balance";
+    
+    AFHTTPSessionManager *menager = [AFHTTPSessionManager manager];
+    [menager POST:urlPath parameters:para constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        
+    } success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        NSLog(@"%@", responseObject);
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+        NSLog(@"%@", error);
+        
+    }];
+    
 
 }
 

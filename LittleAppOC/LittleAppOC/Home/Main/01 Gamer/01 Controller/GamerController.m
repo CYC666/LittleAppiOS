@@ -34,6 +34,8 @@
 #import "CharBarController.h"
 #import "NoteViewController.h"
 #import "WCViewController.h"
+#import "BluetoothViewController.h"
+#import "WeChatPayViewController.h"
 
 
 #define GamerCellID @"GamerCellID"  
@@ -82,62 +84,78 @@
     
 }
 
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    
+}
+
 #pragma mark - 创建UI
 - (void)creatSubviews {
     
-    images = @[@"icon_gamer_2048",
-               @"icon_gamer_target",
+    images = @[
+//               @"icon_gamer_2048",
+//               @"icon_gamer_target",
                @"icon_gamer_boom",
                @"icon_gamer_color",
-               @"icon_gamer_line",
-               @"icon_gamer_flowSlider",
-               @"icon_gamer_subway",
-               @"icon_gamer_bankCard",
+//               @"icon_gamer_line",
+//               @"icon_gamer_flowSlider",
+//               @"icon_gamer_subway",
+//               @"icon_gamer_bankCard",
                @"icon_gamer_translate",
                @"icon_gamer_home",
                @"icon_gamer_die",
                @"icon_gamer_city",
                @"icon_gamer_font",
-               @"icon_gamer_app",
+//               @"icon_gamer_app",
                @"icon_gamer_overColor",
                @"icon_gamer_code",
                @"icon_gamer_calendar",
-               @"icon_gamer_input",
+//               @"icon_gamer_input",
                @"icon_gamer_image",
                @"icon_gamer_image_animation",
                @"icon_gamer_sendLoveImage",
-               @"icon_gamer_image_test",
+//               @"icon_gamer_image_test",
                @"icon_gamer_image_PanoramaView",
                @"icon_gamer_image_CharBar",
                @"icon_gamer_image_Note",
-               @"icon_gamer_image_WC"];
+               @"icon_gamer_image_WC",
+               @"icon_gamer_image_Bluetooth",
+               @"icon_gamer_image_WeChat"];
     
-    titles = @[@"2048",
-               @"目标",
+    titles = @[
+//               @"2048",
+//               @"目标",
                @"扫雷",
                @"取色板",
-               @"折线图",
-               @"标尺",
-               @"深圳地铁",
-               @"识别银行卡",
+//               @"折线图",
+//               @"标尺",
+//               @"深圳地铁",
+//               @"识别银行卡",
                @"翻译",
                @"桌面",
                @"退出",
                @"城市",
                @"字幕",
-               @"应用",
+//               @"应用",
                @"渐变",
                @"二维码",
                @"日历",
-               @"输入法",
+//               @"输入法",
                @"照片",
                @"动画",
                @"点赞",
-               @"测试",
+//               @"测试",
                @"全景图",
                @"柱形图",
                @"笔记",
-               @"地铁厕所"];
+               @"地铁厕所",
+               @"蓝牙",
+               @"微信"];
 
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     UICollectionView *gamesCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(20, 0, kScreenWidth - 40, kScreenHeight - TabBar_Height)
@@ -370,6 +388,17 @@
                 WCViewController *ctrl = [[WCViewController alloc] init];
                 ctrl.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:ctrl animated:YES];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"蓝牙"]) {
+                
+                BluetoothViewController *ctrl = [[BluetoothViewController alloc] init];
+                ctrl.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:ctrl animated:YES];
+                
+            } else if ([cell.gameNameLabel.text isEqualToString:@"微信"]) {
+                
+                WeChatPayViewController *ctrl = [[WeChatPayViewController alloc] init];
+                [self presentViewController:ctrl animated:YES completion:nil];
                 
             }
             

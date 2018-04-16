@@ -12,6 +12,7 @@
 #import "HomerController.h"
 #import "DiscoverController.h"
 #import "SettingerController.h"
+#import "CBaseNavViewController.h"
 
 
 @interface CYCTabBarController () {
@@ -61,17 +62,17 @@
     _subArray = [NSMutableArray arrayWithCapacity:5];
     for (int i = 0; i < tabControllerArray.count; i++) {
         UIViewController *controller = [[NSClassFromString(tabControllerArray[i]) alloc] init];
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
-        if (i == 1) {
-            // 音乐界面的个导航栏颜色为绿色，模仿QQ音乐
-            nav.navigationBar.barTintColor = CRGB(45, 194, 131, 1);
-            nav.navigationBar.tintColor = [UIColor whiteColor];
-            nav.navigationBar.translucent = NO;
-        } else {
+        CBaseNavViewController *nav = [[CBaseNavViewController alloc] initWithRootViewController:controller];
+//        if (i == 1) {
+//            // 音乐界面的个导航栏颜色为绿色，模仿QQ音乐
+//            nav.navigationBar.barTintColor = CRGB(45, 194, 131, 1);
+//            nav.navigationBar.tintColor = [UIColor whiteColor];
+//            nav.navigationBar.translucent = NO;
+//        } else {
             nav.navigationBar.barTintColor = [UIColor blackColor];
             nav.navigationBar.tintColor = [UIColor whiteColor];
             nav.navigationBar.translucent = YES;
-        }
+//        }
         
         controller.title = titleName[i];
         controller.tabBarItem.title = titleName[i];

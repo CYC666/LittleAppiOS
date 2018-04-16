@@ -39,7 +39,7 @@
     title.textColor = [UIColor whiteColor];
     self.navigationItem.titleView = title;
     
-    _mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, -64, kScreenWidth, kScreenHeight + 64)];
+    _mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, -Nav_Height, kScreenWidth, kScreenHeight + Nav_Height)];
     _mainScrollView.contentSize = CGSizeMake(5000, 5000);
     _mainScrollView.delegate = self;
     _mainScrollView.scrollIndicatorInsets = UIEdgeInsetsMake(64, 0, 0, 0);

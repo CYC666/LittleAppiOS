@@ -28,7 +28,7 @@
                             MenuControllerDelegate, SongViewControllerDelegate>
 
 @property (strong, nonatomic) AVPlayer *mp3Player;                  // 播放mp3
-@property (strong, nonatomic) UIImageView *songImageView;           // 点击播放音乐之后，显示在导航栏左边的图片
+//@property (strong, nonatomic) UIImageView *songImageView;           // 点击播放音乐之后，显示在导航栏左边的图片
 @property (strong, nonatomic) NSTimer *mainTimer;                   // 监听进度的定时器
 @property (strong, nonatomic) NSMutableArray *tableViewDataArray;   // 用于表视图显示的数组
 @property (strong, nonatomic) SongViewController *songView;         // 播放详情页
@@ -128,7 +128,7 @@
 - (UITableView *)songListTableView {
 
     if (_songListTableView == nil) {
-        _songListTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 64 - 49)
+        _songListTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - TabBar_Height)
                                                           style:UITableViewStylePlain];
         _songListTableView.backgroundColor = [UIColor clearColor];
         [_songListTableView setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
@@ -246,7 +246,7 @@
             }
             
             SongModel *liveModel = _tableViewDataArray[_currentIndex];
-            [_songImageView sd_setImageWithURL:[NSURL URLWithString:liveModel.albumpic_small]];
+//            [_songImageView sd_setImageWithURL:[NSURL URLWithString:liveModel.albumpic_small]];
             _mp3Player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:liveModel.url]];
             [_mp3Player play];
             
@@ -274,7 +274,7 @@
             }
             
             SongModel *liveModel = _tableViewDataArray[_currentIndex];
-            [_songImageView sd_setImageWithURL:[NSURL URLWithString:liveModel.albumpic_small]];
+//            [_songImageView sd_setImageWithURL:[NSURL URLWithString:liveModel.albumpic_small]];
             _mp3Player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:liveModel.url]];
             [_mp3Player play];
             
@@ -561,7 +561,7 @@
         model.albumid = musicDic[@"albumid"];
         model.number = [NSString stringWithFormat:@"%ld", i+1];
         model.isLive = NO;
-        
+    
         [self.songArray addObject:model];
     }
     
@@ -634,20 +634,24 @@
     _mp3Player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:songModel.url]];
     [_mp3Player play];
     
-    if (_songImageView == nil) {
-        // 导航栏左边的音乐图片
-        _songImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-        _songImageView.layer.cornerRadius = 15;
-        _songImageView.clipsToBounds = YES;
-        _songImageView.userInteractionEnabled = YES;
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(leftItemAction:)];
-        [_songImageView addGestureRecognizer:tap];
-        
-        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:_songImageView];
+//    if (_songImageView == nil) {
+//        // 导航栏左边的音乐图片
+//        _songImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+//        _songImageView.layer.cornerRadius = 15;
+//        _songImageView.clipsToBounds = YES;
+//        _songImageView.userInteractionEnabled = YES;
+//        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(leftItemAction:)];
+//        [_songImageView addGestureRecognizer:tap];
+//
+    //        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:_songImageView];
+        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"music_show"]
+                                                                       style:UIBarButtonItemStylePlain
+                                                                      target:self
+                                                                      action:@selector(leftItemAction:)];
         [self.navigationItem setLeftBarButtonItem:leftItem];
-    }
+//    }
     
-    [_songImageView sd_setImageWithURL:[NSURL URLWithString:songModel.albumpic_small]];
+//    [_songImageView sd_setImageWithURL:[NSURL URLWithString:songModel.albumpic_small]];
     
     // 创建播放详情页
     if (_songView == nil) {
@@ -695,7 +699,7 @@
             _songView.liveIndex++;
             
             SongModel *liveModel = _tableViewDataArray[_songView.liveIndex];
-            [_songImageView sd_setImageWithURL:[NSURL URLWithString:liveModel.albumpic_small]];
+//            [_songImageView sd_setImageWithURL:[NSURL URLWithString:liveModel.albumpic_small]];
             _mp3Player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:liveModel.url]];
             [_mp3Player play];
         } else {
@@ -703,7 +707,7 @@
             _songView.liveIndex = 0;
             
             SongModel *liveModel = _tableViewDataArray[_songView.liveIndex];
-            [_songImageView sd_setImageWithURL:[NSURL URLWithString:liveModel.albumpic_small]];
+//            [_songImageView sd_setImageWithURL:[NSURL URLWithString:liveModel.albumpic_small]];
             _mp3Player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:liveModel.url]];
             [_mp3Player play];
 
@@ -728,7 +732,7 @@
             _songView.liveIndex = happenIndex;
             
             SongModel *liveModel = _tableViewDataArray[_songView.liveIndex];
-            [_songImageView sd_setImageWithURL:[NSURL URLWithString:liveModel.albumpic_small]];
+//            [_songImageView sd_setImageWithURL:[NSURL URLWithString:liveModel.albumpic_small]];
             _mp3Player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:liveModel.url]];
             [_mp3Player play];
         
@@ -782,7 +786,7 @@
 
     SongModel *liveModel = _tableViewDataArray[index];
     _currentIndex = index;
-    [_songImageView sd_setImageWithURL:[NSURL URLWithString:liveModel.albumpic_small]];
+//    [_songImageView sd_setImageWithURL:[NSURL URLWithString:liveModel.albumpic_small]];
     _mp3Player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:liveModel.url]];
     [_mp3Player play];
     
@@ -816,7 +820,7 @@
 
     _currentIndex = index;
     SongModel *liveModel = _tableViewDataArray[index];
-    [_songImageView sd_setImageWithURL:[NSURL URLWithString:liveModel.albumpic_small]];
+//    [_songImageView sd_setImageWithURL:[NSURL URLWithString:liveModel.albumpic_small]];
     _mp3Player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:liveModel.url]];
     [_mp3Player play];
     

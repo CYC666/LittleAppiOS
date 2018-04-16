@@ -19,6 +19,13 @@
 		09453E7E1E8C07C40062E5CA /* icon_gamer_line@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09453E7C1E8C07C40062E5CA /* icon_gamer_line@3x.png */; };
 		09D0F8DC1E8AB48D00E2BDFF /* icon_gamer_color@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09D0F8DA1E8AB48D00E2BDFF /* icon_gamer_color@2x.png */; };
 		09D0F8DD1E8AB48D00E2BDFF /* icon_gamer_color@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09D0F8DB1E8AB48D00E2BDFF /* icon_gamer_color@3x.png */; };
+		1704420F2073334A00448AD0 /* TestCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1704420E2073334A00448AD0 /* TestCollectionView.m */; };
+		170442132073336400448AD0 /* TestFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 170442122073336400448AD0 /* TestFlowLayout.m */; };
+		170442172073507A00448AD0 /* TestCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 170442152073507A00448AD0 /* TestCollectionViewCell.m */; };
+		170442182073507A00448AD0 /* TestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170442162073507A00448AD0 /* TestCollectionViewCell.xib */; };
+		1710BBB7207B61200057C714 /* sha256.c in Sources */ = {isa = PBXBuildFile; fileRef = 1710BBB2207B61200057C714 /* sha256.c */; };
+		1710BBB8207B61200057C714 /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = 1710BBB5207B61200057C714 /* base64.c */; };
+		1710BBB9207B61200057C714 /* aes256.c in Sources */ = {isa = PBXBuildFile; fileRef = 1710BBB6207B61200057C714 /* aes256.c */; };
 		17119247204A526400E28893 /* icon_gamer_image_WC@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17119244204A526300E28893 /* icon_gamer_image_WC@3x.png */; };
 		17119248204A526400E28893 /* icon_gamer_image_WC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17119246204A526400E28893 /* icon_gamer_image_WC@2x.png */; };
 		1711924C204A52AD00E28893 /* WCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1711924B204A52AD00E28893 /* WCViewController.m */; };
@@ -42,9 +49,15 @@
 		171F33E62038593800D0A23A /* AddNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 171F33E42038593800D0A23A /* AddNoteViewController.xib */; };
 		171F33EA20385E5300D0A23A /* ShowNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 171F33E820385E5300D0A23A /* ShowNoteViewController.m */; };
 		171F33EB20385E5300D0A23A /* ShowNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 171F33E920385E5300D0A23A /* ShowNoteViewController.xib */; };
+		1729986320843B690026B1E9 /* music_show@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1729986020843B690026B1E9 /* music_show@2x.png */; };
+		1729986420843B690026B1E9 /* music_show@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1729986220843B690026B1E9 /* music_show@3x.png */; };
 		173E1E711FE03613003621E5 /* SendLoveImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E1E701FE03613003621E5 /* SendLoveImageController.m */; };
 		173E1E741FE0377C003621E5 /* icon_gamer_sendLoveImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 173E1E721FE0377C003621E5 /* icon_gamer_sendLoveImage@3x.png */; };
 		173E1E751FE0377C003621E5 /* icon_gamer_sendLoveImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 173E1E731FE0377C003621E5 /* icon_gamer_sendLoveImage@2x.png */; };
+		17440771205A08E700485C5C /* icon_gamer_image_Bluetooth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1744076F205A08E700485C5C /* icon_gamer_image_Bluetooth@2x.png */; };
+		17440772205A08E700485C5C /* icon_gamer_image_Bluetooth@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17440770205A08E700485C5C /* icon_gamer_image_Bluetooth@3x.png */; };
+		17440776205A093500485C5C /* BluetoothViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17440775205A093500485C5C /* BluetoothViewController.m */; };
+		17440779205A0B0400485C5C /* HMBlueToothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17440777205A0B0400485C5C /* HMBlueToothManager.m */; };
 		1756054E201816440089EF46 /* guaiqiao.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1756054C201816440089EF46 /* guaiqiao.gif */; };
 		1756054F201819790089EF46 /* libYYKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17560550201819790089EF46 /* libYYKit.a */; };
 		17560551201819FD0089EF46 /* libYYKit.a in Sources */ = {isa = PBXBuildFile; fileRef = 17560550201819790089EF46 /* libYYKit.a */; };
@@ -64,6 +77,19 @@
 		17ACF732202C037E0086B5D2 /* tableViewA.m in Sources */ = {isa = PBXBuildFile; fileRef = 17ACF731202C037E0086B5D2 /* tableViewA.m */; };
 		17BAFD6B2043F74800A2DEA5 /* NoteSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BAFD692043F74800A2DEA5 /* NoteSearchViewController.m */; };
 		17BAFD6C2043F74800A2DEA5 /* NoteSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17BAFD6A2043F74800A2DEA5 /* NoteSearchViewController.xib */; };
+		17D236CE205A5175000BFD20 /* icon_gamer_image_WeChat@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17D236CC205A5175000BFD20 /* icon_gamer_image_WeChat@3x.png */; };
+		17D236CF205A5175000BFD20 /* icon_gamer_image_WeChat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17D236CD205A5175000BFD20 /* icon_gamer_image_WeChat@2x.png */; };
+		17D236D3205A51A7000BFD20 /* WeChatPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D236D2205A51A7000BFD20 /* WeChatPayViewController.m */; };
+		17D236D6205A525F000BFD20 /* CBaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D236D5205A525F000BFD20 /* CBaseNavViewController.m */; };
+		17D236D8205A5D62000BFD20 /* inputImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 17D236D7205A5D62000BFD20 /* inputImage.png */; };
+		17D236DB205A5D9F000BFD20 /* WeChatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D236DA205A5D9F000BFD20 /* WeChatView.m */; };
+		17D236DD205A5DB4000BFD20 /* WeChatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17D236DC205A5DB4000BFD20 /* WeChatView.xib */; };
+		17D236DF205A5E30000BFD20 /* wechattest.png in Resources */ = {isa = PBXBuildFile; fileRef = 17D236DE205A5E30000BFD20 /* wechattest.png */; };
+		17D236E2205A6463000BFD20 /* WeChatPayFinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D236E1205A6463000BFD20 /* WeChatPayFinishViewController.m */; };
+		17D236E5205A66DB000BFD20 /* WeChatFinshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D236E4205A66DB000BFD20 /* WeChatFinshView.m */; };
+		17D236E7205A66E4000BFD20 /* WeChatFinshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17D236E6205A66E4000BFD20 /* WeChatFinshView.xib */; };
+		17D236E9205A6714000BFD20 /* wechatfinish.png in Resources */ = {isa = PBXBuildFile; fileRef = 17D236E8205A6714000BFD20 /* wechatfinish.png */; };
+		17D236EB205A7697000BFD20 /* 人民币符号.png in Resources */ = {isa = PBXBuildFile; fileRef = 17D236EA205A7697000BFD20 /* 人民币符号.png */; };
 		17FF656F20280D4500308B6D /* icon_gamer_image_test@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17FF656C20280D4500308B6D /* icon_gamer_image_test@2x.png */; };
 		17FF657020280D4500308B6D /* icon_gamer_image_test@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17FF656E20280D4500308B6D /* icon_gamer_image_test@3x.png */; };
 		17FF657420280DA800308B6D /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FF657320280DA800308B6D /* TestViewController.m */; };
@@ -711,6 +737,17 @@
 		09453E7C1E8C07C40062E5CA /* icon_gamer_line@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_line@3x.png"; sourceTree = "<group>"; };
 		09D0F8DA1E8AB48D00E2BDFF /* icon_gamer_color@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_color@2x.png"; sourceTree = "<group>"; };
 		09D0F8DB1E8AB48D00E2BDFF /* icon_gamer_color@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_color@3x.png"; sourceTree = "<group>"; };
+		1704420D2073334A00448AD0 /* TestCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCollectionView.h; sourceTree = "<group>"; };
+		1704420E2073334A00448AD0 /* TestCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCollectionView.m; sourceTree = "<group>"; };
+		170442112073336400448AD0 /* TestFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestFlowLayout.h; sourceTree = "<group>"; };
+		170442122073336400448AD0 /* TestFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestFlowLayout.m; sourceTree = "<group>"; };
+		170442142073507A00448AD0 /* TestCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCollectionViewCell.h; sourceTree = "<group>"; };
+		170442152073507A00448AD0 /* TestCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCollectionViewCell.m; sourceTree = "<group>"; };
+		170442162073507A00448AD0 /* TestCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCollectionViewCell.xib; sourceTree = "<group>"; };
+		1710BBB2207B61200057C714 /* sha256.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha256.c; sourceTree = "<group>"; };
+		1710BBB4207B61200057C714 /* PSCC_enc_pwd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCC_enc_pwd.h; sourceTree = "<group>"; };
+		1710BBB5207B61200057C714 /* base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base64.c; sourceTree = "<group>"; };
+		1710BBB6207B61200057C714 /* aes256.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aes256.c; sourceTree = "<group>"; };
 		17119244204A526300E28893 /* icon_gamer_image_WC@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_WC@3x.png"; sourceTree = "<group>"; };
 		17119246204A526400E28893 /* icon_gamer_image_WC@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_WC@2x.png"; sourceTree = "<group>"; };
 		1711924A204A52AD00E28893 /* WCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCViewController.h; sourceTree = "<group>"; };
@@ -741,10 +778,18 @@
 		171F33E720385E5300D0A23A /* ShowNoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowNoteViewController.h; sourceTree = "<group>"; };
 		171F33E820385E5300D0A23A /* ShowNoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowNoteViewController.m; sourceTree = "<group>"; };
 		171F33E920385E5300D0A23A /* ShowNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowNoteViewController.xib; sourceTree = "<group>"; };
+		1729986020843B690026B1E9 /* music_show@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music_show@2x.png"; sourceTree = "<group>"; };
+		1729986220843B690026B1E9 /* music_show@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music_show@3x.png"; sourceTree = "<group>"; };
 		173E1E6F1FE03613003621E5 /* SendLoveImageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SendLoveImageController.h; sourceTree = "<group>"; };
 		173E1E701FE03613003621E5 /* SendLoveImageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendLoveImageController.m; sourceTree = "<group>"; };
 		173E1E721FE0377C003621E5 /* icon_gamer_sendLoveImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_sendLoveImage@3x.png"; sourceTree = "<group>"; };
 		173E1E731FE0377C003621E5 /* icon_gamer_sendLoveImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_sendLoveImage@2x.png"; sourceTree = "<group>"; };
+		1744076F205A08E700485C5C /* icon_gamer_image_Bluetooth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_Bluetooth@2x.png"; sourceTree = "<group>"; };
+		17440770205A08E700485C5C /* icon_gamer_image_Bluetooth@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_Bluetooth@3x.png"; sourceTree = "<group>"; };
+		17440774205A093500485C5C /* BluetoothViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BluetoothViewController.h; sourceTree = "<group>"; };
+		17440775205A093500485C5C /* BluetoothViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BluetoothViewController.m; sourceTree = "<group>"; };
+		17440777205A0B0400485C5C /* HMBlueToothManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMBlueToothManager.m; sourceTree = "<group>"; };
+		17440778205A0B0400485C5C /* HMBlueToothManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMBlueToothManager.h; sourceTree = "<group>"; };
 		1756054C201816440089EF46 /* guaiqiao.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = guaiqiao.gif; sourceTree = "<group>"; };
 		17560550201819790089EF46 /* libYYKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libYYKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		17560552201821000089EF46 /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebP.framework; path = Pods/YYKit/Vendor/WebP.framework; sourceTree = "<group>"; };
@@ -771,6 +816,24 @@
 		17BAFD682043F74800A2DEA5 /* NoteSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteSearchViewController.h; sourceTree = "<group>"; };
 		17BAFD692043F74800A2DEA5 /* NoteSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteSearchViewController.m; sourceTree = "<group>"; };
 		17BAFD6A2043F74800A2DEA5 /* NoteSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteSearchViewController.xib; sourceTree = "<group>"; };
+		17D236CC205A5175000BFD20 /* icon_gamer_image_WeChat@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_WeChat@3x.png"; sourceTree = "<group>"; };
+		17D236CD205A5175000BFD20 /* icon_gamer_image_WeChat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_WeChat@2x.png"; sourceTree = "<group>"; };
+		17D236D1205A51A7000BFD20 /* WeChatPayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeChatPayViewController.h; sourceTree = "<group>"; };
+		17D236D2205A51A7000BFD20 /* WeChatPayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeChatPayViewController.m; sourceTree = "<group>"; };
+		17D236D4205A525F000BFD20 /* CBaseNavViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBaseNavViewController.h; sourceTree = "<group>"; };
+		17D236D5205A525F000BFD20 /* CBaseNavViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBaseNavViewController.m; sourceTree = "<group>"; };
+		17D236D7205A5D62000BFD20 /* inputImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inputImage.png; sourceTree = "<group>"; };
+		17D236D9205A5D9F000BFD20 /* WeChatView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeChatView.h; sourceTree = "<group>"; };
+		17D236DA205A5D9F000BFD20 /* WeChatView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeChatView.m; sourceTree = "<group>"; };
+		17D236DC205A5DB4000BFD20 /* WeChatView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeChatView.xib; sourceTree = "<group>"; };
+		17D236DE205A5E30000BFD20 /* wechattest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wechattest.png; sourceTree = "<group>"; };
+		17D236E0205A6463000BFD20 /* WeChatPayFinishViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeChatPayFinishViewController.h; sourceTree = "<group>"; };
+		17D236E1205A6463000BFD20 /* WeChatPayFinishViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeChatPayFinishViewController.m; sourceTree = "<group>"; };
+		17D236E3205A66DB000BFD20 /* WeChatFinshView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeChatFinshView.h; sourceTree = "<group>"; };
+		17D236E4205A66DB000BFD20 /* WeChatFinshView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeChatFinshView.m; sourceTree = "<group>"; };
+		17D236E6205A66E4000BFD20 /* WeChatFinshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeChatFinshView.xib; sourceTree = "<group>"; };
+		17D236E8205A6714000BFD20 /* wechatfinish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wechatfinish.png; sourceTree = "<group>"; };
+		17D236EA205A7697000BFD20 /* 人民币符号.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "人民币符号.png"; sourceTree = "<group>"; };
 		17FF656C20280D4500308B6D /* icon_gamer_image_test@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_test@2x.png"; sourceTree = "<group>"; };
 		17FF656E20280D4500308B6D /* icon_gamer_image_test@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gamer_image_test@3x.png"; sourceTree = "<group>"; };
 		17FF657220280DA800308B6D /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
@@ -1702,6 +1765,17 @@
 			path = SendLoveImage;
 			sourceTree = "<group>";
 		};
+		17440773205A091100485C5C /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				17440774205A093500485C5C /* BluetoothViewController.h */,
+				17440775205A093500485C5C /* BluetoothViewController.m */,
+				17440778205A0B0400485C5C /* HMBlueToothManager.h */,
+				17440777205A0B0400485C5C /* HMBlueToothManager.m */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
 		17601CDC202FF6EA009A84B7 /* YQPanoramaView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1754,6 +1828,27 @@
 			path = PanoramaView;
 			sourceTree = "<group>";
 		};
+		17D236D0205A5197000BFD20 /* WeChatPay */ = {
+			isa = PBXGroup;
+			children = (
+				17D236EA205A7697000BFD20 /* 人民币符号.png */,
+				17D236D7205A5D62000BFD20 /* inputImage.png */,
+				17D236DE205A5E30000BFD20 /* wechattest.png */,
+				17D236E8205A6714000BFD20 /* wechatfinish.png */,
+				17D236D1205A51A7000BFD20 /* WeChatPayViewController.h */,
+				17D236D2205A51A7000BFD20 /* WeChatPayViewController.m */,
+				17D236D9205A5D9F000BFD20 /* WeChatView.h */,
+				17D236DA205A5D9F000BFD20 /* WeChatView.m */,
+				17D236DC205A5DB4000BFD20 /* WeChatView.xib */,
+				17D236E0205A6463000BFD20 /* WeChatPayFinishViewController.h */,
+				17D236E1205A6463000BFD20 /* WeChatPayFinishViewController.m */,
+				17D236E3205A66DB000BFD20 /* WeChatFinshView.h */,
+				17D236E4205A66DB000BFD20 /* WeChatFinshView.m */,
+				17D236E6205A66E4000BFD20 /* WeChatFinshView.xib */,
+			);
+			path = WeChatPay;
+			sourceTree = "<group>";
+		};
 		17FF657120280D8D00308B6D /* test */ = {
 			isa = PBXGroup;
 			children = (
@@ -1770,6 +1865,13 @@
 				17FF659120297DE200308B6D /* PageView.m */,
 				17ACF730202C037E0086B5D2 /* tableViewA.h */,
 				17ACF731202C037E0086B5D2 /* tableViewA.m */,
+				1704420D2073334A00448AD0 /* TestCollectionView.h */,
+				1704420E2073334A00448AD0 /* TestCollectionView.m */,
+				170442112073336400448AD0 /* TestFlowLayout.h */,
+				170442122073336400448AD0 /* TestFlowLayout.m */,
+				170442142073507A00448AD0 /* TestCollectionViewCell.h */,
+				170442152073507A00448AD0 /* TestCollectionViewCell.m */,
+				170442162073507A00448AD0 /* TestCollectionViewCell.xib */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -1818,6 +1920,8 @@
 		9E118AB31E5FF8AF00914D9E /* Music_image */ = {
 			isa = PBXGroup;
 			children = (
+				1729986020843B690026B1E9 /* music_show@2x.png */,
+				1729986220843B690026B1E9 /* music_show@3x.png */,
 				9EEA41FB1E66EBFB0081F8E5 /* music_search.png */,
 				9EEA41FC1E66EBFB0081F8E5 /* music_search@2x.png */,
 				9EEA41FD1E66EBFB0081F8E5 /* music_search@3x.png */,
@@ -1950,6 +2054,8 @@
 				9E1389D91E2B0EB00011701B /* CYCAppDelegate.m */,
 				9E1389DB1E2B101F0011701B /* CYCTabBarController.h */,
 				9E1389DC1E2B101F0011701B /* CYCTabBarController.m */,
+				17D236D4205A525F000BFD20 /* CBaseNavViewController.h */,
+				17D236D5205A525F000BFD20 /* CBaseNavViewController.m */,
 				9E64DE3F1F4ACCDA002E6A3F /* CBaseViewController.h */,
 				9E64DE401F4ACCDA002E6A3F /* CBaseViewController.m */,
 				9E64DE411F4ACCDA002E6A3F /* CBaseViewController.xib */,
@@ -2013,6 +2119,8 @@
 			children = (
 				9E1389F21E2B11D00011701B /* GamerController.h */,
 				9E1389F31E2B11D00011701B /* GamerController.m */,
+				17D236D0205A5197000BFD20 /* WeChatPay */,
+				17440773205A091100485C5C /* Bluetooth */,
 				17119249204A529B00E28893 /* WC */,
 				171F33D62038269F00D0A23A /* Note */,
 				17601CE320301FB7009A84B7 /* CharBarView */,
@@ -2333,6 +2441,10 @@
 		9E527DC21E3799460057AF4C /* GamerImage */ = {
 			isa = PBXGroup;
 			children = (
+				17D236CD205A5175000BFD20 /* icon_gamer_image_WeChat@2x.png */,
+				17D236CC205A5175000BFD20 /* icon_gamer_image_WeChat@3x.png */,
+				1744076F205A08E700485C5C /* icon_gamer_image_Bluetooth@2x.png */,
+				17440770205A08E700485C5C /* icon_gamer_image_Bluetooth@3x.png */,
 				17119246204A526400E28893 /* icon_gamer_image_WC@2x.png */,
 				17119244204A526300E28893 /* icon_gamer_image_WC@3x.png */,
 				171F33D32038269600D0A23A /* icon_gamer_image_Note@2x.png */,
@@ -3039,6 +3151,10 @@
 		9EA44B1C1E2E6FBD00F7761D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1710BBB6207B61200057C714 /* aes256.c */,
+				1710BBB5207B61200057C714 /* base64.c */,
+				1710BBB4207B61200057C714 /* PSCC_enc_pwd.h */,
+				1710BBB2207B61200057C714 /* sha256.c */,
 				9EA44B1D1E2E6FBD00F7761D /* CYCLeftController.h */,
 				9EA44B1E1E2E6FBD00F7761D /* CYCLeftController.m */,
 				9EA44B281E2E708300F7761D /* WeatherController.h */,
@@ -3432,6 +3548,7 @@
 				9EA44AEC1E2E24BC00F7761D /* 12.png in Resources */,
 				9EA44B301E2E758900F7761D /* 37x-Checkmark.png in Resources */,
 				9E66B02C1F444BF60095FC41 /* DFW_WW7.TTF in Resources */,
+				17D236EB205A7697000BFD20 /* 人民币符号.png in Resources */,
 				9ED17DC61F6920EB00127760 /* icon_game_detial_select@3x.png in Resources */,
 				9EA44A921E2DF3FF00F7761D /* home_tab_icon_3.png in Resources */,
 				17FF656F20280D4500308B6D /* icon_gamer_image_test@2x.png in Resources */,
@@ -3485,6 +3602,7 @@
 				9EF9EC151E2C89D30030023B /* icon_leftController_night@3x.png in Resources */,
 				9EA44AF11E2E24BC00F7761D /* 17.png in Resources */,
 				9E35FC231E73E1240077D688 /* icon_gamer_target_edit@2x.png in Resources */,
+				1729986420843B690026B1E9 /* music_show@3x.png in Resources */,
 				9E4E12121E3569F900A08DAC /* icon_weatner_night_31.png in Resources */,
 				9E9D6E901E61896900EB095B /* music_menu@3x.png in Resources */,
 				9EFAB73F1E2F01030039C853 /* DailyController.xib in Resources */,
@@ -3499,6 +3617,7 @@
 				9E138A2F1E2B375E0011701B /* Icon-60.png in Resources */,
 				17FF657920280E0F00308B6D /* TestCell.xib in Resources */,
 				9EA44B0A1E2E24BD00F7761D /* 5.png in Resources */,
+				1729986320843B690026B1E9 /* music_show@2x.png in Resources */,
 				9E4E11E11E3569F900A08DAC /* icon_weatner_day_29.png in Resources */,
 				9E4E11E51E3569F900A08DAC /* icon_weatner_day_302.png in Resources */,
 				17601CED203020B6009A84B7 /* icon_gamer_image_CharBar@3x.png in Resources */,
@@ -3519,6 +3638,7 @@
 				9EA44A8F1E2DF3FF00F7761D /* home_tab_icon_1@2x.png in Resources */,
 				9E4E11CD1E3569F900A08DAC /* icon_weatner_day_10.png in Resources */,
 				9E5BFDD51F99DEF4005F3544 /* IMInputBar.xib in Resources */,
+				170442182073507A00448AD0 /* TestCollectionViewCell.xib in Resources */,
 				171F33EB20385E5300D0A23A /* ShowNoteViewController.xib in Resources */,
 				09D0F8DC1E8AB48D00E2BDFF /* icon_gamer_color@2x.png in Resources */,
 				17119262204CDD4000E28893 /* 3号线.png in Resources */,
@@ -3538,6 +3658,7 @@
 				9E4E12221E3569F900A08DAC /* 天气图标对照表.txt in Resources */,
 				9E66B00D1F442C620095FC41 /* BoomController.xib in Resources */,
 				9EEA41FE1E66EBFB0081F8E5 /* music_search.png in Resources */,
+				17440772205A08E700485C5C /* icon_gamer_image_Bluetooth@3x.png in Resources */,
 				9E5EE25D1F3C6BD3009C3659 /* icon_gamer_subway@3x.png in Resources */,
 				9E4E11D71E3569F900A08DAC /* icon_weatner_day_2.png in Resources */,
 				17119261204CDD4000E28893 /* 5号线.png in Resources */,
@@ -3556,8 +3677,10 @@
 				9E220D411E30A4A6009D7146 /* new_13.png in Resources */,
 				9E9D6E7C1E617E2700EB095B /* pull_image_6@2x.png in Resources */,
 				9E527DC11E3797350057AF4C /* GamerCell.xib in Resources */,
+				17D236CF205A5175000BFD20 /* icon_gamer_image_WeChat@2x.png in Resources */,
 				9ECB1E9C1E6ACF3C002FE2E4 /* setting_touchID@3x.png in Resources */,
 				9E4E12131E3569F900A08DAC /* icon_weatner_night_32.png in Resources */,
+				17D236CE205A5175000BFD20 /* icon_gamer_image_WeChat@3x.png in Resources */,
 				9EA44A9B1E2DF67200F7761D /* home_bottom_tab_arrow@2x.png in Resources */,
 				9EA44AFD1E2E24BC00F7761D /* 28.png in Resources */,
 				9E53B4C31E64A2F10015FA02 /* music_song_pause.png in Resources */,
@@ -3600,6 +3723,7 @@
 				9E0672211F4D7BDA00C1ABEE /* icon_gamer_input@3x.png in Resources */,
 				9ED17DBC1F6920EB00127760 /* icon_bangbi_score@3x.png in Resources */,
 				9E1389C71E2B08390011701B /* LaunchScreen.storyboard in Resources */,
+				17D236DF205A5E30000BFD20 /* wechattest.png in Resources */,
 				9E9EB63B1E62A46C005A0F2B /* PasswordController.xib in Resources */,
 				9E4E11D41E3569F900A08DAC /* icon_weatner_day_17.png in Resources */,
 				9E9D6E811E617E2700EB095B /* pull_image_11@2x.png in Resources */,
@@ -3638,6 +3762,7 @@
 				9EF53D101E2BDE2000F55033 /* icon_leftCtrl_Third@3x.png in Resources */,
 				9E118ACB1E5FFD0200914D9E /* music_menuButton@3x.png in Resources */,
 				9E220D3A1E30A4A6009D7146 /* new_6.png in Resources */,
+				17D236E9205A6714000BFD20 /* wechatfinish.png in Resources */,
 				9E53B4BE1E64A2F10015FA02 /* music_song_list@2x.png in Resources */,
 				9E4E11D01E3569F900A08DAC /* icon_weatner_day_13.png in Resources */,
 				9EA44B071E2E24BD00F7761D /* 37.png in Resources */,
@@ -3701,6 +3826,7 @@
 				9EA44B0E1E2E24BD00F7761D /* 9.png in Resources */,
 				9E279CA31F3D9390004E9FB4 /* icon_gamer_bankCard@2x.png in Resources */,
 				9ED17DD51F6920EB00127760 /* icon_gameRank_silver@2x.png in Resources */,
+				17440771205A08E700485C5C /* icon_gamer_image_Bluetooth@2x.png in Resources */,
 				9E4E11F11E3569F900A08DAC /* icon_weatner_day_58.png in Resources */,
 				9EA44B041E2E24BD00F7761D /* 34.png in Resources */,
 				9E66AFEC1F442AD80095FC41 /* FontViewController.xib in Resources */,
@@ -3715,6 +3841,7 @@
 				9E802F6A1F4160990092DDAE /* icon_gamer_city@2x.png in Resources */,
 				9E138A121E2B1DDF0011701B /* icon_tab_discover.png in Resources */,
 				9E4E11FD1E3569F900A08DAC /* icon_weatner_night_14.png in Resources */,
+				17D236E7205A66E4000BFD20 /* WeChatFinshView.xib in Resources */,
 				9E64DE3E1F4ACB5C002E6A3F /* CodeViewController.xib in Resources */,
 				17BAFD6C2043F74800A2DEA5 /* NoteSearchViewController.xib in Resources */,
 				9EF837851E3F66540094BE84 /* icon_login_background@3x.png in Resources */,
@@ -3774,6 +3901,7 @@
 				9EA44AF71E2E24BC00F7761D /* 22.png in Resources */,
 				9ED17DC31F6920EB00127760 /* icon_game2048_reset@2x.png in Resources */,
 				9E138A171E2B1DDF0011701B /* icon_tab_gamer@3x.png in Resources */,
+				17D236D8205A5D62000BFD20 /* inputImage.png in Resources */,
 				9EA44B0B1E2E24BD00F7761D /* 6.png in Resources */,
 				171F33DE203827B100D0A23A /* NoteListCell.xib in Resources */,
 				1711925E204CDD4000E28893 /* 4号线.png in Resources */,
@@ -3856,6 +3984,7 @@
 				9E66AFDF1F43F4130095FC41 /* icon_gamer_font@2x.png in Resources */,
 				9E279CA41F3D9390004E9FB4 /* icon_gamer_bankCard@3x.png in Resources */,
 				9E4E11EA1E3569F900A08DAC /* icon_weatner_day_49.png in Resources */,
+				17D236DD205A5DB4000BFD20 /* WeChatView.xib in Resources */,
 				9E9EB6481E62B9B9005A0F2B /* setting_clear@2x.png in Resources */,
 				9E4E11E21E3569F900A08DAC /* icon_weatner_day_3.png in Resources */,
 				9ECB1E9A1E6ACF3C002FE2E4 /* setting_touchID.png in Resources */,
@@ -3977,6 +4106,7 @@
 				9ED17DB61F6920EB00127760 /* F3HGameModel.m in Sources */,
 				9E72A2891F9DB2F60061990A /* NewsListCell.m in Sources */,
 				9E118ACE1E6000D800914D9E /* SongModel.m in Sources */,
+				1710BBB9207B61200057C714 /* aes256.c in Sources */,
 				9E01D36B1F4C272400AA31F3 /* NSDate+Calendar.m in Sources */,
 				9E66B0021F442C1A0095FC41 /* TranslateController.m in Sources */,
 				17FF657F20282E5600308B6D /* RollLabelInfo.m in Sources */,
@@ -3989,11 +4119,13 @@
 				9E9D6E931E618A8900EB095B /* MenuController.m in Sources */,
 				17601CF72030214A009A84B7 /* YQCharBarCell.m in Sources */,
 				9EC8C32F1F9DD3980094CB3E /* NewsCollectController.m in Sources */,
+				17440779205A0B0400485C5C /* HMBlueToothManager.m in Sources */,
 				17119268204CE34B00E28893 /* WCLineCell.m in Sources */,
 				9E6EB0D81E3ED9C800E7128A /* CustomCell.m in Sources */,
 				9E5BFDCD1F999A2A005F3544 /* IMMessageModel.m in Sources */,
 				9ED17DB51F6920EB00127760 /* CGameRankModel.m in Sources */,
 				9EA44AB11E2E11CD00F7761D /* AFHTTPRequestOperationManager.m in Sources */,
+				17D236E5205A66DB000BFD20 /* WeChatFinshView.m in Sources */,
 				9E4E12251E356A6300A08DAC /* AliWeatherModel.m in Sources */,
 				9ECB1EA41E6C0C36002FE2E4 /* CYCTouchIDController.m in Sources */,
 				9ED17DDC1F6920EB00127760 /* CGameRankCell.m in Sources */,
@@ -4009,6 +4141,7 @@
 				9ED17DBA1F6920EB00127760 /* F3HTileModel.m in Sources */,
 				9E138A001E2B120E0011701B /* SettingerController.m in Sources */,
 				17601CDF202FF6EA009A84B7 /* YQPanoramaView.m in Sources */,
+				1704420F2073334A00448AD0 /* TestCollectionView.m in Sources */,
 				9E66AFFC1F442BF50095FC41 /* SelectColorController.m in Sources */,
 				9E6EB0D61E3ED9C800E7128A /* YJLocalCountryData.m in Sources */,
 				9E9D6E2A1E61705800EB095B /* MJRefreshAutoGifFooter.m in Sources */,
@@ -4022,6 +4155,7 @@
 				9ED17DB41F6920EB00127760 /* F3HTileAppearanceProvider.m in Sources */,
 				9EFAB7451E2F092A0039C853 /* WeatherCollectionView.m in Sources */,
 				9E648E111F61379500FB2705 /* PhotoScrollView.m in Sources */,
+				17D236E2205A6463000BFD20 /* WeChatPayFinishViewController.m in Sources */,
 				9E66B0071F442C330095FC41 /* AppListViewController.m in Sources */,
 				9E01D3691F4C272400AA31F3 /* CalendarScrollView.m in Sources */,
 				9EA44AB51E2E11CD00F7761D /* AFURLConnectionOperation.m in Sources */,
@@ -4029,6 +4163,7 @@
 				9EF53CE41E2BBE6500F55033 /* MMDrawerVisualState.m in Sources */,
 				9EF53CE51E2BBE6500F55033 /* UIViewController+MMDrawerController.m in Sources */,
 				9E9D6E321E61705800EB095B /* MJRefreshStateHeader.m in Sources */,
+				170442132073336400448AD0 /* TestFlowLayout.m in Sources */,
 				9ED17DB81F6920EB00127760 /* F3HMoveOrder.m in Sources */,
 				9E9D6E2E1E61705800EB095B /* MJRefreshBackNormalFooter.m in Sources */,
 				17FF657420280DA800308B6D /* TestViewController.m in Sources */,
@@ -4063,14 +4198,18 @@
 				9E6EB0DD1E3ED9C800E7128A /* SectionsViewControllerFriends.m in Sources */,
 				9E4E12311E35739300A08DAC /* AliWeatherController.m in Sources */,
 				9E9D6E361E61705800EB095B /* UIScrollView+MJExtension.m in Sources */,
+				17440776205A093500485C5C /* BluetoothViewController.m in Sources */,
 				9EA44AB81E2E11CD00F7761D /* AFURLSessionManager.m in Sources */,
 				9E118AF61E60147800914D9E /* SDWebImageCompat.m in Sources */,
 				9E66B00C1F442C620095FC41 /* BoomController.m in Sources */,
 				9EA44B151E2E425A00F7761D /* CThemeLabel.m in Sources */,
 				171F33D9203826AC00D0A23A /* NoteViewController.m in Sources */,
+				1710BBB7207B61200057C714 /* sha256.c in Sources */,
 				9E64DE3D1F4ACB5C002E6A3F /* CodeViewController.m in Sources */,
 				9ED17DE01F6920EB00127760 /* CYCBestScoreView.m in Sources */,
+				17D236D6205A525F000BFD20 /* CBaseNavViewController.m in Sources */,
 				9E1389FD1E2B12000011701B /* DiscoverController.m in Sources */,
+				17D236DB205A5D9F000BFD20 /* WeChatView.m in Sources */,
 				9E4E73971F983CFF00D869DF /* TileView.m in Sources */,
 				9E66B01C1F442CB50095FC41 /* brokenLineController.m in Sources */,
 				9E485AB31F45319A0014ECE6 /* OverColorViewController.m in Sources */,
@@ -4110,6 +4249,7 @@
 				9ED17DDB1F6920EB00127760 /* CBeginEndButton.m in Sources */,
 				9E6EB0FE1E3EDD4800E7128A /* CYCLoginController.m in Sources */,
 				9E472A171E3D914000C6245E /* CScrollView.m in Sources */,
+				1710BBB8207B61200057C714 /* base64.c in Sources */,
 				9E66AFF61F442BCB0095FC41 /* CTargetCell.m in Sources */,
 				9E72A27C1F9DB0AF0061990A /* XLsn0wPopupMenu.m in Sources */,
 				9E4E73AB1F98A94500D869DF /* IMMessageMineCell.m in Sources */,
@@ -4123,6 +4263,7 @@
 				9E4E73A61F98A92F00D869DF /* IMMessageYourCell.m in Sources */,
 				9E9EB63A1E62A46C005A0F2B /* PasswordController.m in Sources */,
 				17601CDA202FF6AB009A84B7 /* PanoramaController.m in Sources */,
+				17D236D3205A51A7000BFD20 /* WeChatPayViewController.m in Sources */,
 				9E9D6E351E61705800EB095B /* NSBundle+MJRefresh.m in Sources */,
 				9E118AF31E60147800914D9E /* MKAnnotationView+WebCache.m in Sources */,
 				9ED17DE21F6920EB00127760 /* F3HGameboardView.m in Sources */,
@@ -4130,6 +4271,7 @@
 				09453E781E8C06850062E5CA /* PopoverView.m in Sources */,
 				9EA44AB71E2E11CD00F7761D /* AFURLResponseSerialization.m in Sources */,
 				9E9D6E291E61705800EB095B /* MJRefreshHeader.m in Sources */,
+				170442172073507A00448AD0 /* TestCollectionViewCell.m in Sources */,
 				9E118AF91E60147800914D9E /* SDWebImageDownloaderOperation.m in Sources */,
 				17BAFD6B2043F74800A2DEA5 /* NoteSearchViewController.m in Sources */,
 				9ED17D431F68E49600127760 /* AnimationController.m in Sources */,

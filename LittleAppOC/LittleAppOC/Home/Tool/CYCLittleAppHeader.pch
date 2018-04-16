@@ -30,7 +30,7 @@
 
 //-----------------------------------------------------颜色-----------------------------------------------------
 #define CRGB(R,G,B,A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]                 // 设置颜色
-#define C_MAIN_COLOR [UIColor colorWithRed:18/255.0 green:150/255.0 blue:219/255.0 alpha:1]             // 主题颜色
+#define C_MAIN_COLOR [UIColor blackColor]                                                               // 主题颜色
 #define C_MAIN_TEXTCOLOR [UIColor colorWithRed:23/255.0 green:23/255.0 blue:23/255.0 alpha:1]           // 主题字体颜色
 
 

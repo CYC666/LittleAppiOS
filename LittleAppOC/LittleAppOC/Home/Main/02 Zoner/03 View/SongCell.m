@@ -49,7 +49,7 @@
     }
     
     if (songModel.isLive) {
-        _isLiveView.backgroundColor = [UIColor colorWithRed:135/255.0 green:225/255.0 blue:73/255.0 alpha:1];
+        _isLiveView.backgroundColor = C_MAIN_COLOR;
     } else {
         _isLiveView.backgroundColor = [UIColor clearColor];
     }

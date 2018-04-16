@@ -423,15 +423,20 @@
 
 #pragma mark - 设置进度
 - (void)setCurrentValue:(float)currentValue {
-
-    // 进度条
-    _songSlider.value = currentValue;
     
-    // 前面的进度label
-    SongModel *liveModel = _songList[_liveIndex];
-    NSNumber *lengNumber = (NSNumber *)liveModel.seconds;
-    NSInteger currentInteger = lengNumber.integerValue * currentValue;
-    _liveLabel.text = [self secondsToString:currentInteger];
+    if (currentValue > 0) {
+        
+        // 进度条
+        _songSlider.value = currentValue;
+        
+        // 前面的进度label
+        SongModel *liveModel = _songList[_liveIndex];
+        NSNumber *lengNumber = (NSNumber *)liveModel.seconds;
+        NSInteger currentInteger = lengNumber.integerValue * currentValue;
+        _liveLabel.text = [self secondsToString:currentInteger];
+
+    }
+
 
 }
 

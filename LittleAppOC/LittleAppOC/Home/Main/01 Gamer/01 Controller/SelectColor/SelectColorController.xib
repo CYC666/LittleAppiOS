@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -33,14 +33,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v8U-Wh-hTe">
-                    <rect key="frame" x="16" y="20" width="343" height="375"/>
+                    <rect key="frame" x="16" y="80" width="343" height="375"/>
                     <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="375" id="BE6-SF-ROb"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1KD-Ml-Tbl">
-                    <rect key="frame" x="16" y="411" width="50" height="50"/>
+                    <rect key="frame" x="16" y="471" width="50" height="50"/>
                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="L1c-3Z-h6W"/>
@@ -51,42 +51,42 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Tm-aV-v7F">
-                    <rect key="frame" x="16" y="469" width="50" height="50"/>
+                    <rect key="frame" x="16" y="529" width="50" height="50"/>
                     <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Otj-gM-eKm">
-                    <rect key="frame" x="16" y="527" width="50" height="50"/>
+                    <rect key="frame" x="16" y="587" width="50" height="50"/>
                     <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="92" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="dxQ-wG-OFN">
-                    <rect key="frame" x="72" y="537" width="231" height="31"/>
+                    <rect key="frame" x="72" y="597" width="231" height="31"/>
                 </slider>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="92" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OXg-cj-2UG">
-                    <rect key="frame" x="309" y="537" width="50" height="30"/>
+                    <rect key="frame" x="309" y="597" width="50" height="30"/>
                     <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                 </textField>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="138" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="9qx-QI-fVT">
-                    <rect key="frame" x="72" y="479" width="231" height="31"/>
+                    <rect key="frame" x="72" y="539" width="231" height="31"/>
                 </slider>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="138" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DvD-RL-qx4">
-                    <rect key="frame" x="309" y="479" width="50" height="30"/>
+                    <rect key="frame" x="309" y="539" width="50" height="30"/>
                     <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                 </textField>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="214" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="vaa-5K-eG8">
-                    <rect key="frame" x="72" y="421" width="231" height="31"/>
+                    <rect key="frame" x="72" y="481" width="231" height="31"/>
                 </slider>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="214" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lkk-wo-FRH">
-                    <rect key="frame" x="309" y="421" width="50" height="30"/>
+                    <rect key="frame" x="309" y="481" width="50" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="tP9-dL-Lca"/>
                     </constraints>
@@ -95,7 +95,7 @@
                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBc-ue-xwk">
-                    <rect key="frame" x="16" y="585" width="50" height="50"/>
+                    <rect key="frame" x="16" y="645" width="50" height="50"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.31799568965517239" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="UwM-ml-jyc"/>
@@ -106,10 +106,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="D9I-Cy-IV4">
-                    <rect key="frame" x="72" y="595" width="231" height="31"/>
+                    <rect key="frame" x="72" y="655" width="231" height="31"/>
                 </slider>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xB-nB-w23">
-                    <rect key="frame" x="16" y="585" width="50" height="25"/>
+                    <rect key="frame" x="16" y="645" width="50" height="25"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.60390624999999998" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="5Vy-O6-WgH"/>
@@ -120,7 +120,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3GA-PM-zzo">
-                    <rect key="frame" x="309" y="595" width="50" height="30"/>
+                    <rect key="frame" x="309" y="655" width="50" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="12w-hh-8Uu"/>
                     </constraints>
@@ -151,7 +151,7 @@
                 <constraint firstItem="1KD-Ml-Tbl" firstAttribute="top" secondItem="v8U-Wh-hTe" secondAttribute="bottom" constant="16" id="VqH-eX-s5a"/>
                 <constraint firstItem="DvD-RL-qx4" firstAttribute="leading" secondItem="9qx-QI-fVT" secondAttribute="trailing" constant="8" id="XfQ-P8-2ji"/>
                 <constraint firstItem="vaa-5K-eG8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aI6-rK-t6J"/>
-                <constraint firstItem="v8U-Wh-hTe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="cQJ-at-9bb"/>
+                <constraint firstItem="v8U-Wh-hTe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="cQJ-at-9bb"/>
                 <constraint firstItem="lkk-wo-FRH" firstAttribute="centerY" secondItem="1KD-Ml-Tbl" secondAttribute="centerY" id="dKc-xE-jGz"/>
                 <constraint firstItem="9qx-QI-fVT" firstAttribute="centerY" secondItem="8Tm-aV-v7F" secondAttribute="centerY" id="dab-13-h6v"/>
                 <constraint firstItem="dxQ-wG-OFN" firstAttribute="leading" secondItem="Otj-gM-eKm" secondAttribute="trailing" constant="8" id="dbs-7z-R3h"/>
